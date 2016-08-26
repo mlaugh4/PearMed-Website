@@ -1,0 +1,968 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"main-",
+				"main-text"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"color",
+				"border-color"
+			],
+			[
+				"main",
+				"main-links"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"tweets",
+				"tweets_sentiment"
+			],
+			[
+				"tweet",
+				"tweets_with_sent"
+			],
+			[
+				"twee",
+				"tweets_with_sent"
+			],
+			[
+				"trans",
+				"translateY"
+			],
+			[
+				"tab",
+				"tab-wrap"
+			],
+			[
+				"backgroung",
+				"background-image"
+			],
+			[
+				"ease",
+				"ease-in-out"
+			],
+			[
+				"scip-",
+				"scip-final-txt"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"slick",
+				"slick1"
+			],
+			[
+				"backgroun",
+				"background-repeat"
+			],
+			[
+				"backgrou",
+				"background-image"
+			],
+			[
+				"nps",
+				"nps-pill-container"
+			],
+			[
+				"ope",
+				"openFeed-topCell"
+			],
+			[
+				"open",
+				"openFeed-whole"
+			],
+			[
+				"conversation",
+				"conversation-form"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"np",
+				"nps-pill-red"
+			],
+			[
+				"nps-pil",
+				"nps-pill-container"
+			],
+			[
+				"fir",
+				"first-child"
+			],
+			[
+				"tr",
+				"trend"
+			],
+			[
+				"left",
+				"left-column"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"nac",
+				"nav-actions"
+			],
+			[
+				"tabmenu",
+				"tabmenu-option"
+			],
+			[
+				"project",
+				"project-area"
+			],
+			[
+				"image",
+				"image-slider"
+			],
+			[
+				"quest",
+				"question_index"
+			],
+			[
+				"he",
+				"hero-image"
+			],
+			[
+				"remov",
+				"removeClass"
+			],
+			[
+				"over",
+				"overview-graphs"
+			],
+			[
+				"graph",
+				"graph-column"
+			],
+			[
+				"perf",
+				"perf-pill-inner"
+			],
+			[
+				"sum",
+				"sumForPercent"
+			],
+			[
+				"gr",
+				"graph-metrics"
+			],
+			[
+				"graph-",
+				"graph-table"
+			],
+			[
+				"nav-",
+				"nav-actions"
+			],
+			[
+				"max",
+				"maxIndex"
+			],
+			[
+				"card",
+				"card-links"
+			],
+			[
+				"chart",
+				"chart_date"
+			],
+			[
+				"margin",
+				"margincalc_agegraph"
+			],
+			[
+				"mar",
+				"margincalc"
+			],
+			[
+				"msg",
+				"msgalert"
+			],
+			[
+				"right",
+				"rightCol"
+			],
+			[
+				"dash-bub",
+				"dash-bubbles-mobile"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"bubb",
+				"card-bubble"
+			],
+			[
+				"dash",
+				"dash-bubbles"
+			],
+			[
+				"padding-",
+				"padding-bottom"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"eas",
+				"ease-in"
+			],
+			[
+				"backro",
+				"background-color"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/team.html",
+			"settings":
+			{
+				"buffer_size": 2233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/index.html",
+			"settings":
+			{
+				"buffer_size": 1543,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/product.html",
+			"settings":
+			{
+				"buffer_size": 1131,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/contact.html",
+			"settings":
+			{
+				"buffer_size": 1157,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/styles.css",
+			"settings":
+			{
+				"buffer_size": 3129,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Documents/code/pearmed/js/myjs.js",
+			"settings":
+			{
+				"buffer_size": 883,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/marklaughery/Documents/code/pearmed/product.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"team",
+			"<hr>",
+			"small",
+			"logo",
+			"n",
+			"h2",
+			"a href",
+			" style=\"height:500px;width:auto;\"",
+			"margin-bottom:40px",
+			"style=\"height:500px;width:auto;margin-bottom:40px\"",
+			" class=\"final-header\"",
+			"span",
+			"70",
+			"100",
+			"h2",
+			"h3",
+			"//",
+			"2",
+			"span",
+			"p",
+			"body",
+			"renderer",
+			"...     ",
+			"object3d",
+			"object3D",
+			"object3d",
+			"10",
+			"4",
+			"edge_cut",
+			"no_report",
+			"tweet_entities",
+			"hashes",
+			"digraph",
+			"type",
+			"#genesis",
+			".g",
+			"#genesis",
+			"barwidth",
+			"area",
+			"media",
+			"min-width",
+			"36px",
+			"class",
+			".left",
+			"left",
+			"h3",
+			"label",
+			"button",
+			"div",
+			"assets",
+			"p",
+			"div",
+			"scip",
+			"final",
+			"msurvey",
+			"chunk",
+			"alt=\"\"",
+			"div",
+			"back",
+			"new message",
+			"comment",
+			"btn",
+			"ol",
+			"div",
+			"scip",
+			"4",
+			"span",
+			"div",
+			"000",
+			"0",
+			"fff",
+			"tyle=\"position:absolute;right:0px;top:0px;height:100%;width:40px;background-color:white;opacity:.1\"",
+			"auto",
+			"div",
+			"style=\"height:500px;width:auto;\"",
+			"200px",
+			"padding",
+			"msg",
+			"msg\\",
+			"msg",
+			"width:32%;",
+			"float:left;",
+			"active",
+			"current_list",
+			"contact_brief",
+			".number",
+			"small",
+			"section-",
+			"main-contacts",
+			"pin",
+			"30px",
+			"60px",
+			"div",
+			"p",
+			"#dummy",
+			"hover",
+			"current_list li",
+			"compose",
+			"noRemove",
+			"addpart",
+			"contacts-div",
+			"pin",
+			"li",
+			"pin",
+			"active",
+			"div",
+			"20px",
+			"url",
+			"deg",
+			"url",
+			"nps-pill",
+			"0px",
+			"nps-pill",
+			"td",
+			".table",
+			"#sub-tables",
+			"h4",
+			".nps",
+			"div",
+			"#r-tab",
+			"graph",
+			"#area",
+			"card-box",
+			"card",
+			"graph-column",
+			"How",
+			"trends",
+			"trend"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"deg",
+			"span",
+			"#212121",
+			"#3E8ACC"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/marklaughery/Documents/code/pearmed/team.html",
+					"settings":
+					{
+						"buffer_size": 2233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/marklaughery/Documents/code/pearmed/index.html",
+					"settings":
+					{
+						"buffer_size": 1543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/marklaughery/Documents/code/pearmed/product.html",
+					"settings":
+					{
+						"buffer_size": 1131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/marklaughery/Documents/code/pearmed/contact.html",
+					"settings":
+					{
+						"buffer_size": 1157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "/Users/marklaughery/Documents/code/pearmed/styles.css",
+					"settings":
+					{
+						"buffer_size": 3129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/marklaughery/Documents/code/pearmed/js/myjs.js",
+					"settings":
+					{
+						"buffer_size": 883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.555697697442,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"style.css",
+				"media/surveySimulator/static/css/style.css"
+			],
+			[
+				"style.",
+				"media/assets/dist/css/style.css"
+			],
+			[
+				"survey_over",
+				"html/survey_creation/survey_overview.html"
+			],
+			[
+				"an.css",
+				"media/assets/dist/css/an.css"
+			],
+			[
+				"manage.js",
+				"media/assets/dist/js/manage.js"
+			],
+			[
+				"manage.",
+				"html/panel/manage.html"
+			],
+			[
+				"main.js",
+				"media/assets/dist/js/main.js"
+			],
+			[
+				"report.js",
+				"media/assets/dist/js/report.js"
+			],
+			[
+				"report",
+				"media/assets/dist/css/report.css"
+			],
+			[
+				"view",
+				"noe/alerts/views.py"
+			],
+			[
+				"new",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"nps",
+				"html/report/nps_report.html"
+			],
+			[
+				"landing",
+				"html/landing.html"
+			],
+			[
+				"surveyove",
+				"html/survey_creation/survey_overview.html"
+			],
+			[
+				"new-",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"css",
+				"templates/static/css/screen_styles.css"
+			],
+			[
+				"report.css",
+				"media/assets/dist/css/report.css"
+			],
+			[
+				"report.",
+				"html/report/report.html"
+			],
+			[
+				"",
+				"media/assets/dist/css/new-nps.css"
+			],
+			[
+				"newp",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"changel",
+				"ChangeLog.md"
+			],
+			[
+				"an.",
+				"media/assets/dist/css/an.css"
+			],
+			[
+				"new-n",
+				"media/assets/dist/css/new-nps.css"
+			],
+			[
+				"chart",
+				"html/charts/charts.html"
+			],
+			[
+				"report.j",
+				"media/assets/dist/js/report.js"
+			],
+			[
+				"repo",
+				"html/report/report.html"
+			],
+			[
+				"audience",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"manage",
+				"html/panel/manage.html"
+			],
+			[
+				"dashboa",
+				"html/panel/dashboard.html"
+			],
+			[
+				"dash",
+				"html/panel/dashboard.html"
+			],
+			[
+				"dashboard",
+				"html/panel/dashboard.html"
+			],
+			[
+				"header",
+				"html/header.html"
+			],
+			[
+				"audienc",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"manage.html",
+				"html/panel/manage.html"
+			],
+			[
+				"local",
+				"project/local_settings.py"
+			],
+			[
+				"setting",
+				"project/settings.py"
+			],
+			[
+				"loc",
+				"project/local_settings.py"
+			],
+			[
+				"/dist/style",
+				"media/assets/dist/css/style.css"
+			],
+			[
+				"bootstrap",
+				"media/surveySerialNumbers/css/bootstrap.css"
+			],
+			[
+				"audie",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"dashba",
+				"html/panel/dashboard.html"
+			],
+			[
+				"boot",
+				"static/bootstrap/css/bootstrap.css"
+			],
+			[
+				"parse.p",
+				"noe/panel/parse.py"
+			],
+			[
+				"dashb",
+				"html/panel/dashboard.html"
+			],
+			[
+				"tabhea",
+				"html/tabheader.html"
+			],
+			[
+				"tabhe",
+				"html/tabheader.html"
+			],
+			[
+				"sched",
+				"html/scheduler/scheduler.html"
+			],
+			[
+				"old",
+				"html/panel/oldmanage"
+			],
+			[
+				"style",
+				"media/style.css"
+			],
+			[
+				"schedule",
+				"html/scheduler/scheduler.html"
+			],
+			[
+				"sty",
+				"media/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 114.0,
+	"status_bar_visible": true
+}
