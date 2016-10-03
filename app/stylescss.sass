@@ -15,6 +15,12 @@ h1
   font-size: 14px
   font-weight: lighter
 
+a
+  color: $pri-color
+  text-decoration: none
+  cursor: pointer
+
+
 .title-text
   font-size: 16px
   vertical-align: super
@@ -24,15 +30,19 @@ h1
 .grn
   color: $green-color
 
+.org
+  color: $orange-color
+
 .shell
   font-family: $font-stack
+  font-size: 14px
   color: $pri-color
   font-weight: lighter
   margin: 0 0
   user-select: none
-  width: 700px
+  width: 800px
   height: 500px
-  border: 2px solid black
+  border: 1px solid black
 
 .header
   width: 100%
@@ -48,11 +58,12 @@ h1
     height: 100%
 
 .content
-  padding: 30px
+  padding: 0 30px
+  overflow: hidden
 
 .full-width
   width: 100%
-  padding: 0 0 20px 0
+  padding: 20px 0
   display: flex
   flex-direction: row
   justify-content: center
@@ -61,20 +72,83 @@ h1
 .half-width
   width: 50%
   padding: 20px
-  svg
+  svg:first-child
     fill: $green-color
   input[type=search]
     width: 100%
     height: 30px
     padding: 5px 8px
     border: 1px solid $sec-color
+    &:focus .search-icon
+      display: none
+
+
+.search-icon
+  position: absolute
+  top: 50%
+  right: 5px
+  transform: translateY(-50%)
+  fill: $sec-color
+
+
+.half-width:nth-child(3)
+  color: red
+  svg
+    fill: $orange-color
+
 
 .files-list
+  .file
+    &:hover .name
+      color: $green-color
+
+    cursor: pointer
+    position: relative
+    padding: 10px 0
+    border-bottom: .5px solid $sec-color
+    .name
+      margin-bottom: 5px
+    .issue-title
+      font-weight: bold
+      font-size: .8em
+    .last-opened
+      position: absolute
+      right: 0px
+      bottom: 10px
+      color: $sec-color
+      font-size: .8em
+
+.resources
+  display: flex
+  flex-direction: column
+  a
+    &:hover
+      color: $orange-color
+    margin-bottom: 10px
+    img
+      width: 12
+      color: $pri-color
+
 
 
 .primary-btn
-  padding: 10px 15px
+  cursor: pointer
+  padding: 10px 20px
   background-color: $pri-color
   color: white
   border-radius: 2px
   box-shadow: 0px 2px 4px 0px rgba(179,179,179,0.50)
+  transition: all .4s
+  &:hover
+    background-image: -webkit-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%)
+    background-image: -o-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%)
+    background-image: linear-gradient(49deg, #DA5612 0%, #ACA33D 100%)
+
+.secondary-btn
+  background-color: $green-color
+  padding: 5px 10px
+  font-size: .8em
+  color: white
+  border-radius: 2px
+  margin-top: 10px
+  width: fit-content
