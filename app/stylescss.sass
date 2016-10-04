@@ -8,30 +8,53 @@ $sec-color: rgb(214,214,214)
 $green-color: #AF9E3A
 $orange-color: #D55D16
 
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  background: url('squared_metal.png')
+  -webkit-font-smoothing: antialiased
+
 html
   overflow-y: scroll
 
 h1
-  font-size: 14px
+  font-size: 18px
   font-weight: lighter
+  margin: 0 0 5px 0
 
 a
   color: $pri-color
   text-decoration: none
   cursor: pointer
 
+#logo
+  position: absolute
+  top: 10px
+  left: 50%
+  transform: translateX(-50%)
+  z-index: -1
+  img
+    width: 100px
 
 .title-text
   font-size: 16px
   vertical-align: super
-  line-height: 24px
-  margin-bottom: 10px
+  margin-bottom: 20px
 
 .grn
   color: $green-color
 
 .org
   color: $orange-color
+
+.secondary
+  color: $sec-color
+  font-size: .8em
+  img
+    width: 12px
+    opacity: .3
+    margin: 0 5px
 
 .shell
   font-family: $font-stack
@@ -42,7 +65,9 @@ a
   user-select: none
   width: 800px
   height: 500px
-  border: 1px solid black
+  background-color: white
+  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.22), 0px 24px 24px 0px rgba(0,0,0,0.30)
+  border-radius: 2px
 
 .header
   width: 100%
@@ -62,16 +87,32 @@ a
   overflow: hidden
 
 .full-width
+  position: relative
   width: 100%
+  height: 77px
   padding: 20px 0
   display: flex
-  flex-direction: row
-  justify-content: center
+  flex-direction: column
+  align-items: center
   border-bottom: .5px solid $sec-color
+  .backarrow
+    position: absolute
+    left: 0px
+    width: 30px
+    transform: translateY(-50%)
+    top: 50%
+    cursor: pointer
+    &:hover
+
+
 
 .half-width
+  position: relative
   width: 50%
+  height: calc(100% - 107px)
   padding: 20px
+  display: flex
+  flex-direction: column
   svg:first-child
     fill: $green-color
   input[type=search]
@@ -92,7 +133,6 @@ a
 
 
 .half-width:nth-child(3)
-  color: red
   svg
     fill: $orange-color
 
@@ -108,15 +148,14 @@ a
     border-bottom: .5px solid $sec-color
     .name
       margin-bottom: 5px
-    .issue-title
-      font-weight: bold
-      font-size: .8em
-    .last-opened
+    .secondary
       position: absolute
       right: 0px
       bottom: 10px
-      color: $sec-color
-      font-size: .8em
+
+.issue-title
+  font-weight: bold
+  font-size: .8em
 
 .resources
   display: flex
@@ -129,7 +168,26 @@ a
       width: 12
       color: $pri-color
 
+.description
+  margin-bottom: 20px
+  flex-grow: 2
+  &
 
+
+.meta-holder
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  border-bottom: .5px solid $sec-color
+  padding: 10px 0
+  margin-bottom: 20px
+  img
+    width: 12px
+    margin-right: 2px
+    vertical-align: middle
+
+.launch
+  margin-right: 10px
 
 .primary-btn
   cursor: pointer
