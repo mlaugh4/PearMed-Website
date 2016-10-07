@@ -40,7 +40,7 @@ BoscApis.prototype.mock = function () {
 					"name": "Stacey Marks",
 					"shortDesc": "Ventricular Septal Defect",
 					"longDesc": "This patient presented a VSD...",
-					"lastModified": "2016-10-07T21:27:14.757Z",
+					"lastAccessed": "2016-10-07T21:27:14.757Z",
 					"ownerId": this.accountId,
 					"__v": 0
 				},
@@ -49,7 +49,7 @@ BoscApis.prototype.mock = function () {
 					"name": "Ryan James",
 					"shortDesc": "Kidney Stones",
 					"longDesc": "This patient has a giant kidney stone...",
-					"lastModified": "2016-10-07T20:27:14.757Z",
+					"lastAccessed": "2016-10-07T20:27:14.757Z",
 					"ownerId": this.accountId,
 					"__v": 0
 				},
@@ -58,7 +58,7 @@ BoscApis.prototype.mock = function () {
 					"name": "Mark Winslow Laughery",
 					"shortDesc": null,
 					"longDescription": null,
-					"lastModified": "2016-10-07T02:27:14.757Z",
+					"lastAccessed": "2016-10-07T02:27:14.757Z",
 					"ownerId": this.accountId,
 					"__v": 0
 				},
@@ -67,7 +67,7 @@ BoscApis.prototype.mock = function () {
 					"name": "Test Organ",
 					"shortDesc": "Test short description",
 					"longDescription": "This is a test long description",
-					"lastModified": "2016-10-05T21:27:14.757Z",
+					"lastAccessed": "2016-10-05T21:27:14.757Z",
 					"ownerId": this.accountId,
 					"__v": 0
 				},

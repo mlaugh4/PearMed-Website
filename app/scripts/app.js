@@ -1,9 +1,7 @@
 var testAccountId = "57f586944528391266107c4b";
 
-$(window).on("load", function () {
-	var boscApis = new BoscApis(testAccountId);
-	boscApis.mock();
-	boscApis.getModels(function (models) {
+function View() {
+	this.updateRecentModels = function (models) {
 		models.forEach(function (model) {
 			$(".files-list").append(
 				"<div class='file'>" +
@@ -21,6 +19,15 @@ $(window).on("load", function () {
 				"</div>"
 			);
 		});
+	};
+}
+
+$(window).on("load", function () {
+	var view = new View();
+	var boscApis = new BoscApis(testAccountId);
+	boscApis.mock();
+	boscApis.getModels(function (models) {
+		view.updateRecentModels(models);
 	},
 	function (response, ajaxOptions, thrownError) {
 		console.log(response.status);
@@ -37,10 +44,10 @@ function showResponseError(response, msg) {
 
 // Get a display string for the last modified date
 function getLastModifiedDisplayValue (model) {
-	var lastModified = new Date(model.lastModified);
+	var lastAccessed = new Date(model.lastAccessed);
 	var rightNow = new Date();
 
-	var delta = Math.abs(lastModified.getTime() - rightNow.getTime()) / 1000;
+	var delta = Math.abs(lastAccessed.getTime() - rightNow.getTime()) / 1000;
 	
 	// calculate (and subtract) whole days
 	var days = Math.floor(delta / 86400);
