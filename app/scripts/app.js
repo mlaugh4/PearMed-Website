@@ -1,5 +1,3 @@
-var testAccountId = "57f586944528391266107c4b";
-
 function View() {
 	this.updateRecentModels = function (models) {
 		models.forEach(function (model) {
@@ -24,7 +22,7 @@ function View() {
 
 $(window).on("load", function () {
 	var view = new View();
-	var boscApis = new BoscApis(testAccountId);
+	var boscApis = new BoscApis(BoscApis.testAuthId);
 	boscApis.mock();
 	boscApis.getModels(function (models) {
 		view.updateRecentModels(models);
