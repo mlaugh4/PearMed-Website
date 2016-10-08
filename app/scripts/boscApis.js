@@ -16,18 +16,19 @@ function BoscApis(authId) {
 	}
 
 	// Get all of the models linked to this user
-	this.getModels = function (success, error) {
+	this.getModels = function (success, error, complete) {
 		callApi({
 			type: "GET",
 			url: apiRoot + "organModels",
 			dataType: "json",
 			success: success,
-			error, error,
+			error: error,
+			complete: complete,
 		});
 	}
 
 	// Upload models to the server
-	this.postModel = function (data, success, error) {
+	this.postModel = function (data, success, error, complete) {
 		callApi({
 			type: 'POST',
 			url: apiRoot + "organModels",
@@ -38,6 +39,19 @@ function BoscApis(authId) {
 			processData: false,
 			success: success,
 			error: error,
+			complete: complete,
+		});
+	}
+
+	// Update a model's metadata
+	this.putModel = function (data, success, error, complete) {
+		callApi({
+			type: 'PUT',
+			url: apiRoot + "organModels/" + data._id,
+			data: data,
+			success: success,
+			error: error,
+			complete: complete,
 		});
 	}
 }
@@ -51,13 +65,24 @@ BoscApis.prototype.mock = function () {
 		setTimeout(callback, 1000);
 	}
 	
-	this.getModels = function (success, error) {
+	this.getModels = function (success, error, complete) {
 		callApi(function () {
 			success(thisObj.testModelData);
 		});
 	}
 
-	this.postModel = function (data, success, error) {
+	this.postModel = function (data, success, error, complete) {
+		callApi(function () {
+			// Give the model an id, similar to what the server would do
+			data._id = 12345;
+			success({
+				_id: 12345,
+				name: data.get("name") // Get the name field's value from the form
+			});
+		})
+	}
+
+	this.putModel = function (data, success, error, complete) {
 		callApi(function () {
 			success(data);
 		})
