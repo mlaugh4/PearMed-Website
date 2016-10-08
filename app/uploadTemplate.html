@@ -101,7 +101,7 @@
                     }
 
                     var boscApis = new BoscApis(BoscApis.testAuthId);
-                    //boscApis.mock();
+                    boscApis.mock();
                     boscApis.postModel(formData, success, error, complete);
 
                     return false;
@@ -137,7 +137,7 @@
                     }
 
                     var boscApis = new BoscApis(BoscApis.testAuthId);
-                    //boscApis.mock();
+                    boscApis.mock();
                     boscApis.putModel(modelData, success, error, complete);
 
                     return false;
