@@ -68,6 +68,7 @@ BoscApis.prototype.mock = function () {
 	this.getModels = function (success, error, complete) {
 		callApi(function () {
 			success(thisObj.testModelData);
+			complete();
 		});
 	}
 
@@ -79,12 +80,14 @@ BoscApis.prototype.mock = function () {
 				_id: 12345,
 				name: data.get("name") // Get the name field's value from the form
 			});
+			complete();
 		})
 	}
 
 	this.putModel = function (data, success, error, complete) {
 		callApi(function () {
 			success(data);
+			complete();
 		})
 	}
 }
