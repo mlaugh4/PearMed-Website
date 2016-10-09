@@ -64,7 +64,7 @@ a
   margin: 0 0
   user-select: none
   width: 800px
-  height: 500px
+  height: 80%
   background-color: white
   box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.22), 0px 24px 24px 0px rgba(0,0,0,0.30)
   border-radius: 2px
@@ -85,6 +85,10 @@ a
 .content
   padding: 0 30px
   overflow: hidden
+
+.lower-container
+  display: flex
+  flex-direction: row
 
 .full-width
   position: relative
@@ -132,14 +136,15 @@ a
   fill: $sec-color
 
 
-.half-width:nth-child(3)
+.half-width:nth-child(2)
   svg
     fill: $orange-color
 
 
 .files-list
+  overflow-y: scroll
   .file
-    &:hover .name
+    &:hover > *
       color: $green-color
 
     cursor: pointer

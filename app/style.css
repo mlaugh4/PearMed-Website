@@ -58,7 +58,7 @@ a {
   margin: 0 0;
   user-select: none;
   width: 800px;
-  height: 500px;
+  height: 80%;
   background-color: white;
   box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.22), 0px 24px 24px 0px rgba(0, 0, 0, 0.3);
   border-radius: 2px; }
@@ -79,6 +79,10 @@ a {
 .content {
   padding: 0 30px;
   overflow: hidden; }
+
+.lower-container {
+  display: flex;
+  flex-direction: row; }
 
 .full-width {
   position: relative;
@@ -121,22 +125,24 @@ a {
   transform: translateY(-50%);
   fill: #d6d6d6; }
 
-.half-width:nth-child(3) svg {
+.half-width:nth-child(2) svg {
   fill: #D55D16; }
 
-.files-list .file {
-  cursor: pointer;
-  position: relative;
-  padding: 10px 0;
-  border-bottom: 0.5px solid #d6d6d6; }
-  .files-list .file:hover .name {
-    color: #AF9E3A; }
-  .files-list .file .name {
-    margin-bottom: 5px; }
-  .files-list .file .secondary {
-    position: absolute;
-    right: 0px;
-    bottom: 10px; }
+.files-list {
+  overflow-y: scroll; }
+  .files-list .file {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #d6d6d6; }
+    .files-list .file:hover > * {
+      color: #AF9E3A; }
+    .files-list .file .name {
+      margin-bottom: 5px; }
+    .files-list .file .secondary {
+      position: absolute;
+      right: 0px;
+      bottom: 10px; }
 
 .issue-title {
   font-weight: bold;

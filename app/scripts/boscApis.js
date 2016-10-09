@@ -5,13 +5,13 @@ var apiRoot = "http://UbuntuDev-1:3000/";
 */
 function BoscApis(accountId) {
 	this.accountId = accountId;
-	
+
 	// Executes an ajax call
 	var callApi = function (options) {
 		options.beforeSend = function (request) {
 			request.setRequestHeader("Bosc-AuthId", accountId);
 		};
-		
+
 		$.ajax(options);
 	}
 
@@ -31,7 +31,7 @@ BoscApis.prototype.mock = function () {
 	var callApi = function (callback) {
 		setTimeout(callback, 1000);
 	}
-	
+
 	this.getModels = function (success, error) {
 		callApi(function () {
 			success([
@@ -39,7 +39,7 @@ BoscApis.prototype.mock = function () {
 					"_id": "57f6b8b03c9fa30a471bf4ee",
 					"name": "Stacey Marks",
 					"shortDesc": "Ventricular Septal Defect",
-					"longDesc": "This patient presented a VSD...",
+					"longDesc": "This patient presented a VSD and likes chocolate milk they're short of breath blah",
 					"lastAccessed": "2016-10-07T21:27:14.757Z",
 					"ownerId": this.accountId,
 					"__v": 0
@@ -66,6 +66,15 @@ BoscApis.prototype.mock = function () {
 					"_id": "57f6b8b03c9fa30a471bf4ee",
 					"name": "Test Organ",
 					"shortDesc": "Test short description",
+					"longDescription": "This is a test long description",
+					"lastAccessed": "2016-10-05T21:27:14.757Z",
+					"ownerId": this.accountId,
+					"__v": 0
+				},
+				{
+					"_id": "57f6b8b03c9fa30a471bf4ee",
+					"name": "Introductory organ",
+					"shortDesc": "This comes pre-loaded with the application to help people learn",
 					"longDescription": "This is a test long description",
 					"lastAccessed": "2016-10-05T21:27:14.757Z",
 					"ownerId": this.accountId,
