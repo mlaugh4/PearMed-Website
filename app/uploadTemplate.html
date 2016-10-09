@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <title>Upload Template</title>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="scripts/boscApis.js"></script>
+
+        <style>
+            /*
+                Always hidden. This element is used to store the list of files the
+                user selected. We don't want to show it because it's ugly. Instead,
+                we use another, nicer looking element, as a proxy
+            */
+            #modelChooser {
+                display: none;
+            }
+
+            /* Shown after the user selects models */
+            #uploadModels {
+                display: none;
+            }
+
+            .chosenFiles {
+                border: 1px solid black;
+            }
+
+            .chosenFiles label {
+                display: block;
+            }
+
+            .loading {
+                display: none;
+            }
+
+            #updateModelForm {
+                display: none;
+            }
+        </style>
+
+        <script type="text/javascript">
+            // Attach events to DOM elements when the page loads
+            $(window).on("load", function () {
+
+                // We need to use an <input> box to show the file chooser, but <input> boxes are ugly, especially in IE
+                // Instead of showing in <input> box, lets show a button. When the button is clicked simulate a
+                // click on the <input> box so the user can choose model files.
+                $("#selectModelsToLoad").click(function () {
+                    // Simulate a click on the hidden <input> box so the file chooser opens
+                    $("#modelChooser").click();
+                });
+
+                // When the user selects models display them and show the open in VR button
+                $("#modelChooser").change(function () {
+                    // Clear the list of files that were previously shown
+                    $(".chosenFiles").empty();
+
+                    // Show the files that were chosen
+                    var models = "";
+                    var files = $("#modelChooser")[0].files;
+                    for(var fileIndex = 0; fileIndex < files.length; fileIndex++) {
+                        $(".chosenFiles").append("<label>" + files[fileIndex].name + "</label>");
+                    }
+
+                    // Show the upload models button
+                    $("#uploadModels").show();
+                });
+
+                // Upload the models to the bosc APIs
+                $("#uploadFilesForm").submit(function (event) {
+                    //disable the default form submission
+                    event.preventDefault();
+
+                    $("#uploadFilesForm").hide();
+                    $(".loading").show();
+
+                    //grab all form data  
+                    var formData = new FormData($(this)[0]);
+
+                    var success = function (model) {
+                        // The server returns the metadata about this model that
+                        // was saved in the database. Save it on the update form
+                        // so we can use it later
+                        $("#updateModelForm").data("model", model);
+
+                        // Set the model's name on the update form so the user
+                        // can change it if they'd like
+                        $(".updateModelName").val(model.name);
+
+                        // Show the update form
+                        $("#updateModelForm").show();
+                    }
+
+                    var error = function (response, ajaxOptions, thrownError) {
+                        alert("error");
+                        console.log("status: " + response.status);
+                    }
+
+                    var complete = function () {
+                        $(".loading").hide();
+                    }
+
+                    var boscApis = new BoscApis(BoscApis.testAuthId);
+                    boscApis.mock();
+                    boscApis.postModel(formData, success, error, complete);
+
+                    return false;
+                });
+
+                $("#updateModelForm").submit(function (event) {
+                    //disable the default form submission
+                    event.preventDefault();
+
+                    $(".loading").show();
+
+                    //grab all form data  
+                    var formData = new FormData($(this)[0]);
+
+                    // Use the properties the user just entered to update the
+                    // the server
+                    var modelData =  $("#updateModelForm").data("model");
+                    modelData.name = formData.get("name");
+                    modelData.shortDesc = formData.get("shortDesc");
+                    modelData.longDesc = formData.get("longDesc");
+
+                    var success = function (model) {
+                        alert("Update Complete!");
+                    }
+
+                    var error = function (response, ajaxOptions, thrownError) {
+                        alert("error");
+                        console.log("status: " + response.status);
+                    }
+
+                    var complete = function () {
+                        $(".loading").hide();
+                    }
+
+                    var boscApis = new BoscApis(BoscApis.testAuthId);
+                    boscApis.mock();
+                    boscApis.putModel(modelData, success, error, complete);
+
+                    return false;
+                });
+            });
+
+
+        </script>
+	</head>
+</head>
+<body>
+    <form id="uploadFilesForm">
+        Model Name: <input type="text" name="name" value="New Model"><br>
+        <input type="button" value="Select Models To Load" id="selectModelsToLoad" />
+        <input type='file' name="modelFile" id="modelChooser" multiple>
+        <p class="chosenFiles">
+            Files displayed here when chosen...
+        </p>
+        <br>
+        <input type="submit" value="Upload" id="uploadModels" />
+    </form>
+
+    <div class="loading">
+        Loading
+    </div>
+
+    <form id="updateModelForm">
+        Model Name: <input class="updateModelName" type="text" name="name" value="New Model"><br>
+        Short Description: <input type="text" name="shortDesc" value=""><br>
+        Long Description: <input type="text" name="longDesc" value=""><br>
+        <br>
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>
