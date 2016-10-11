@@ -8,73 +8,6 @@
   <script src="scripts/boscApis.js"></script>
   <script src="scripts/app.js"></script>
 
-  <script type="text/javascript">
-      // Attach events to DOM elements when the page loads
-      $(window).on("load", function () {
-
-          // We need to use an <input> box to show the file chooser, but <input> boxes are ugly, especially in IE
-          // Instead of showing in <input> box, lets show a button. When the button is clicked simulate a
-          // click on the <input> box so the user can choose model files.
-          $("#selectModelsToLoad").click(function () {
-              // Simulate a click on the hidden <input> box so the file chooser opens
-              $("#modelChooser").click();
-          });
-
-          // When the user selects models display them and show the open in VR button
-          $("#modelChooser").change(function () {
-              // Clear the list of files that were previously shown
-              $(".chosenFiles").empty();
-              $(".welcome").fadeOut(500);
-              $("#updateModelForm").delay(500).fadeIn(500)
-
-              // Show the files that were chosen
-              var models = "";
-              var files = $("#modelChooser")[0].files;
-              for(var fileIndex = 0; fileIndex < files.length; fileIndex++) {
-                  $(".chosenFiles").append("<small>" + files[fileIndex].name + ", " + "</small>");
-              }
-
-              // Show the upload models button
-              // $("#uploadModels").show();
-          });
-
-          // Upload the models to the bosc APIs
-          $("#uploadModelForm").submit(function (event) {
-              //disable the default form submission
-              event.preventDefault();
-
-              $("#uploadModelForm").fadeOut(500);
-              $(".modelInfo").delay(500).fadeIn(500);
-
-              //grab all form data
-              var formData = new FormData($(this)[0]);
-
-              var success = function (model) {
-                  // The server returns the metadata about this model that
-                  // was saved in the database. Save it on the update form
-                  // so we can use it later
-                  $("#updateModelForm").data("model", model);
-              }
-
-              var error = function (response, ajaxOptions, thrownError) {
-                  alert("error");
-                  console.log("status: " + response.status);
-              }
-
-              var complete = function () {
-                  $(".loading").hide();
-              }
-
-              var boscApis = new BoscApis(BoscApis.testAuthId);
-              boscApis.mock();
-              boscApis.postModel(formData, success, error, complete);
-
-              return false;
-          });
-      });
-
-
-  </script>
 
 
 </head>
@@ -149,11 +82,20 @@
              <div class="divForm" contenteditable="true" name="shortDesc"></div>
              <label for="name">Long description</label>
              <div class="divForm long" contenteditable="true" name="longDesc"></div>
+
+            <input id="hiddenName"></input>
+            <input id="hiddenSDesc"></input>
+            <input id="hiddenLDesc"></input>
+
              <input type="submit" value="Save" />
          </form>
          <div class="modelInfo">
-            <div class="description editable">
-              Lorem ipsum dolor sit amet, malesuada vel sit mauris sit erat, magna fermentum a congue suscipit rutrum, vivamus eu feugiat sit, suspendisse cras vestibulum dictumst potenti, phasellus ultrices enim.
+            <div class="title-text name org"></div>
+            <label for="shortDesc">Short description</label>
+            <div class="issue-title"></div>
+            <label for="name">Long description</label>
+            <div class="description">
+              No description available
             </div>
          </div>
        </div>

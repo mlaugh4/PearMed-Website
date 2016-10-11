@@ -253,6 +253,9 @@ input {
 #updateModelForm {
   display: none; }
 
+#updateModelForm input:not(:last-child) {
+  display: none; }
+
 #updateModelForm .chosenFiles {
   margin-bottom: 10px; }
 
@@ -269,5 +272,8 @@ input {
 
 .modelInfo {
   display: none; }
+
+.modelInfo > div {
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */
