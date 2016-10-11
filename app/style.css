@@ -24,9 +24,7 @@ a {
 
 #logo {
   position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 10px;
   z-index: -1; }
   #logo img {
     width: 100px; }
@@ -36,16 +34,24 @@ a {
   vertical-align: super;
   margin-bottom: 20px; }
 
+.editable:hover:after {
+  content: " ";
+  display: inline-block;
+  background: url("edit.svg") no-repeat;
+  background-size: contain;
+  width: 14px;
+  height: 14px; }
+
 .grn {
   color: #AF9E3A; }
 
 .org {
   color: #D55D16; }
 
-.secondary {
-  color: #d6d6d6;
+.secondary, label {
+  color: #a1a1a1;
   font-size: 0.8em; }
-  .secondary img {
+  .secondary img, label img {
     width: 12px;
     opacity: 0.3;
     margin: 0 5px; }
@@ -62,6 +68,21 @@ a {
   background-color: white;
   box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.22), 0px 24px 24px 0px rgba(0, 0, 0, 0.3);
   border-radius: 2px; }
+
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px; }
+
+#nextarrow {
+  transform: rotate(180deg);
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 29px;
+  cursor: pointer; }
 
 .header {
   width: 100%;
@@ -92,7 +113,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 0.5px solid #d6d6d6; }
+  border-bottom: 0.5px solid #a1a1a1; }
   .full-width .backarrow {
     position: absolute;
     left: 0px;
@@ -114,16 +135,29 @@ a {
     width: 100%;
     height: 30px;
     padding: 5px 8px;
-    border: 1px solid #d6d6d6; }
-    .half-width input[type=search]:focus .search-icon {
-      display: none; }
+    border: 1px solid #a1a1a1; }
+    .half-width input[type=search]:focus svg {
+      opacity: 0; }
+
+input {
+  width: 100%;
+  height: 30px;
+  padding: 5px 8px;
+  border: 1px solid #a1a1a1; }
+  input:focus {
+    outline: 1px solid #AF9E3A;
+    transition: 0.3s outline ease; }
+  input[type=text] {
+    height: 50px;
+    font-weight: 400;
+    font-size: 1.5em; }
 
 .search-icon {
   position: absolute;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
-  fill: #d6d6d6; }
+  fill: #a1a1a1; }
 
 .half-width:nth-child(2) svg {
   fill: #D55D16; }
@@ -134,15 +168,25 @@ a {
     cursor: pointer;
     position: relative;
     padding: 10px 0;
-    border-bottom: 0.5px solid #d6d6d6; }
+    border-bottom: 0.5px solid #a1a1a1; }
     .files-list .file:hover > * {
       color: #AF9E3A; }
+    .files-list .file:hover > .arrow {
+      display: block; }
     .files-list .file .name {
       margin-bottom: 5px; }
-    .files-list .file .secondary {
+    .files-list .file .secondary, .files-list .file label {
       position: absolute;
       right: 0px;
       bottom: 10px; }
+    .files-list .file .arrow {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY -50%;
+      display: none;
+      cursor: pointer;
+      z-index: 1000; }
 
 .issue-title {
   font-weight: bold;
@@ -151,6 +195,9 @@ a {
 .resources {
   display: flex;
   flex-direction: column; }
+  .resources img {
+    height: 80%;
+    margin: 0 auto; }
   .resources a {
     margin-bottom: 10px; }
     .resources a:hover {
@@ -167,7 +214,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 0.5px solid #d6d6d6;
+  border-bottom: 0.5px solid #a1a1a1;
   padding: 10px 0;
   margin-bottom: 20px; }
   .meta-holder img {
@@ -191,13 +238,36 @@ a {
     background-image: -o-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%);
     background-image: linear-gradient(49deg, #DA5612 0%, #ACA33D 100%); }
 
-.secondary-btn {
-  background-color: #AF9E3A;
+.secondary-btn, input[type=submit] {
+  background-color: #a1a1a1;
+  cursor: pointer;
   padding: 5px 10px;
   font-size: 0.8em;
   color: white;
   border-radius: 2px;
   margin-top: 10px;
   width: fit-content; }
+  .secondary-btn:hover, input[type=submit]:hover {
+    background-color: #AF9E3A; }
+
+#updateModelForm {
+  display: none; }
+
+#updateModelForm .chosenFiles {
+  margin-bottom: 10px; }
+
+#updateModelForm > .divForm {
+  margin-bottom: 20px;
+  padding: 10px;
+  max-width: 100%;
+  background-color: #f1f1f1; }
+  #updateModelForm > .divForm .long {
+    min-height: 100px; }
+  #updateModelForm > .divForm:focus {
+    outline: 1px solid #AF9E3A;
+    transition: 0.3s outline ease; }
+
+.modelInfo {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

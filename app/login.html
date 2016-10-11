@@ -1,5 +1,6 @@
 <html>
 <head>
+
   <meta name="google-site-verification" content="Kctkb4ovFntAcicPwO1FTDxPOlN79_Em3kNMFpzYzRY" />
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,10 +9,19 @@
 </head>
 
 <body>
-  <div id="logo"><img src="fullLogo.png" alt=""></div>
-  <div class="shell" style="display:flex;justify-content:center;align-items:center;padding:60px">
-    <span>Shoot us a note at team@pearmedical.com to get access. Bosc is brand new and a little fragile. That said, we love new people :)</span>
+  <div class="shell" id="login">
+    <img src="bosc_logo.png" style="width:50%">
+    <form style="width:50%;flex-grow:2;position:relative">
+      <div class="secondary">Login with your org ID:</div>
+      <input type="text" name="psw" id="loginForm">
+      <img src="backarrow.svg" id="nextarrow">
+    </form>
+    <div>
+      <a class="secondary-btn" style="position:absolute;bottom:20px;right:20px;" href="mailto:team@pearmedical.com">Request access</a>
+    </div>
   </div>
 </body>
+
+<script src="scripts/primary.js"></script>
 
 </html>

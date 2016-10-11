@@ -3,24 +3,24 @@ function View() {
 		models.forEach(function (model) {
 			$(".files-list").append(
 				"<div class='file'>" +
-					"<a href='detail.html'>" +
-						"<div class='name'>" +
-							model.name +
-						"</div>" +
-						"<div class='issue-title'>" +
-							model.shortDesc +
-						"</div>" +
-						"<div class='secondary'>" +
-							getLastModifiedDisplayValue(model) +
-						"</div>" +
-					"</a>" +
+					"<div class='name'>" +
+						model.name +
+					"</div>" +
+					"<div class='issue-title'>" +
+						model.shortDesc +
+					"</div>" +
+					"<div class='secondary'>" +
+						getLastModifiedDisplayValue(model) +
+					"</div>" +
+					"<img src='chevron.svg' class='arrow'></img>" +
 				"</div>"
 			);
 		});
+
 	};
 }
 
-$(window).on("load", function () {
+$(window).on("load", function() {
 	var view = new View();
 	var boscApis = new BoscApis(BoscApis.testAuthId);
 	boscApis.mock();
@@ -46,7 +46,7 @@ function getLastModifiedDisplayValue (model) {
 	var rightNow = new Date();
 
 	var delta = Math.abs(lastAccessed.getTime() - rightNow.getTime()) / 1000;
-	
+
 	// calculate (and subtract) whole days
 	var days = Math.floor(delta / 86400);
 	delta -= days * 86400;
@@ -61,7 +61,7 @@ function getLastModifiedDisplayValue (model) {
 
 	// what's left is seconds
 	var seconds = delta % 60;  // in theory the modulus is not required
-	
+
 	var timeSince = "";
 	if(days > 0)
 		timeSince = days + "d";
@@ -71,6 +71,6 @@ function getLastModifiedDisplayValue (model) {
 		timeSince = minutes + "m";
 	else
 		timeSince = seconds + "s";
-	
+
 	return timeSince + " ago";
 }

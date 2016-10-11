@@ -3,7 +3,6 @@ var apiRoot = "http://localhost:3000/";
 /*
 	Used to communicate with the Bosc APIs
 */
-
 function BoscApis(authId) {
 	this.authId = authId;
 
@@ -17,19 +16,18 @@ function BoscApis(authId) {
 	}
 
 	// Get all of the models linked to this user
-	this.getModels = function (success, error, complete) {
+	this.getModels = function (success, error) {
 		callApi({
 			type: "GET",
 			url: apiRoot + "organModels",
 			dataType: "json",
 			success: success,
-			error: error,
-			complete: complete,
+			error, error,
 		});
 	}
 
 	// Upload models to the server
-	this.postModel = function (data, success, error, complete) {
+	this.postModel = function (data, success, error) {
 		callApi({
 			type: 'POST',
 			url: apiRoot + "organModels",
@@ -40,19 +38,6 @@ function BoscApis(authId) {
 			processData: false,
 			success: success,
 			error: error,
-			complete: complete,
-		});
-	}
-
-	// Update a model's metadata
-	this.putModel = function (data, success, error, complete) {
-		callApi({
-			type: 'PUT',
-			url: apiRoot + "organModels/" + data._id,
-			data: data,
-			success: success,
-			error: error,
-			complete: complete,
 		});
 	}
 }
@@ -66,29 +51,15 @@ BoscApis.prototype.mock = function () {
 		setTimeout(callback, 1000);
 	}
 
-	this.getModels = function (success, error, complete) {
+	this.getModels = function (success, error) {
 		callApi(function () {
 			success(thisObj.testModelData);
-			complete();
 		});
 	}
 
-	this.postModel = function (data, success, error, complete) {
-		callApi(function () {
-			// Give the model an id, similar to what the server would do
-			data._id = 12345;
-			success({
-				_id: 12345,
-				name: data.get("name") // Get the name field's value from the form
-			});
-			complete();
-		})
-	}
-
-	this.putModel = function (data, success, error, complete) {
+	this.postModel = function (data, success, error) {
 		callApi(function () {
 			success(data);
-			complete();
 		})
 	}
 }
@@ -98,7 +69,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4ee",
 		"name": "Stacey Marks",
 		"shortDesc": "Ventricular Septal Defect",
-		"longDesc": "This patient presented a VSD and likes chocolate milk they're short of breath blah",
+		"longDesc": "This patient presented a VSD...",
 		"lastAccessed": "2016-10-07T21:27:14.757Z",
 		"ownerId": this.authId,
 		"__v": 0
@@ -132,12 +103,29 @@ BoscApis.prototype.testModelData = [
 	},
 	{
 		"_id": "57f6b8b03c9fa30a471bf4ee",
-		"name": "Introductory organ",
-		"shortDesc": "This comes pre-loaded with the application to help people learn",
+		"name": "Test Organ",
+		"shortDesc": "Test short description",
+		"longDescription": "This is a test long description",
+		"lastAccessed": "2016-10-05T21:27:14.757Z",
+		"ownerId": this.authId,
+		"__v": 0
+	},
+	{
+		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"name": "Test Organ",
+		"shortDesc": "Test short description",
+		"longDescription": "This is a test long description",
+		"lastAccessed": "2016-10-05T21:27:14.757Z",
+		"ownerId": this.authId,
+		"__v": 0
+	},
+	{
+		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"name": "Test Organ",
+		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
 		"ownerId": this.authId,
 		"__v": 0
 	},
 ];
->>>>>>> origin/master
