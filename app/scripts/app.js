@@ -1,8 +1,10 @@
 function View() {
 	this.updateRecentModels = function (models) {
+		$('.files-list').empty()
+		$('.files-list').data('allModelData', models)
 		models.forEach(function (model) {
 			$(".files-list").append(
-				"<div class='file'>" +
+				"<div id="+model._id +" class='file'>" +
 					"<div class='name'>" +
 						model.name +
 					"</div>" +
@@ -15,12 +17,21 @@ function View() {
 					"<img src='chevron.svg' class='arrow'></img>" +
 				"</div>"
 			);
+			var modelElement = $('#'+ model._id)
+			modelElement.data('modelData',model)
 		});
 
 	};
 }
 
+// var dfd = $.Deferred();
+
+// dfd
+// 	.done( View )
+// 	.done( ShowMore )
+
 $(window).on("load", function() {
+	// dfd.resolve()
 	var view = new View();
 	var boscApis = new BoscApis(BoscApis.testAuthId);
 	boscApis.mock();

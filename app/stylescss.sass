@@ -36,11 +36,26 @@ a
   img
     width: 100px
 
+#moreInfo
+  position: absolute
+  transform: translateY(400%)
+  left: 52px
+  opacity: .5
+  height: 15px
+  width: auto
+
+.tipso_bubble > *
+  /*margin: 10px*/
+.tipso_bubble
+  margin-left: 10px
+
 .title-text
   font-size: 16px
   vertical-align: super
   margin-bottom: 20px
 
+.hidden
+  display: none
 
 .editable
   &:hover
@@ -122,8 +137,9 @@ a
   height: 77px
   padding: 20px 0
   display: flex
-  flex-direction: column
+  flex-direction: row
   align-items: center
+  justify-content: flex-end
   border-bottom: .5px solid $sec-color
   .backarrow
     position: absolute
@@ -152,6 +168,8 @@ a
     border: 1px solid $sec-color
     &:focus svg
       opacity: 0
+  iframe
+    /*display: none*/
 
 input
   width: 100%
@@ -185,6 +203,7 @@ label
 
 .files-list
   overflow-y: scroll
+  overflow-x: visible
   .file
     &:hover > *
       color: $green-color
@@ -250,16 +269,20 @@ label
 
 .primary-btn
   cursor: pointer
+  font-weight: bold
+  text-transform: uppercase
+  font-size: 10px
   padding: 10px 20px
-  background-color: $pri-color
-  color: white
+  margin-left: 10px
+  background-color: $ter-color
+  color: $pri-color
   border-radius: 2px
-  box-shadow: 0px 2px 4px 0px rgba(179,179,179,0.50)
   transition: all .4s
   &:hover
     background-image: -webkit-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%)
     background-image: -o-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%)
     background-image: linear-gradient(49deg, #DA5612 0%, #ACA33D 100%)
+    color: white
 
 .secondary-btn
   background-color: $sec-color
@@ -295,5 +318,25 @@ label
 
 .modelInfo
   display: none
+  flex-direction: column
+  .title-text
+    margin-bottom: 10px
 .modelInfo > div
   margin-bottom: 20px
+  &:hover
+    background-color: $ter-color
+
+.loader
+  display: none
+  margin: 0 0 2em
+  height: 100px
+  width: 20%
+  text-align: center
+  padding: 1em
+  margin: 0 auto 1em
+  display: inline-block
+  vertical-align: top
+  svg path,
+  svg rect
+    fill: $sec-color
+

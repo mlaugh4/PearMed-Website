@@ -11,20 +11,77 @@ $('#loginForm').keyup(function () {
 ////////// INDEX PAGE
 
 // Show more button if there are more than 5ish options
-// $.when( loadList() ).then(function() {
-// 	if ( $('.files-list').children().length > 6 )
-// 		$('.showMore').show()
-// 	else
-// 		$('.showMore').hide()
+$('.files-list').on('load','div', function() {
+	if ( $('.files-list').children().length > 6 )
+		$('.showMore').show()
+	else
+		$('.showMore').hide()
+});
+
+// $('.files-list').on('click','div', function(){
+// 	alert('sup ryan')
 // });
+
+$('.files-list').on('click','.file', function(){
+	$('.files-list > *').css('background-color','white')
+	$(this).css('background-color','rgb(241,241,241)')
+	thisModel = $(this).data('modelData')
+	if (thisModel) {
+		$('.right').fadeOut(500, function() {
+			$('.welcome').hide();
+			$('.modelInfo').css('display','flex')
+		$('.modelInfo > .title-text').html(thisModel.name)
+		$('.modelInfo > .issue-title').html(thisModel.shortDesc)
+		$('.modelInfo > .description').html(thisModel.longDesc)
+		$('.right').fadeIn(500)
+		})
+
+	}
+})
 
 // Hide search icon on focus
 $('input[type=search]').focus( function() {
 	$(this).siblings().hide()
 	$(this).focusout(function(){
 		$(this).siblings().show()
-	})
+	});
 });
+
+
+// Tooltip code
+var a= '<a href="">How to: Generate 3d model from CT/MR Images </a><br>' +
+           '<a href="">Contact our product team </a><br>' +
+           '<a href="http://www.pearmedical.com">PearMedical.com </a>';
+$('.tipso').tipso();
+jQuery('.hover-tipso-tooltip').tipso({
+    tooltipHover: true,
+    background: 'rgba(33,33,33,.05)',
+    position: 'bottom',
+    width: '300',
+    size: 'small',
+    content: function(){
+    					return a;
+    				}
+});
+
+
+// Search stuff
+$('#fileSearch').keyup( function(){
+	console.log("Search function")
+	var models = $('.files-list').data('allModelData')
+	if ( models ) {
+		var searchText = $(this).val().toLowerCase()
+		models.forEach(function(model){
+			if ( searchText == "" || model.name.toLowerCase().startsWith(searchText ) ) {
+				$('#'+model._id).show()
+			}
+			else {
+				$('#'+model._id).hide()
+			}
+		});
+	}
+});
+
 
 
 ////////// UPLOAD PROCESS
@@ -44,7 +101,7 @@ $(window).on("load", function () {
     $("#modelChooser").change(function () {
         // Clear the list of files that were previously shown
         $(".chosenFiles").empty();
-        $(".welcome").fadeOut(500);
+        $(".right > *").fadeOut(500);
         $("#updateModelForm").delay(500).fadeIn(500)
 
         // Show the files that were chosen
@@ -87,6 +144,20 @@ $(window).on("load", function () {
             $('.modelInfo > .name').html(name)
             $('.modelInfo > .issue-title').html(shortDesc)
             $('.modelInfo > .description').html(longDesc)
+
+            var view = new View();
+            var boscApis = new BoscApis(BoscApis.testAuthId);
+            boscApis.mock();
+            boscApis.getModels(function (models) {
+            	view.updateRecentModels(models);
+            },
+            function (response, ajaxOptions, thrownError) {
+            	console.log(response.status);
+            	if(response.status == 500) {
+            		showResponseError(response, "Oops. You are not authorized.");
+            	}
+            });
+
           }
 
           var error = function (response, ajaxOptions, thrownError) {

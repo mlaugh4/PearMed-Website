@@ -29,10 +29,27 @@ a {
   #logo img {
     width: 100px; }
 
+#moreInfo {
+  position: absolute;
+  transform: translateY(400%);
+  left: 52px;
+  opacity: 0.5;
+  height: 15px;
+  width: auto; }
+
+.tipso_bubble > * {
+  /*margin: 10px */ }
+
+.tipso_bubble {
+  margin-left: 10px; }
+
 .title-text {
   font-size: 16px;
   vertical-align: super;
   margin-bottom: 20px; }
+
+.hidden {
+  display: none; }
 
 .editable:hover:after {
   content: " ";
@@ -111,8 +128,9 @@ a {
   height: 77px;
   padding: 20px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
   border-bottom: 0.5px solid #a1a1a1; }
   .full-width .backarrow {
     position: absolute;
@@ -138,6 +156,8 @@ a {
     border: 1px solid #a1a1a1; }
     .half-width input[type=search]:focus svg {
       opacity: 0; }
+  .half-width iframe {
+    /*display: none */ }
 
 input {
   width: 100%;
@@ -163,7 +183,8 @@ input {
   fill: #D55D16; }
 
 .files-list {
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: visible; }
   .files-list .file {
     cursor: pointer;
     position: relative;
@@ -227,16 +248,20 @@ input {
 
 .primary-btn {
   cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
   padding: 10px 20px;
-  background-color: #4a4a4a;
-  color: white;
+  margin-left: 10px;
+  background-color: #f1f1f1;
+  color: #4a4a4a;
   border-radius: 2px;
-  box-shadow: 0px 2px 4px 0px rgba(179, 179, 179, 0.5);
   transition: all 0.4s; }
   .primary-btn:hover {
     background-image: -webkit-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%);
     background-image: -o-linear-gradient(319deg, #DA5612 0%, #ACA33D 100%);
-    background-image: linear-gradient(49deg, #DA5612 0%, #ACA33D 100%); }
+    background-image: linear-gradient(49deg, #DA5612 0%, #ACA33D 100%);
+    color: white; }
 
 .secondary-btn, input[type=submit] {
   background-color: #a1a1a1;
@@ -271,9 +296,28 @@ input {
     transition: 0.3s outline ease; }
 
 .modelInfo {
-  display: none; }
+  display: none;
+  flex-direction: column; }
+  .modelInfo .title-text {
+    margin-bottom: 10px; }
 
 .modelInfo > div {
   margin-bottom: 20px; }
+  .modelInfo > div:hover {
+    background-color: #f1f1f1; }
+
+.loader {
+  display: none;
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top; }
+  .loader svg path,
+  .loader svg rect {
+    fill: #a1a1a1; }
 
 /*# sourceMappingURL=style.css.map */

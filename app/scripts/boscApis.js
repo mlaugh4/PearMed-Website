@@ -47,18 +47,32 @@ BoscApis.testAuthId = "95565080-fb3d-4469-bc39-4acf5285abe7";
 BoscApis.prototype.mock = function () {
 	var thisObj = this;
 
+	$('.loader').show()
+
 	var callApi = function (callback) {
 		setTimeout(callback, 1000);
 	}
 
 	this.getModels = function (success, error) {
 		callApi(function () {
+			$('.loader').hide();
 			success(thisObj.testModelData);
 		});
 	}
 
 	this.postModel = function (data, success, error) {
 		callApi(function () {
+			thisObj.testModelData.unshift(
+					{
+						"_id": "57f6b8b03c9fa30a471bf4aa",
+						"name": 'name',
+						"shortDesc": "Herminal Por Favor Hanger",
+						"longDesc": "This description is pretty long extra text to test the div flexibility",
+						"lastAccessed": "2016-10-07T21:27:14.757Z",
+						"ownerId": this.authId,
+						"__v": 0
+					}
+				);
 			success(data);
 		})
 	}
@@ -66,7 +80,7 @@ BoscApis.prototype.mock = function () {
 
 BoscApis.prototype.testModelData = [
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4e3",
 		"name": "Stacey Marks",
 		"shortDesc": "Ventricular Septal Defect",
 		"longDesc": "This patient presented a VSD...",
@@ -75,7 +89,7 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4ea",
 		"name": "Ryan James",
 		"shortDesc": "Kidney Stones",
 		"longDesc": "This patient has a giant kidney stone...",
@@ -93,7 +107,7 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4ef",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
@@ -102,7 +116,7 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4eb",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
@@ -111,7 +125,7 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4ec",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
@@ -120,7 +134,7 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 	{
-		"_id": "57f6b8b03c9fa30a471bf4ee",
+		"_id": "57f6b8b03c9fa30a471bf4ed",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
