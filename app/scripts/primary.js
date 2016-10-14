@@ -1,14 +1,39 @@
 ////////// LOGIN PAGE
 
+
+$('#nextarrow').click(function(event) {
+    Login();
+});
+
+$('#loginForm').keypress(function (e) {
+ var key = e.which;
+ if(key == 13)  // the enter key code
+  {
+    Login();
+    return false;
+  }
+});
+
+function Login() {
+    Cookies.set('authId',$('.loginForm').val());
+    window.location.href = 'index.html';
+}
+
 // Fading in login button
 $('#loginForm').keyup(function () {
-	if ( $('#loginForm').val().length > 0 )
+	if ( $(this).val().length > 0 )
 		$('#nextarrow').fadeIn(500);
 	else
 		$('#nextarrow').fadeOut(200);
 });
 
 ////////// INDEX PAGE
+
+// Logout button
+$('.logout').click( function(){
+    Cookies.remove('authId')
+    window.location.href = 'login.html';
+});
 
 // Show more button if there are more than 5ish options
 $('.files-list').on('load','div', function() {
@@ -17,10 +42,6 @@ $('.files-list').on('load','div', function() {
 	else
 		$('.showMore').hide()
 });
-
-// $('.files-list').on('click','div', function(){
-// 	alert('sup ryan')
-// });
 
 $('.files-list').on('click','.file', function(){
 	$('.files-list > *').css('background-color','white')
@@ -33,11 +54,25 @@ $('.files-list').on('click','.file', function(){
 		$('.modelInfo > .title-text').html(thisModel.name)
 		$('.modelInfo > .issue-title').html(thisModel.shortDesc)
 		$('.modelInfo > .description').html(thisModel.longDesc)
-		$('.right').fadeIn(500)
+		$('.right').fadeIn(500, function(){
+            $(this).trigger('justFaded')
+        })
 		})
 
 	}
+});
+
+$('.right').on('justFaded', function(){
+    console.log("yo")
+    $(this).bind("DOMSubtreeModified", function(){
+        $('.saveButton').fadeIn(500)
+    })
 })
+
+$('.saveButton').click(function(){
+
+})
+
 
 // Hide search icon on focus
 $('input[type=search]').focus( function() {

@@ -13,7 +13,7 @@ body
   display: flex
   justify-content: center
   align-items: center
-  background-image: url('../img/squared_metal.png')
+  background: url("../img/squared_metal.png")
   -webkit-font-smoothing: antialiased
 
 html
@@ -28,6 +28,7 @@ a
   color: $pri-color
   text-decoration: none
   cursor: pointer
+
 
 #logo
   position: absolute
@@ -57,7 +58,7 @@ a
 .hidden
   display: none
 
-.editable
+/*.editable
   &:hover
     &:after
       content: " "
@@ -65,7 +66,7 @@ a
       background: url("../img/edit.svg") no-repeat
       background-size: contain
       width: 14px
-      height: 14px
+      height: 14px*/
 
 .grn
   color: $green-color
@@ -148,6 +149,7 @@ a
     transform: translateY(-50%)
     top: 50%
     cursor: pointer
+    &:hover
 
 
 
@@ -248,6 +250,7 @@ label
 .description
   margin-bottom: 20px
   flex-grow: 2
+  &
 
 
 .meta-holder
@@ -317,13 +320,33 @@ label
 .modelInfo
   display: none
   flex-direction: column
+  height: 100%
   .title-text
     margin-bottom: 10px
-.modelInfo > div
+  .saveButton
+    position: absolute
+    display: none
+    bottom: 0px
+    right: 10px
+.modelInfo > .editable
   margin-bottom: 20px
-  border-radius: 2px
+  position: relative
   &:hover
+    &:after
+      content: " "
+      position: absolute
+      right: 10px
+      transform: translateY(-50%)
+      top: 50%
+      background: url("../img/edit.svg") no-repeat
+      background-size: contain
+      width: 14px
+      height: 14px
+  &:focus
+    transition: .3s background-color
     background-color: $ter-color
+
+
 
 .loader
   display: none

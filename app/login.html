@@ -3,18 +3,28 @@
 
   <meta name="google-site-verification" content="Kctkb4ovFntAcicPwO1FTDxPOlN79_Em3kNMFpzYzRY" />
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="scripts/js.cookie.js"></script>
+
+  <script>
+    $(window).on('load', function(){
+      if( Cookies.get('authId') ) {
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+
 </head>
 
 <body>
   <div class="shell" id="login">
-    <img src="bosc_logo.png" style="width:50%">
+    <img src="img/bosc_logo.png" style="width:50%">
     <form style="width:50%;flex-grow:2;position:relative">
       <div class="secondary">Login with your org ID:</div>
       <input type="text" name="psw" id="loginForm">
-      <img src="backarrow.svg" id="nextarrow">
+      <img src="img/backarrow.svg" id="nextarrow">
     </form>
     <div>
       <a class="secondary-btn" style="position:absolute;bottom:20px;right:20px;" href="mailto:team@pearmedical.com">Request access</a>

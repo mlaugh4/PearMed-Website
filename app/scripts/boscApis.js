@@ -1,10 +1,13 @@
-var apiRoot = "http://localhost:3000/";
+var apiRoot = "http://52.160.88.200:3000/";
 
 /*
 	Used to communicate with the Bosc APIs
 */
 function BoscApis(authId) {
-	this.authId = authId;
+	this.authId = Cookies.get('authId');
+	if (!this.authId) {
+		console.log("Poop")
+	}
 
 	// Executes an ajax call
 	var callApi = function (options) {
@@ -143,3 +146,9 @@ BoscApis.prototype.testModelData = [
 		"__v": 0
 	},
 ];
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}

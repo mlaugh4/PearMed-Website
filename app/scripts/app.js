@@ -14,7 +14,7 @@ function View() {
 					"<div class='secondary'>" +
 						getLastModifiedDisplayValue(model) +
 					"</div>" +
-					"<img src='chevron.svg' class='arrow'></img>" +
+					// "<img src='chevron.svg' class='arrow'></img>" +
 				"</div>"
 			);
 			var modelElement = $('#'+ model._id)
@@ -24,14 +24,8 @@ function View() {
 	};
 }
 
-// var dfd = $.Deferred();
-
-// dfd
-// 	.done( View )
-// 	.done( ShowMore )
 
 $(window).on("load", function() {
-	// dfd.resolve()
 	var view = new View();
 	var boscApis = new BoscApis(BoscApis.testAuthId);
 	boscApis.mock();

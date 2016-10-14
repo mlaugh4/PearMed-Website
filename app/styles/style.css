@@ -51,14 +51,15 @@ a {
 .hidden {
   display: none; }
 
-.editable:hover:after {
-  content: " ";
-  display: inline-block;
-  background: url("edit.svg") no-repeat;
-  background-size: contain;
-  width: 14px;
-  height: 14px; }
-
+/*.editable
+ * &:hover
+ *   &:after
+ *     content: " "
+ *     display: inline-block
+ *     background: url("../img/edit.svg") no-repeat
+ *     background-size: contain
+ *     width: 14px
+ *     height: 14px */
 .grn {
   color: #AF9E3A; }
 
@@ -200,15 +201,15 @@ input {
       position: absolute;
       right: 0px;
       bottom: 10px; }
-    .files-list .file .arrow {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY -50%;
-      display: none;
-      cursor: pointer;
-      z-index: 1000; }
 
+/*    .arrow
+ * position: absolute
+ * right: -20px
+ * top: 50%
+ * transform: translateY (-50%)
+ * display: none
+ * cursor: pointer
+ * z-index: 1000 */
 .issue-title {
   font-weight: bold;
   font-size: 0.8em; }
@@ -297,13 +298,31 @@ input {
 
 .modelInfo {
   display: none;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100%; }
   .modelInfo .title-text {
     margin-bottom: 10px; }
+  .modelInfo .saveButton {
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    right: 10px; }
 
-.modelInfo > div {
-  margin-bottom: 20px; }
-  .modelInfo > div:hover {
+.modelInfo > .editable {
+  margin-bottom: 20px;
+  position: relative; }
+  .modelInfo > .editable:hover:after {
+    content: " ";
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    top: 50%;
+    background: url("../img/edit.svg") no-repeat;
+    background-size: contain;
+    width: 14px;
+    height: 14px; }
+  .modelInfo > .editable:focus {
+    transition: 0.3s background-color;
     background-color: #f1f1f1; }
 
 .loader {
