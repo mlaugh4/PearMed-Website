@@ -2,15 +2,16 @@
 	Used to communicate with the Bosc APIs
 */
 function BoscApis(authId) {
-	this.authId = Cookies.get('authId');
+	this.authId = '95565080-fb3d-4469-bc39-4acf5285abe7';
 	if (!this.authId) {
 		console.log("Poop")
 	}
+	console.log(this.authId)
 
 	// Executes an ajax call
-	var callApi = function (options) {
+	this.callApi = function (options) {
 		options.beforeSend = function (request) {
-			request.setRequestHeader("Bosc-AuthId", authId);
+			request.setRequestHeader("Bosc-AuthId", '95565080-fb3d-4469-bc39-4acf5285abe7');
 		};
 
 		$.ajax(options);
@@ -18,7 +19,7 @@ function BoscApis(authId) {
 
 	// Get all of the models linked to this user
 	this.getModels = function (success, error) {
-		callApi({
+		this.callApi({
 			type: "GET",
 			url: BoscApis.apiRoot + "organModels",
 			dataType: "json",
@@ -29,7 +30,7 @@ function BoscApis(authId) {
 
 	// Upload models to the server
 	this.postModel = function (data, success, error) {
-		callApi({
+		this.callApi({
 			type: 'POST',
 			url: BoscApis.apiRoot + "organModels",
 			data: data,
@@ -147,8 +148,3 @@ BoscApis.prototype.testModelData = [
 	},
 ];
 
-function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
-}

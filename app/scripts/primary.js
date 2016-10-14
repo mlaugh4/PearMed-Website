@@ -172,7 +172,7 @@ $(window).on("load", function () {
         var longDesc = $('.divForm[name=longDesc]').html()
         $('#hiddenLDesc').val(longDesc);
         //grab all form data
-        var formData = new FormData($(this)[0,1,2]);
+        var formData = new FormData($(this)[0]);
 
         var success = function (model) {
         	console.log("success")
@@ -187,7 +187,7 @@ $(window).on("load", function () {
 
             var view = new View();
             var boscApis = new BoscApis(BoscApis.testAuthId);
-            boscApis.mock();
+            // boscApis.mock();
             boscApis.getModels(function (models) {
             	view.updateRecentModels(models);
             },
@@ -211,7 +211,7 @@ $(window).on("load", function () {
           }
 
           var boscApis = new BoscApis(BoscApis.testAuthId);
-          boscApis.mock();
+          // boscApis.mock();
           boscApis.postModel(formData, success, error, complete);
 
           return false;

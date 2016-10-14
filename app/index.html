@@ -37,7 +37,6 @@
       <div class="full-width">
         <div class="primary-btn" id="selectModelsToLoad">Import model files</div>
         <a class="primary-btn download">Download Bosc App</a>
-        <input type='file' class="primary-btn" name="modelFile" id="modelChooser" style="display:none" multiple>
       </div>
       <div class="lower-container">
         <div class="half-width">
@@ -105,9 +104,10 @@
              <label for="name">Long description</label>
              <div class="divForm long" contenteditable="true" name="longDesc"></div>
 
-            <input id="hiddenName"></input>
-            <input id="hiddenSDesc"></input>
-            <input id="hiddenLDesc"></input>
+            <input id="hiddenName" name="name"></input>
+            <input type='file' class="primary-btn" name="modelFile" id="modelChooser" style="display:none" multiple>
+            <input id="hiddenSDesc" name="shortDesc"></input>
+            <input id="hiddenLDesc" name="longDesc"></input>
 
              <input type="submit" value="Save" />
          </form>

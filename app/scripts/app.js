@@ -28,7 +28,7 @@ function View() {
 $(window).on("load", function() {
 	var view = new View();
 	var boscApis = new BoscApis(BoscApis.testAuthId);
-	boscApis.mock();
+	// boscApis.mock();
 	boscApis.getModels(function (models) {
 		view.updateRecentModels(models);
 	},
