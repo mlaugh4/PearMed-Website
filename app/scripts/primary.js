@@ -29,6 +29,11 @@ $('#loginForm').keyup(function () {
 
 ////////// INDEX PAGE
 
+//Download button
+$(window).on('load', function(){
+    $('.download').attr('href',BoscApis.apiRoot + "download/")
+});
+
 // Logout button
 $('.logout').click( function(){
     Cookies.remove('authId')

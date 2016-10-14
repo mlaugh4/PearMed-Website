@@ -1,5 +1,3 @@
-var apiRoot = "http://52.160.88.200:3000/";
-
 /*
 	Used to communicate with the Bosc APIs
 */
@@ -22,7 +20,7 @@ function BoscApis(authId) {
 	this.getModels = function (success, error) {
 		callApi({
 			type: "GET",
-			url: apiRoot + "organModels",
+			url: BoscApis.apiRoot + "organModels",
 			dataType: "json",
 			success: success,
 			error, error,
@@ -33,7 +31,7 @@ function BoscApis(authId) {
 	this.postModel = function (data, success, error) {
 		callApi({
 			type: 'POST',
-			url: apiRoot + "organModels",
+			url: BoscApis.apiRoot + "organModels",
 			data: data,
 			async: true,
 			cache: false,
@@ -44,6 +42,8 @@ function BoscApis(authId) {
 		});
 	}
 }
+
+BoscApis.apiRoot = "http://52.160.88.200:3000/";
 
 BoscApis.testAuthId = "95565080-fb3d-4469-bc39-4acf5285abe7";
 
