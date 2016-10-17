@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World! • A-Frame</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+
+    <script src="scripts/aframe-v0.3.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scripts/boscApis.js"></script>
+    <script src="scripts/js.cookie.js"></script>
+
+    <script>
+        $(window).on("load", function () {
+          // Mock settings
+          //BoscSettings.mock();
+          
+          if( !Cookies.get('authId') ) {
+            window.location.href = 'login.html';
+          }
+
+          var modelId = getUrlParameter("modelId");
+          if(!organModelId)
+            window.location.href = 'index.html';
+
+          // Add an html element for the model we are going to view
+          $("a-scene").append(
+             "<a-assets>" +
+                "<a-asset-item id='modelObj' src='" + BoscSettings.apiRoot  + "organModels/" + modelId + "/obj'></a-asset-item>" +
+             "</a-assets>" +
+             "<a-entity obj-model='obj: #modelObj;' position='-1 0.5 1' rotation='0 45 0' width='1' height='1' depth='1'  color='#4CC3D9'></a-entity>"
+          );
+        });
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+        
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#ECECEC"></a-sky>
+      <a-entity position="0 0 3.8">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
