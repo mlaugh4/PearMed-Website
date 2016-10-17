@@ -31,7 +31,7 @@ $('#loginForm').keyup(function () {
 
 //Download button
 $(window).on('load', function(){
-    $('.download').attr('href',BoscApis.apiRoot + "download/")
+    $('.download').attr('href', BoscSettings.apiRoot + "download/")
 });
 
 // Logout button
@@ -103,7 +103,6 @@ jQuery('.hover-tipso-tooltip').tipso({
     					return a;
     				}
 });
-
 
 // Search stuff
 $('#fileSearch').keyup( function(){

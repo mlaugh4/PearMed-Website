@@ -2,16 +2,15 @@
 	Used to communicate with the Bosc APIs
 */
 function BoscApis(authId) {
-	this.authId = '95565080-fb3d-4469-bc39-4acf5285abe7';
-	if (!this.authId) {
+	if (!BoscSettings.authId) {
 		console.log("Poop")
 	}
-	console.log(this.authId)
+	console.log(BoscSettings.authId)
 
 	// Executes an ajax call
 	this.callApi = function (options) {
 		options.beforeSend = function (request) {
-			request.setRequestHeader("Bosc-AuthId", '95565080-fb3d-4469-bc39-4acf5285abe7');
+			request.setRequestHeader("Bosc-AuthId", BoscSettings.authId);
 		};
 
 		$.ajax(options);
@@ -21,7 +20,7 @@ function BoscApis(authId) {
 	this.getModels = function (success, error) {
 		this.callApi({
 			type: "GET",
-			url: BoscApis.apiRoot + "organModels",
+			url: BoscSettings.apiRoot + "organModels",
 			dataType: "json",
 			success: success,
 			error, error,
@@ -32,7 +31,7 @@ function BoscApis(authId) {
 	this.postModel = function (data, success, error) {
 		this.callApi({
 			type: 'POST',
-			url: BoscApis.apiRoot + "organModels",
+			url: BoscSettings.apiRoot + "organModels",
 			data: data,
 			async: true,
 			cache: false,
@@ -43,10 +42,6 @@ function BoscApis(authId) {
 		});
 	}
 }
-
-BoscApis.apiRoot = "http://52.160.88.200:3000/";
-
-BoscApis.testAuthId = "95565080-fb3d-4469-bc39-4acf5285abe7";
 
 BoscApis.prototype.mock = function () {
 	var thisObj = this;
@@ -73,7 +68,7 @@ BoscApis.prototype.mock = function () {
 						"shortDesc": "Herminal Por Favor Hanger",
 						"longDesc": "This description is pretty long extra text to test the div flexibility",
 						"lastAccessed": "2016-10-07T21:27:14.757Z",
-						"ownerId": this.authId,
+						"ownerId": BoscSettings.authId,
 						"__v": 0
 					}
 				);
@@ -89,7 +84,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Ventricular Septal Defect",
 		"longDesc": "This patient presented a VSD...",
 		"lastAccessed": "2016-10-07T21:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -98,7 +93,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Kidney Stones",
 		"longDesc": "This patient has a giant kidney stone...",
 		"lastAccessed": "2016-10-07T20:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -107,7 +102,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": null,
 		"longDescription": null,
 		"lastAccessed": "2016-10-07T02:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -116,7 +111,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -125,7 +120,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -134,7 +129,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 	{
@@ -143,7 +138,7 @@ BoscApis.prototype.testModelData = [
 		"shortDesc": "Test short description",
 		"longDescription": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
-		"ownerId": this.authId,
+		"ownerId": BoscSettings.authId,
 		"__v": 0
 	},
 ];
