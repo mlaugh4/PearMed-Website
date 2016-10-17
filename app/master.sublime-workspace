@@ -1,0 +1,1248 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Bo",
+				"BoscApis"
+			],
+			[
+				"login",
+				"loginForm"
+			],
+			[
+				"next",
+				"nextarrow"
+			],
+			[
+				"tr",
+				"translateY"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"remove",
+				"removeClass	.removeClass()"
+			],
+			[
+				"k",
+				"keypress	.keypress()"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"toggle",
+				"toggleClass	.toggleClass()"
+			],
+			[
+				"model",
+				"modelElement"
+			],
+			[
+				"test",
+				"testModelData"
+			],
+			[
+				"trans",
+				"translateY"
+			],
+			[
+				"Long",
+				"longDesc"
+			],
+			[
+				"long",
+				"longDesc"
+			],
+			[
+				"grn",
+				"green-color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"sec",
+				"sec-color"
+			],
+			[
+				"or",
+				"orange-color"
+			],
+			[
+				"pri",
+				"pri-color"
+			],
+			[
+				"bo",
+				"box-shadow"
+			],
+			[
+				"gr",
+				"green-color"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"tab",
+				"tab-wrap"
+			],
+			[
+				"backgroung",
+				"background-image"
+			],
+			[
+				"ease",
+				"ease-in-out"
+			],
+			[
+				"scip-",
+				"scip-final-txt"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"back",
+				"backarrow"
+			],
+			[
+				"slick",
+				"slick1"
+			],
+			[
+				"backgroun",
+				"background-repeat"
+			],
+			[
+				"nps",
+				"nps-pill-container"
+			],
+			[
+				"ope",
+				"openFeed-topCell"
+			],
+			[
+				"open",
+				"openFeed-whole"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"conversation",
+				"conversation-form"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"np",
+				"nps-pill-red"
+			],
+			[
+				"nps-pil",
+				"nps-pill-container"
+			],
+			[
+				"fir",
+				"first-child"
+			],
+			[
+				"left",
+				"left-column"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"nac",
+				"nav-actions"
+			],
+			[
+				"tabmenu",
+				"tabmenu-option"
+			],
+			[
+				"project",
+				"project-area"
+			],
+			[
+				"image",
+				"image-slider"
+			],
+			[
+				"quest",
+				"question_index"
+			],
+			[
+				"he",
+				"hero-image"
+			],
+			[
+				"remov",
+				"removeClass"
+			],
+			[
+				"graph",
+				"graph-column"
+			],
+			[
+				"perf",
+				"perf-pill-inner"
+			],
+			[
+				"main",
+				"main_barchart"
+			],
+			[
+				"sum",
+				"sumForPercent"
+			],
+			[
+				"graph-",
+				"graph-table"
+			],
+			[
+				"nav-",
+				"nav-actions"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"max",
+				"maxIndex"
+			],
+			[
+				"color",
+				"background-color"
+			],
+			[
+				"card",
+				"card-links"
+			],
+			[
+				"chart",
+				"chart_date"
+			],
+			[
+				"margin",
+				"margincalc_agegraph"
+			],
+			[
+				"mar",
+				"margincalc"
+			],
+			[
+				"msg",
+				"msgalert"
+			],
+			[
+				"right",
+				"rightCol"
+			],
+			[
+				"dash-bub",
+				"dash-bubbles-mobile"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"bubb",
+				"card-bubble"
+			],
+			[
+				"dash",
+				"dash-bubbles"
+			],
+			[
+				"padding-",
+				"padding-bottom"
+			],
+			[
+				"eas",
+				"ease-in"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"backro",
+				"background-color"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 6079,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "uploadTemplate.html",
+			"settings":
+			{
+				"buffer_size": 6431,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "login.html",
+			"settings":
+			{
+				"buffer_size": 1090,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "detail.html",
+			"settings":
+			{
+				"buffer_size": 26131,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/style.sass",
+			"settings":
+			{
+				"buffer_size": 6486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/primary.js",
+			"settings":
+			{
+				"buffer_size": 6358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 2223,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/boscApis.js",
+			"settings":
+			{
+				"buffer_size": 3557,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 6685,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"selected_items":
+		[
+			[
+				"Install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 452.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/marklaughery/Documents/code/pearmed/app/stylescss.sass",
+		"/Users/marklaughery/Documents/code/pearmed/app/scripts/3dSphere.js",
+		"/Users/marklaughery/Documents/code/pearmed/app/smallDetail.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/uploadTemplate.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/uploadEdit.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/detail.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/login.html",
+		"/Users/marklaughery/Documents/code/pearmed/index.html",
+		"/Users/marklaughery/Documents/code/mark-winslow/index.html",
+		"/Users/marklaughery/Documents/code/pearmed/styles.css",
+		"/Users/marklaughery/Documents/code/pearmed/app/index.html",
+		"/Users/marklaughery/Documents/code/CadaVR-Website/cadavred/index.html",
+		"/Users/marklaughery/Documents/code/mark-winslow/master.sublime-project",
+		"/Users/marklaughery/Documents/code/mark-winslow/master.sublime-workspace",
+		"/Users/marklaughery/Documents/code/pearmed/app/appstyle.css",
+		"/Users/marklaughery/Documents/code/mark-winslow/app.yaml",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/an.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/manage.html",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/tomanna.html",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/msurvey.html",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/tabbing.css",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/project/settings.py",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/project/connection.py",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/main/migrations/0001_initial.py",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/main.js",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/my-js-2.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/report.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/report.css",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/alerts/views.py",
+		"/Users/marklaughery/Desktop/mS/DIY/ChangeLog.md",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/style.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/landing.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/survey_creation/survey_activation.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/hint.css",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/hint.min.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/survey_creation/survey_overview.html",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/charts/views.py",
+		"/Users/marklaughery/Desktop/mS/DIY/project/settings.py",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/templates/static/css/bootstrap.min.css",
+		"/Users/marklaughery/Library/Application Support/Sublime Text 2/Packages/Emmet/Emmet.sublime-settings",
+		"/Users/marklaughery/Desktop/mS/DIY/__init__.py",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/templates/static/css/screen_layout_large.css",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/templates/static/css/screen_layout_small.css",
+		"/Users/marklaughery/Desktop/mS/switchboard/switchboard/switchboard/templates/static/css/screen_layout_medium.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/report/report.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/report/scip_report.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/new-nps.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/new-nps.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/charts/npscharts.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/main.css",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/manage.js",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/dashboard.html",
+		"/Users/marklaughery/Downloads/NPS-maker.py",
+		"/Users/marklaughery/Desktop/mS/DIY/html/charts/charts.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/chart.css",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/charts.css",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/mturk.py",
+		"/Users/marklaughery/Desktop/mS/DIY/requirements.txt",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/index.html",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/jquery-ui-1.11.4/jquery-ui.js",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/style.css",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/my-js.js",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/jquery.js",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/slick/slick-theme.css",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/dutch-style.css",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/index2",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/index2.html",
+		"/Users/marklaughery/Documents/code/mlaugh4.github.io/dog.jpg",
+		"/Users/marklaughery/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/marklaughery/Desktop/mS/DIY/project/urls.py",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/audience_entries.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload/create_audience.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload/manual_audience_numbers.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload/audience_from_survey.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload/upload_audience_file.html",
+		"/Users/marklaughery/Desktop/images/2015-04-17 13.53.19.jpg",
+		"/Users/marklaughery/Desktop/mS/DIY/html/header.html",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/charts/urls.py",
+		"/Users/marklaughery/Desktop/mS/DIY/project/local_settings.py",
+		"/Users/marklaughery/Desktop/mS/DIY/manage.py",
+		"/Users/marklaughery/Desktop/mini-graph-icon.png",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/css/bootstrap.css",
+		"/Users/marklaughery/Desktop/mS/DIY/media/surveySerialNumbers/css/bootstrap.css",
+		"/Users/marklaughery/Desktop/mS/DIY/html/tabheader.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/modals/edit_audience_modal.html",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/manage.py",
+		"/Users/marklaughery/Desktop/mS/DIY/static/bootstrap/css/bootstrap.css",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/parse.py",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload_audience_file.html",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/views.py",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/create_audience.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/surveyPanel.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/survey_creation/survey_creation_header.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/modals/confirm_audience_deletion.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/manual_audience_numbers.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/audience_from_survey.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/createaudience.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/panel.js",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/modals/add_members_modal.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/adminpanel.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/clientpanel.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/panelrequest.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/uploadaudience.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/common.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/surveySerialNumbers/upload.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/scheduler/scheduled-surveys.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/filter/filters.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/scheduler/scheduler.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/apis/apis.html",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/bootstrap.min.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/bootstrap.js",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/d3.js",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/oldmanage",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/stats.py",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/dashboard.py",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/urls.py",
+		"/Users/marklaughery/Desktop/mS/DIY/media/style.css",
+		"/Users/marklaughery/Desktop/mS/DIY/media/surveySerialNumbers/js/SelectBox.js",
+		"/Users/marklaughery/Desktop/mS/DIY/html/surveySerialNumbers/backup.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/surveySerialNumbers/index.html",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/api.py",
+		"/Users/marklaughery/Desktop/mS/DIY/static/assets/styles.css",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/surveyAdmin/main.py",
+		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/scripts.js",
+		"/Users/marklaughery/Desktop/mS/DIY/noe/surveyAdmin/interfaceYaml.py",
+		"/Users/marklaughery/Desktop/mS/DIY/html/panel/panelrequests.html",
+		"/Users/marklaughery/Desktop/mS/DIY/html/editsurvey.html",
+		"/Users/marklaughery/Desktop/eve.csv"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mock",
+			"div",
+			"psw",
+			"editable",
+			"arrow",
+			"url",
+			"img",
+			"src",
+			"img",
+			"500",
+			"val",
+			")",
+			"') ",
+			";",
+			"meta-holder",
+			"<img src=\"arrow.svg\" alt=\"\">",
+			"\"",
+			"val",
+			"model",
+			"textarea",
+			"uploadModels",
+			"modelData",
+			"label",
+			"div",
+			"<div ",
+			"div",
+			"updatemodel",
+			"161",
+			"input",
+			"{",
+			"color: pink",
+			";\n}",
+			"div",
+			"file",
+			"span",
+			"callback",
+			"load",
+			"form",
+			"search",
+			"214",
+			"div",
+			"secondary",
+			"img",
+			"20px",
+			"orange",
+			"mock",
+			"boscApis.mock();",
+			"span",
+			"testModelData",
+			"accountId",
+			"uthid",
+			"div",
+			"/div>",
+			"div class=\"secondary\"",
+			"small",
+			"span",
+			"100",
+			"meta",
+			"red",
+			"width",
+			"canvas",
+			"80px",
+			"33",
+			"absolute",
+			"last-opened",
+			"div",
+			".top",
+			"top",
+			"header",
+			"span",
+			"h3",
+			"background-image: ",
+			"</li>",
+			" <li>",
+			"div",
+			"h1",
+			"grey",
+			"p",
+			"span",
+			"h1",
+			"span",
+			"b",
+			"h2",
+			"h3",
+			"<div class=\"chunk\">",
+			"slick",
+			"public",
+			"media",
+			"min-width",
+			"36px",
+			"class",
+			".left",
+			"left",
+			"h3",
+			"label",
+			"button",
+			"div",
+			"assets",
+			"p",
+			"div",
+			"scip",
+			"final",
+			"msurvey",
+			"chunk",
+			"alt=\"\"",
+			"div",
+			"back",
+			"new message",
+			"comment",
+			"btn",
+			"ol",
+			"div",
+			"scip",
+			"4",
+			"span",
+			"div",
+			"000",
+			"0",
+			"fff",
+			"tyle=\"position:absolute;right:0px;top:0px;height:100%;width:40px;background-color:white;opacity:.1\"",
+			"auto",
+			"div",
+			"style=\"height:500px;width:auto;\"",
+			"200px",
+			"padding",
+			"msg",
+			"msg\\",
+			"msg"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"deg",
+			"span",
+			"#212121",
+			"#3E8ACC"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 6079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1519,
+								1519
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2151.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "uploadTemplate.html",
+					"settings":
+					{
+						"buffer_size": 6431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6253,
+								6238
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2897.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "login.html",
+					"settings":
+					{
+						"buffer_size": 1090,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								528,
+								528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "detail.html",
+					"settings":
+					{
+						"buffer_size": 26131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "sass/style.sass",
+					"settings":
+					{
+						"buffer_size": 6486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								539,
+								539
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/primary.js",
+					"settings":
+					{
+						"buffer_size": 6358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scripts/app.js",
+					"settings":
+					{
+						"buffer_size": 2223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								771,
+								775
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "scripts/boscApis.js",
+					"settings":
+					{
+						"buffer_size": 3557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								593,
+								593
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 341.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 6685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.475138284796,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"style.",
+				"media/assets/dist/css/style.css"
+			],
+			[
+				"survey_over",
+				"html/survey_creation/survey_overview.html"
+			],
+			[
+				"an.css",
+				"media/assets/dist/css/an.css"
+			],
+			[
+				"manage.js",
+				"media/assets/dist/js/manage.js"
+			],
+			[
+				"manage.",
+				"html/panel/manage.html"
+			],
+			[
+				"main.js",
+				"media/assets/dist/js/main.js"
+			],
+			[
+				"report.js",
+				"media/assets/dist/js/report.js"
+			],
+			[
+				"report",
+				"media/assets/dist/css/report.css"
+			],
+			[
+				"view",
+				"noe/alerts/views.py"
+			],
+			[
+				"new",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"nps",
+				"html/report/nps_report.html"
+			],
+			[
+				"landing",
+				"html/landing.html"
+			],
+			[
+				"surveyove",
+				"html/survey_creation/survey_overview.html"
+			],
+			[
+				"new-",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"css",
+				"templates/static/css/screen_styles.css"
+			],
+			[
+				"report.css",
+				"media/assets/dist/css/report.css"
+			],
+			[
+				"report.",
+				"html/report/report.html"
+			],
+			[
+				"",
+				"media/assets/dist/css/new-nps.css"
+			],
+			[
+				"newp",
+				"media/assets/dist/js/new-nps.js"
+			],
+			[
+				"changel",
+				"ChangeLog.md"
+			],
+			[
+				"an.",
+				"media/assets/dist/css/an.css"
+			],
+			[
+				"new-n",
+				"media/assets/dist/css/new-nps.css"
+			],
+			[
+				"chart",
+				"html/charts/charts.html"
+			],
+			[
+				"report.j",
+				"media/assets/dist/js/report.js"
+			],
+			[
+				"repo",
+				"html/report/report.html"
+			],
+			[
+				"audience",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"manage",
+				"html/panel/manage.html"
+			],
+			[
+				"dashboa",
+				"html/panel/dashboard.html"
+			],
+			[
+				"dash",
+				"html/panel/dashboard.html"
+			],
+			[
+				"dashboard",
+				"html/panel/dashboard.html"
+			],
+			[
+				"header",
+				"html/header.html"
+			],
+			[
+				"audienc",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"manage.html",
+				"html/panel/manage.html"
+			],
+			[
+				"local",
+				"project/local_settings.py"
+			],
+			[
+				"setting",
+				"project/settings.py"
+			],
+			[
+				"loc",
+				"project/local_settings.py"
+			],
+			[
+				"/dist/style",
+				"media/assets/dist/css/style.css"
+			],
+			[
+				"bootstrap",
+				"media/surveySerialNumbers/css/bootstrap.css"
+			],
+			[
+				"audie",
+				"html/panel/audience_entries.html"
+			],
+			[
+				"dashba",
+				"html/panel/dashboard.html"
+			],
+			[
+				"boot",
+				"static/bootstrap/css/bootstrap.css"
+			],
+			[
+				"parse.p",
+				"noe/panel/parse.py"
+			],
+			[
+				"dashb",
+				"html/panel/dashboard.html"
+			],
+			[
+				"tabhea",
+				"html/tabheader.html"
+			],
+			[
+				"tabhe",
+				"html/tabheader.html"
+			],
+			[
+				"sched",
+				"html/scheduler/scheduler.html"
+			],
+			[
+				"old",
+				"html/panel/oldmanage"
+			],
+			[
+				"style",
+				"media/style.css"
+			],
+			[
+				"schedule",
+				"html/scheduler/scheduler.html"
+			],
+			[
+				"sty",
+				"media/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 118.0,
+	"status_bar_visible": true
+}
