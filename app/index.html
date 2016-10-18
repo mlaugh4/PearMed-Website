@@ -106,16 +106,16 @@
              <label for="name">Long description</label>
              <div class="divForm long" contenteditable="true" name="longDesc"></div>
 
-            <input id="hiddenName" name="name"></input>
+            <input class="hiddenName" name="name"></input>
             <input type='file' class="primary-btn" name="modelFile" id="modelChooser" style="display:none" multiple>
-            <input id="hiddenSDesc" name="shortDesc"></input>
-            <input id="hiddenLDesc" name="longDesc"></input>
+            <input class="hiddenSDesc" name="shortDesc"></input>
+            <input class="hiddenLDesc" name="longDesc"></input>
 
              <input type="submit" value="Save" />
          </form>
 
          <!-- This shows up when they click on a model on the left -->
-         <div class="modelInfo">
+         <form class="modelInfo">
             <div class="title-text name org editable" contenteditable="true">Model Title</div>
             <!-- <label for="shortDesc">Short description</label> -->
             <div class="issue-title editable" contenteditable="true">Short description</div>
@@ -123,9 +123,15 @@
             <div class="description editable" contenteditable="true" style="flex-grow:2">
               No description available
             </div>
+            <div style="display:none">
+              <input class="hiddenName" name="name"></input>
+              <input class="hiddenSDesc" name="shortDesc"></input>
+              <input class="hiddenLDesc" name="longDesc"></input>
+            </div>
             <img src="img/preview.png" style="height:60%;margin:0 auto" alt="">
-            <div class="saveButton secondary-btn">Save</div>
-         </div>
+            <!-- <div class="saveButton secondary-btn">Save</div> -->
+            <input type="submit" value="Save" class="saveButton">
+         </form>
        </div>
      </div>
 

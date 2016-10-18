@@ -72,15 +72,23 @@ $('.files-list').on('click','.file', function(){
 
 // Show the save button when someone edits metadata in the file detail
 $('.right').on('justFaded', function(){
-    console.log("yo")
     $(this).bind("DOMSubtreeModified", function(){
         $('.saveButton').fadeIn(500)
     })
 })
+//When user clicks save
+$(".modelInfo").submit(function (event) {
+    vent.preventDefault();
 
-$('.saveButton').click(function(){
+    var name = $('.name').html()
+    $('.name').next('.hiddenName').val(name);
+    var shortDesc = $('.issue-title').html()
+    $('issue-title').next('.hiddenSDec').val(shortDesc);
+    var longDesc = $('.description').html()
+    $('.description').next('.hiddenLDesc').val(longDesc);
 
-})
+    var formData = new FormData($(this)[0]);
+});
 
 
 // Hide search icon on focus
@@ -169,11 +177,11 @@ $(window).on("load", function () {
         // info, we need to addign the values to
         // the textareas so theyre pulling into formdata
         var name = $('.divForm[name=name]').html()
-        $('#hiddenName').val(name);
+        $('.divForm[name=name]').next('.hiddenName').val(name);
         var shortDesc = $('.divForm[name=shortDesc]').html()
-        $('#hiddenSDec').val(shortDesc);
+        $('divForm[name=shortDesc]').next('.hiddenSDec').val(shortDesc);
         var longDesc = $('.divForm[name=longDesc]').html()
-        $('#hiddenLDesc').val(longDesc);
+        $('.divForm[name=longDesc]').next('.hiddenLDesc').val(longDesc);
         //grab all form data
         var formData = new FormData($(this)[0]);
 
