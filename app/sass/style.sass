@@ -29,24 +29,25 @@ a
   text-decoration: none
   cursor: pointer
 
-
-#logo
+.menu
   position: absolute
-  left: 10px
-  z-index: -1
-  img
-    width: 100px
+  top: 50%
+  transform: translateY(-50%)
+  left: 1vw
+  height: 170px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  #logo
+    img
+      width: 100px
+  #moreInfo
+    opacity: .5
+    height: 15px
+    width: auto
 
-#moreInfo
-  position: absolute
-  transform: translateY(400%)
-  left: 52px
-  opacity: .5
-  height: 15px
-  width: auto
 
-.tipso_bubble > *
-  /*margin: 10px*/
 .tipso_bubble
   margin-left: 10px
 
@@ -57,16 +58,6 @@ a
 
 .hidden
   display: none
-
-/*.editable
-  &:hover
-    &:after
-      content: " "
-      display: inline-block
-      background: url("../img/edit.svg") no-repeat
-      background-size: contain
-      width: 14px
-      height: 14px*/
 
 .grn
   color: $green-color
@@ -90,6 +81,7 @@ a
   margin: 0 0
   user-select: none
   width: 800px
+  max-height: 600px
   height: 80%
   background-color: white
   box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.22), 0px 24px 24px 0px rgba(0,0,0,0.30)
@@ -141,7 +133,7 @@ a
   flex-direction: row
   align-items: center
   justify-content: flex-end
-  border-bottom: .5px solid $sec-color
+  border-bottom: .5px solid $ter-color
   .backarrow
     position: absolute
     left: 0px
@@ -151,11 +143,9 @@ a
     cursor: pointer
     &:hover
 
-
-
 .half-width
   position: relative
-  width: 50%
+  /*width: 50%*/
   height: calc(100% - 107px)
   padding: 20px
   display: flex
@@ -169,8 +159,13 @@ a
     border: 1px solid $sec-color
     &:focus svg
       opacity: 0
-  iframe
-    /*display: none*/
+
+.left
+  width: 40%
+.right
+  width: 60%
+
+
 
 input
   width: 100%
@@ -187,6 +182,8 @@ input
   &[type=submit]
     @extend .secondary-btn
 
+#searchBox
+  display: none
 .search-icon
   position: absolute
   top: 50%
@@ -197,14 +194,10 @@ input
 label
   @extend .secondary
 
-.half-width:nth-child(2)
-  svg
-    fill: $orange-color
-
 
 .files-list
   overflow-y: scroll
-  overflow-x: visible
+  height: 100%
   .file
     &:hover > *
       color: $green-color
@@ -213,21 +206,14 @@ label
     cursor: pointer
     position: relative
     padding: 10px 0
-    border-bottom: .5px solid $sec-color
+    border-bottom: .5px solid $ter-color
+    border-radius: 3px
     .name
       margin-bottom: 5px
     .secondary
       position: absolute
       right: 0px
       bottom: 10px
-/*    .arrow
-      position: absolute
-      right: -20px
-      top: 50%
-      transform: translateY (-50%)
-      display: none
-      cursor: pointer
-      z-index: 1000*/
 
 .issue-title
   font-weight: bold
@@ -286,16 +272,16 @@ label
     color: white
 
 .secondary-btn
-  background-color: $sec-color
+  background-color: rgba(33,33,33,.05)
   cursor: pointer
   padding: 5px 10px
   font-size: .8em
-  color: white
+  color: $pri-color
   border-radius: 2px
   margin-top: 10px
   width: fit-content
   &:hover
-    background-color: $green-color
+    background-color: $sec-color
 
 #updateModelForm
   display: none
@@ -335,7 +321,7 @@ label
     &:after
       content: " "
       position: absolute
-      right: 10px
+      right: 20px
       transform: translateY(-50%)
       top: 50%
       background: url("../img/edit.svg") no-repeat

@@ -43,12 +43,12 @@ $('.logout').click( function(){
     window.location.href = 'login.html';
 });
 
-// Show more button if there are more than 5ish options
-$('.files-list').on('load','div', function() {
-	if ( $('.files-list').children().length > 6 )
-		$('.showMore').show()
-	else
-		$('.showMore').hide()
+// Triggered when the files list loads
+$( '.loader' ).on('loadedList', function() {
+	if ( $('.files-list').children().length > 6) {
+        $('#searchBox').show();
+    } else
+        $('#searchBox').hide();
 });
 
 $('.files-list').on('click','.file', function(){
@@ -70,6 +70,7 @@ $('.files-list').on('click','.file', function(){
 	}
 });
 
+// Show the save button when someone edits metadata in the file detail
 $('.right').on('justFaded', function(){
     console.log("yo")
     $(this).bind("DOMSubtreeModified", function(){
@@ -189,7 +190,7 @@ $(window).on("load", function () {
 
             var view = new View();
             var boscApis = new BoscApis(BoscApis.testAuthId);
-            // boscApis.mock();
+            boscApis.mock();
             boscApis.getModels(function (models) {
             	view.updateRecentModels(models);
             },
@@ -213,7 +214,7 @@ $(window).on("load", function () {
           }
 
           var boscApis = new BoscApis(BoscApis.testAuthId);
-          // boscApis.mock();
+          boscApis.mock();
           boscApis.postModel(formData, success, error, complete);
 
           return false;

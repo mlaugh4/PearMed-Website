@@ -28,10 +28,11 @@
 </head>
 
 <body>
-  <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
-  <div class="secondary-btn logout" style="position:absolute;left:29px;top:63%;transform:translateY(-50%);">Logout</div>
-
-  <div id="logo"><img src="img/bosc_logo.png" alt=""></div>
+  <div class="menu">
+    <div id="logo"><img src="img/bosc_logo.png"></div>
+    <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
+    <div class="secondary-btn logout">Logout</div>
+  </div>
 
   <div class="shell">
     <div class="content">
@@ -40,11 +41,11 @@
         <a class="primary-btn download">Download Bosc App</a>
       </div>
       <div class="lower-container">
-        <div class="half-width">
+        <div class="half-width left">
           <div class="title-text grn">
             Models
           </div>
-          <div>
+          <div id="searchBox">
             <form style="position:relative">
               <input type="search" id="fileSearch" placeholder="Search recently opened files">
               <svg class="search-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,7 @@
               Welcome to Bosc!
             </div>
             <div class="secondary">Upload a new model or select one from the left to view it's details.</div>
-            <img src="img/pearheart.png" alt="">
+            <img src="img/pearheart.png" style="opacity:.5">
          </div>
          </div>
 
