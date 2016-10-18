@@ -197,7 +197,7 @@ $(window).on("load", function () {
             $('.modelInfo > .description').html(longDesc)
 
             var view = new View();
-            var boscApis = new BoscApis(BoscApis.testAuthId);
+            var boscApis = new BoscApis();
             boscApis.mock();
             boscApis.getModels(function (models) {
             	view.updateRecentModels(models);

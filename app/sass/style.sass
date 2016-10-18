@@ -34,7 +34,7 @@ a
   top: 50%
   transform: translateY(-50%)
   left: 1vw
-  height: 170px
+  height: 300px
   display: flex
   flex-direction: column
   align-items: center
@@ -117,7 +117,7 @@ a
     height: 100%
 
 .content
-  padding: 0 30px
+  /*padding: 0 30px*/
   overflow: hidden
 
 .lower-container
@@ -145,9 +145,8 @@ a
 
 .half-width
   position: relative
-  /*width: 50%*/
-  height: calc(100% - 107px)
-  padding: 20px
+  height: 100%
+  padding: 30px 20px
   display: flex
   flex-direction: column
   svg:first-child
@@ -162,6 +161,8 @@ a
 
 .left
   width: 40%
+  border-right: 1px solid $ter-color
+  padding-right: 0px
 .right
   width: 60%
 
@@ -205,14 +206,14 @@ label
       display: block
     cursor: pointer
     position: relative
-    padding: 10px 0
+    padding: 5px
     border-bottom: .5px solid $ter-color
-    border-radius: 3px
+    border-radius: 3px 0 0 3px
     .name
       margin-bottom: 5px
     .secondary
       position: absolute
-      right: 0px
+      right: 5px
       bottom: 10px
 
 .issue-title
@@ -347,4 +348,45 @@ label
   svg path,
   svg rect
     fill: $sec-color
+
+.circle
+  position: absolute
+  right: 25px
+  top: -7px
+  background-color: $green-color
+  width: 31px
+  height: 31px
+  display: flex
+  align-items: center
+  border-radius: 100%
+  padding-left: 8px
+  cursor: pointer
+  transition: .3s all
+  &:hover
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24)
+  &:active
+    box-shadow: 0px 0px 0px
+    background-color: $sec-color
+
+.plus.icon
+  color: #000
+
+.plus.icon:before
+  content: ''
+  position: absolute
+  width: 15px
+  height: 1px
+  background-color: white
+
+
+.plus.icon:after
+  content: ''
+  position: absolute
+  width: 15px
+  height: 1px
+  background-color: white
+  -webkit-transform: rotate(90deg)
+  transform: rotate(90deg)
+
+
 

@@ -27,7 +27,7 @@ a {
   top: 50%;
   transform: translateY(-50%);
   left: 1vw;
-  height: 170px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +107,7 @@ a {
     height: 100%; }
 
 .content {
-  padding: 0 30px;
+  /*padding: 0 30px */
   overflow: hidden; }
 
 .lower-container {
@@ -134,9 +134,8 @@ a {
 
 .half-width {
   position: relative;
-  /*width: 50% */
-  height: calc(100% - 107px);
-  padding: 20px;
+  height: 100%;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column; }
   .half-width svg:first-child {
@@ -150,7 +149,9 @@ a {
       opacity: 0; }
 
 .left {
-  width: 40%; }
+  width: 40%;
+  border-right: 1px solid #f1f1f1;
+  padding-right: 0px; }
 
 .right {
   width: 60%; }
@@ -184,9 +185,9 @@ input {
   .files-list .file {
     cursor: pointer;
     position: relative;
-    padding: 10px 0;
+    padding: 5px;
     border-bottom: 0.5px solid #f1f1f1;
-    border-radius: 3px; }
+    border-radius: 3px 0 0 3px; }
     .files-list .file:hover > * {
       color: #AF9E3A; }
     .files-list .file:hover > .arrow {
@@ -195,7 +196,7 @@ input {
       margin-bottom: 5px; }
     .files-list .file .secondary, .files-list .file label {
       position: absolute;
-      right: 0px;
+      right: 5px;
       bottom: 10px; }
 
 .issue-title {
@@ -326,5 +327,43 @@ input {
   .loader svg path,
   .loader svg rect {
     fill: #a1a1a1; }
+
+.circle {
+  position: absolute;
+  right: 25px;
+  top: -7px;
+  background-color: #AF9E3A;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  padding-left: 8px;
+  cursor: pointer;
+  transition: 0.3s all; }
+  .circle:hover {
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24); }
+  .circle:active {
+    box-shadow: 0px 0px 0px;
+    background-color: #a1a1a1; }
+
+.plus.icon {
+  color: #000; }
+
+.plus.icon:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background-color: white; }
+
+.plus.icon:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background-color: white;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 /*# sourceMappingURL=style.css.map */
