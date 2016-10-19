@@ -138,10 +138,13 @@ function ModelView( ) {
   });
 
   // Temp
-  // When the preview image is selected, launch the viewer
+  // When the preview image is selected, launch the viewer in a new tab
   $(".modelInfo .modelPreview").click( function () {
     if(thisModelView.model)
-      window.location.href = "modelViewer.html?modelId=" + thisModelView.model._id;
+      window.open(
+          "modelViewer.html?modelId=" + thisModelView.model._id,
+          '_blank' // <- This is what makes it open in a new tab.
+      );
   })
 
 }
