@@ -7,10 +7,11 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="scripts/js.cookie.js"></script>
+  <script src="scripts/boscSettings.js"></script>
 
   <script>
     $(window).on('load', function(){
-      if( Cookies.get('authId') ) {
+      if( BoscSettings.authId ) {
         window.location.href = 'index.html';
       }
     });

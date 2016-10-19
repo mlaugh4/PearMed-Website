@@ -16,7 +16,6 @@ function ModelsContainer( selector , modelView ) {
   var callGetModelsApi = function() {
 
     var boscApis = new BoscApis();
-    boscApis.mock();
     boscApis.getModels( successCallback , errorCallback )
 
   }

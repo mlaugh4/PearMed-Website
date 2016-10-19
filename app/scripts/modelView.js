@@ -2,11 +2,13 @@ function ModelView( ) {
 
   this.onCreateModel = null;
   this.onUpdateModel = null;
+  this.model = null;
 
   var thisModelView = this;
 
   this.load = function( model ) {
     if ( model ) {
+      this.model = model;
       $('.right').fadeOut(500, function() {
         $('.welcome').hide();
         $('.modelInfo').css('display','flex')
@@ -23,6 +25,8 @@ function ModelView( ) {
   this.updateModel = function( model ) {
 
     var success = function( model ) {
+      thisModelView.load(model);
+
       if ( thisModelView.onUpdateModel != null )
           thisModelView.onUpdateModel( model );
     }
@@ -38,7 +42,6 @@ function ModelView( ) {
     }
 
     var boscApis = new BoscApis(BoscApis.testAuthId);
-    boscApis.mock();
     boscApis.putModel(model, success, error, complete);
 
   }
@@ -47,14 +50,7 @@ function ModelView( ) {
 
     var success = function ( model ) {
       console.log("success")
-        // The server returns the metadata about this model that
-        // was saved in the database. Save it on the update form
-        // so we can use it later
-        $(".modelInfo").data("model", model);
-        $(".modelInfo").fadeIn(500);
-        $('.modelInfo > .name').html(model.name)
-        $('.modelInfo > .issue-title').html(model.shortDesc)
-        $('.modelInfo > .description').html(model.longDesc)
+      thisModelView.load(model);
 
         if ( thisModelView.onCreateModel != null )
           thisModelView.onCreateModel( model );
@@ -71,7 +67,6 @@ function ModelView( ) {
       }
 
       var boscApis = new BoscApis(BoscApis.testAuthId);
-      boscApis.mock();
       boscApis.postModel(formData, success, error, complete);
 
     }
@@ -141,6 +136,13 @@ function ModelView( ) {
 
     return false;
   });
+
+  // Temp
+  // When the preview image is selected, launch the viewer
+  $(".modelInfo .modelPreview").click( function () {
+    if(thisModelView.model)
+      window.location.href = "modelViewer.html?modelId=" + thisModelView.model._id;
+  })
 
 }
 

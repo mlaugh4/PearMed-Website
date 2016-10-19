@@ -1,10 +1,7 @@
 /*
 	Used to communicate with the Bosc APIs
 */
-function BoscApis(authId) {
-	if (!BoscSettings.authId) {
-		console.log("Poop")
-	}
+function BoscApis() {
 	console.log(BoscSettings.authId)
 
 	// Executes an ajax call
@@ -17,7 +14,7 @@ function BoscApis(authId) {
 	}
 
 	// Get all of the models linked to this user
-	this.getModels = function (success, error) {
+	this.getModels = function (success, error, complete) {
 		this.callApi({
 			type: "GET",
 			url: BoscSettings.apiRoot + "organModels",

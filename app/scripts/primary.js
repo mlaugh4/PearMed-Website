@@ -18,7 +18,7 @@ $('#loginForm').keypress(function (e) {
 });
 
 function Login() {
-    Cookies.set('authId',$('.loginForm').val());
+    BoscSettings.setAuthId( $('#loginForm').val() );
     window.location.href = 'index.html';
 }
 
@@ -39,8 +39,7 @@ $(window).on('load', function(){
 
 // Logout button
 $('.logout').click( function(){
-    Cookies.remove('authId')
-    window.location.href = 'login.html';
+    BoscSettings.setAuthId( null );
 });
 
 // Triggered when the files list loads
