@@ -15,7 +15,6 @@ function ModelsContainer( selector , modelView ) {
 
   var completeCallback = function () {
     $('.loader').hide();
-    $('.loader').trigger('loadedList');
     if ( el.children().length > 6 )
         $('#searchBox').show();
     else

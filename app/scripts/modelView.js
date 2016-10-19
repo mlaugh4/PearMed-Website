@@ -102,12 +102,15 @@ function ModelView( ) {
       // Because we are using divs to collect
       // info, we need to addign the values to
       // the textareas so theyre pulling into formdata
-      var name = $('.divForm[name=name]').html()
-      $('.divForm[name=name]').next('.hiddenName').val(name);
-      var shortDesc = $('.divForm[name=shortDesc]').html()
-      $('divForm[name=shortDesc]').next('.hiddenSDec').val(shortDesc);
-      var longDesc = $('.divForm[name=longDesc]').html()
-      $('.divForm[name=longDesc]').next('.hiddenLDesc').val(longDesc);
+      var name = $('.divForm.name').text()
+      $('input.hiddenName').val(name);
+
+      var shortDesc = $('.divForm.shortDesc').text()
+      $('input.hiddenSDesc').val(shortDesc);
+
+      var longDesc = $('.divForm.longDesc').text()
+      $('input.hiddenLDesc').val(longDesc);
+
       //grab all form data
       var formData = new FormData($(this)[0]);
 
