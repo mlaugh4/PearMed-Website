@@ -52,7 +52,7 @@ function ModelsContainer( selector , modelView ) {
     $(selector + ' > *').css('background-color','white')
     $(this).css('background-color','rgb(241,241,241)')
     thisModel = $(this).data('modelData')
-    modelView.update( thisModel )
+    modelView.load( thisModel )
   });
 
 };

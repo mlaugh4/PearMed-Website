@@ -9,6 +9,11 @@ $(window).on('load', function(){
 
     var modelsContainer = new ModelsContainer( '.files-list', modelView );
 
+    // When metadata is updated, update the files list
+    modelView.onCreateModel = modelView.onUpdateModel = function( model ) {
+        modelsContainer.update()
+    }
+
     modelsContainer.update();
 
 });
