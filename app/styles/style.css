@@ -22,23 +22,22 @@ a {
   text-decoration: none;
   cursor: pointer; }
 
-#logo {
+.menu {
   position: absolute;
-  left: 10px;
-  z-index: -1; }
-  #logo img {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  .menu #logo img {
     width: 100px; }
-
-#moreInfo {
-  position: absolute;
-  transform: translateY(400%);
-  left: 52px;
-  opacity: 0.5;
-  height: 15px;
-  width: auto; }
-
-.tipso_bubble > * {
-  /*margin: 10px */ }
+  .menu #moreInfo {
+    opacity: 0.5;
+    height: 15px;
+    width: auto; }
 
 .tipso_bubble {
   margin-left: 10px; }
@@ -51,15 +50,6 @@ a {
 .hidden {
   display: none; }
 
-/*.editable
- * &:hover
- *   &:after
- *     content: " "
- *     display: inline-block
- *     background: url("../img/edit.svg") no-repeat
- *     background-size: contain
- *     width: 14px
- *     height: 14px */
 .grn {
   color: #AF9E3A; }
 
@@ -82,6 +72,7 @@ a {
   margin: 0 0;
   user-select: none;
   width: 800px;
+  max-height: 600px;
   height: 80%;
   background-color: white;
   box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.22), 0px 24px 24px 0px rgba(0, 0, 0, 0.3);
@@ -116,7 +107,7 @@ a {
     height: 100%; }
 
 .content {
-  padding: 0 30px;
+  /*padding: 0 30px */
   overflow: hidden; }
 
 .lower-container {
@@ -132,7 +123,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  border-bottom: 0.5px solid #a1a1a1; }
+  border-bottom: 0.5px solid #f1f1f1; }
   .full-width .backarrow {
     position: absolute;
     left: 0px;
@@ -143,9 +134,8 @@ a {
 
 .half-width {
   position: relative;
-  width: 50%;
-  height: calc(100% - 107px);
-  padding: 20px;
+  height: 100%;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column; }
   .half-width svg:first-child {
@@ -157,8 +147,14 @@ a {
     border: 1px solid #a1a1a1; }
     .half-width input[type=search]:focus svg {
       opacity: 0; }
-  .half-width iframe {
-    /*display: none */ }
+
+.left {
+  width: 40%;
+  border-right: 1px solid #f1f1f1;
+  padding-right: 0px; }
+
+.right {
+  width: 60%; }
 
 input {
   width: 100%;
@@ -173,6 +169,9 @@ input {
     font-weight: 400;
     font-size: 1.5em; }
 
+#searchBox {
+  display: none; }
+
 .search-icon {
   position: absolute;
   top: 50%;
@@ -180,17 +179,15 @@ input {
   transform: translateY(-50%);
   fill: #a1a1a1; }
 
-.half-width:nth-child(2) svg {
-  fill: #D55D16; }
-
 .files-list {
   overflow-y: scroll;
-  overflow-x: visible; }
+  height: 100%; }
   .files-list .file {
     cursor: pointer;
     position: relative;
-    padding: 10px 0;
-    border-bottom: 0.5px solid #a1a1a1; }
+    padding: 5px;
+    border-bottom: 0.5px solid #f1f1f1;
+    border-radius: 3px 0 0 3px; }
     .files-list .file:hover > * {
       color: #AF9E3A; }
     .files-list .file:hover > .arrow {
@@ -199,17 +196,9 @@ input {
       margin-bottom: 5px; }
     .files-list .file .secondary, .files-list .file label {
       position: absolute;
-      right: 0px;
+      right: 5px;
       bottom: 10px; }
 
-/*    .arrow
- * position: absolute
- * right: -20px
- * top: 50%
- * transform: translateY (-50%)
- * display: none
- * cursor: pointer
- * z-index: 1000 */
 .issue-title {
   font-weight: bold;
   font-size: 0.8em; }
@@ -265,16 +254,16 @@ input {
     color: white; }
 
 .secondary-btn, input[type=submit] {
-  background-color: #a1a1a1;
+  background-color: rgba(33, 33, 33, 0.05);
   cursor: pointer;
   padding: 5px 10px;
   font-size: 0.8em;
-  color: white;
+  color: #4a4a4a;
   border-radius: 2px;
   margin-top: 10px;
   width: fit-content; }
   .secondary-btn:hover, input[type=submit]:hover {
-    background-color: #AF9E3A; }
+    background-color: #a1a1a1; }
 
 #updateModelForm {
   display: none; }
@@ -314,7 +303,7 @@ input {
   .modelInfo > .editable:hover:after {
     content: " ";
     position: absolute;
-    right: 10px;
+    right: 20px;
     transform: translateY(-50%);
     top: 50%;
     background: url("../img/edit.svg") no-repeat;
@@ -338,5 +327,43 @@ input {
   .loader svg path,
   .loader svg rect {
     fill: #a1a1a1; }
+
+.circle {
+  position: absolute;
+  right: 25px;
+  top: -7px;
+  background-color: #AF9E3A;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  padding-left: 8px;
+  cursor: pointer;
+  transition: 0.3s all; }
+  .circle:hover {
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24); }
+  .circle:active {
+    box-shadow: 0px 0px 0px;
+    background-color: #a1a1a1; }
+
+.plus.icon {
+  color: #000; }
+
+.plus.icon:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background-color: white; }
+
+.plus.icon:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background-color: white;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 /*# sourceMappingURL=style.css.map */

@@ -23,12 +23,13 @@ function BoscApis(authId) {
 			url: BoscSettings.apiRoot + "organModels",
 			dataType: "json",
 			success: success,
-			error, error,
+			error: error,
+			complete: complete,
 		});
 	}
 
 	// Upload models to the server
-	this.postModel = function (data, success, error) {
+	this.postModel = function (data, success, error, complete) {
 		this.callApi({
 			type: 'POST',
 			url: BoscSettings.apiRoot + "organModels",
@@ -39,6 +40,19 @@ function BoscApis(authId) {
 			processData: false,
 			success: success,
 			error: error,
+			complete: complete,
+		});
+	}
+
+	// Update model on server
+	this.putModel = function (data, success, error, complete) {
+		this.callApi({
+			type: 'PUT',
+			url: BoscSettings.apiRoot + "organModels/" + data._id + "/",
+			data: data,
+			success: success,
+			error: error,
+			complete: complete,
 		});
 	}
 }
@@ -52,14 +66,16 @@ BoscApis.prototype.mock = function () {
 		setTimeout(callback, 1000);
 	}
 
-	this.getModels = function (success, error) {
+	this.getModels = function (success, error, complete) {
 		callApi(function () {
-			$('.loader').hide();
+			$('.loader').trigger('loadedList')
+			$('.loader').hide( function(){});
 			success(thisObj.testModelData);
+			console.log($(this))
 		});
 	}
 
-	this.postModel = function (data, success, error) {
+	this.postModel = function (data, success, error, complete) {
 		callApi(function () {
 			thisObj.testModelData.unshift(
 					{
@@ -72,6 +88,20 @@ BoscApis.prototype.mock = function () {
 						"__v": 0
 					}
 				);
+			success(thisObj.testModelData[0]);
+		})
+	}
+
+	this.putModel = function (data, success, error, complete) {
+		callApi(function () {
+			thisObj.testModelData.forEach( function ( model ) {
+				if( model._id == data._id ) {
+					model.name = data.name;
+					model.shortDesc = data.shortDesc;
+					model.longDesc = data.longDesc;
+				}
+			});
+
 			success(data);
 		})
 	}
@@ -100,7 +130,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4ee",
 		"name": "Mark Winslow Laughery",
 		"shortDesc": null,
-		"longDescription": null,
+		"longDesc": null,
 		"lastAccessed": "2016-10-07T02:27:14.757Z",
 		"ownerId": BoscSettings.authId,
 		"__v": 0
@@ -109,7 +139,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4ef",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
-		"longDescription": "This is a test long description",
+		"longDesc": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
 		"ownerId": BoscSettings.authId,
 		"__v": 0
@@ -118,7 +148,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4eb",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
-		"longDescription": "This is a test long description",
+		"longDesc": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
 		"ownerId": BoscSettings.authId,
 		"__v": 0
@@ -127,7 +157,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4ec",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
-		"longDescription": "This is a test long description",
+		"longDesc": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
 		"ownerId": BoscSettings.authId,
 		"__v": 0
@@ -136,7 +166,7 @@ BoscApis.prototype.testModelData = [
 		"_id": "57f6b8b03c9fa30a471bf4ed",
 		"name": "Test Organ",
 		"shortDesc": "Test short description",
-		"longDescription": "This is a test long description",
+		"longDesc": "This is a test long description",
 		"lastAccessed": "2016-10-05T21:27:14.757Z",
 		"ownerId": BoscSettings.authId,
 		"__v": 0

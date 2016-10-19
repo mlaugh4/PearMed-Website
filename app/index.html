@@ -8,43 +8,41 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="scripts/boscSettings.js"></script>
   <script src="scripts/boscApis.js"></script>
-  <script src="scripts/app.js"></script>
+  <script src="scripts/modelView.js"></script>
+  <script src="scripts/modelsContainer.js"></script>
+  <script src="scripts/index.js"></script>
   <script src="scripts/tipso.min.js"></script>
-
   <script src="http://www.threejs.org/build/three.min.js"></script>
   <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
   <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
   <script src="scripts/3dSphere.js"></script>
   <script src="scripts/js.cookie.js"></script>
 
-  <script>
-    $(window).on('load', function(){
-      if( !Cookies.get('authId') ) {
-        window.location.href = 'login.html';
-      }
-    });
-  </script>
-
 </head>
 
 <body>
-  <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
-  <div class="secondary-btn logout" style="position:absolute;left:29px;top:63%;transform:translateY(-50%);">Logout</div>
-
-  <div id="logo"><img src="img/bosc_logo.png" alt=""></div>
+  <div class="menu">
+    <div id="logo"><img src="img/bosc_logo.png"></div>
+    <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
+    <div class="secondary-btn logout">Logout</div>
+        <a class="primary-btn download">Download Bosc App</a>
+  </div>
 
   <div class="shell">
     <div class="content">
-      <div class="full-width">
+<!--       <div class="full-width">
         <div class="primary-btn" id="selectModelsToLoad">Import model files</div>
         <a class="primary-btn download">Download Bosc App</a>
-      </div>
+      </div> -->
       <div class="lower-container">
-        <div class="half-width">
-          <div class="title-text grn">
+        <div class="half-width left">
+          <div class="title-text grn" style="position:relative">
             Models
+            <div class="circle" id="selectModelsToLoad">
+              <div class="plus icon"></div>
+            </div>
           </div>
-          <div>
+          <div id="searchBox">
             <form style="position:relative">
               <input type="search" id="fileSearch" placeholder="Search recently opened files">
               <svg class="search-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +85,7 @@
               Welcome to Bosc!
             </div>
             <div class="secondary">Upload a new model or select one from the left to view it's details.</div>
-            <img src="img/pearheart.png" alt="">
+            <img src="img/pearheart.png" style="opacity:.5">
          </div>
          </div>
 
@@ -105,16 +103,16 @@
              <label for="name">Long description</label>
              <div class="divForm long" contenteditable="true" name="longDesc"></div>
 
-            <input id="hiddenName" name="name"></input>
-            <input type='file' class="primary-btn" name="modelFile" id="modelChooser" style="display:none" multiple>
-            <input id="hiddenSDesc" name="shortDesc"></input>
-            <input id="hiddenLDesc" name="longDesc"></input>
+            <input class="hiddenName" name="name"></input>
+            <input type='file' class="primary-btn" name="modelFile" id="modelChooser" style="display:none" accept=".obj, .stl" multiple>
+            <input class="hiddenSDesc" name="shortDesc"></input>
+            <input class="hiddenLDesc" name="longDesc"></input>
 
              <input type="submit" value="Save" />
          </form>
 
          <!-- This shows up when they click on a model on the left -->
-         <div class="modelInfo">
+         <form class="modelInfo">
             <div class="title-text name org editable" contenteditable="true">Model Title</div>
             <!-- <label for="shortDesc">Short description</label> -->
             <div class="issue-title editable" contenteditable="true">Short description</div>
@@ -122,9 +120,15 @@
             <div class="description editable" contenteditable="true" style="flex-grow:2">
               No description available
             </div>
+            <div style="display:none">
+              <input class="hiddenName" name="name"></input>
+              <input class="hiddenSDesc" name="shortDesc"></input>
+              <input class="hiddenLDesc" name="longDesc"></input>
+            </div>
             <img src="img/preview.png" style="height:60%;margin:0 auto" alt="">
-            <div class="saveButton secondary-btn">Save</div>
-         </div>
+            <!-- <div class="saveButton secondary-btn">Save</div> -->
+            <input type="submit" value="Save" class="saveButton">
+         </form>
        </div>
      </div>
 

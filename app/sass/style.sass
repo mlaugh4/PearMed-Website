@@ -29,24 +29,25 @@ a
   text-decoration: none
   cursor: pointer
 
-
-#logo
+.menu
   position: absolute
-  left: 10px
-  z-index: -1
-  img
-    width: 100px
+  top: 50%
+  transform: translateY(-50%)
+  left: 1vw
+  height: 300px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  #logo
+    img
+      width: 100px
+  #moreInfo
+    opacity: .5
+    height: 15px
+    width: auto
 
-#moreInfo
-  position: absolute
-  transform: translateY(400%)
-  left: 52px
-  opacity: .5
-  height: 15px
-  width: auto
 
-.tipso_bubble > *
-  /*margin: 10px*/
 .tipso_bubble
   margin-left: 10px
 
@@ -57,16 +58,6 @@ a
 
 .hidden
   display: none
-
-/*.editable
-  &:hover
-    &:after
-      content: " "
-      display: inline-block
-      background: url("../img/edit.svg") no-repeat
-      background-size: contain
-      width: 14px
-      height: 14px*/
 
 .grn
   color: $green-color
@@ -90,6 +81,7 @@ a
   margin: 0 0
   user-select: none
   width: 800px
+  max-height: 600px
   height: 80%
   background-color: white
   box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.22), 0px 24px 24px 0px rgba(0,0,0,0.30)
@@ -125,7 +117,7 @@ a
     height: 100%
 
 .content
-  padding: 0 30px
+  /*padding: 0 30px*/
   overflow: hidden
 
 .lower-container
@@ -141,7 +133,7 @@ a
   flex-direction: row
   align-items: center
   justify-content: flex-end
-  border-bottom: .5px solid $sec-color
+  border-bottom: .5px solid $ter-color
   .backarrow
     position: absolute
     left: 0px
@@ -151,13 +143,10 @@ a
     cursor: pointer
     &:hover
 
-
-
 .half-width
   position: relative
-  width: 50%
-  height: calc(100% - 107px)
-  padding: 20px
+  height: 100%
+  padding: 30px 20px
   display: flex
   flex-direction: column
   svg:first-child
@@ -169,8 +158,15 @@ a
     border: 1px solid $sec-color
     &:focus svg
       opacity: 0
-  iframe
-    /*display: none*/
+
+.left
+  width: 40%
+  border-right: 1px solid $ter-color
+  padding-right: 0px
+.right
+  width: 60%
+
+
 
 input
   width: 100%
@@ -187,6 +183,8 @@ input
   &[type=submit]
     @extend .secondary-btn
 
+#searchBox
+  display: none
 .search-icon
   position: absolute
   top: 50%
@@ -197,14 +195,10 @@ input
 label
   @extend .secondary
 
-.half-width:nth-child(2)
-  svg
-    fill: $orange-color
-
 
 .files-list
   overflow-y: scroll
-  overflow-x: visible
+  height: 100%
   .file
     &:hover > *
       color: $green-color
@@ -212,22 +206,15 @@ label
       display: block
     cursor: pointer
     position: relative
-    padding: 10px 0
-    border-bottom: .5px solid $sec-color
+    padding: 5px
+    border-bottom: .5px solid $ter-color
+    border-radius: 3px 0 0 3px
     .name
       margin-bottom: 5px
     .secondary
       position: absolute
-      right: 0px
+      right: 5px
       bottom: 10px
-/*    .arrow
-      position: absolute
-      right: -20px
-      top: 50%
-      transform: translateY (-50%)
-      display: none
-      cursor: pointer
-      z-index: 1000*/
 
 .issue-title
   font-weight: bold
@@ -286,16 +273,16 @@ label
     color: white
 
 .secondary-btn
-  background-color: $sec-color
+  background-color: rgba(33,33,33,.05)
   cursor: pointer
   padding: 5px 10px
   font-size: .8em
-  color: white
+  color: $pri-color
   border-radius: 2px
   margin-top: 10px
   width: fit-content
   &:hover
-    background-color: $green-color
+    background-color: $sec-color
 
 #updateModelForm
   display: none
@@ -335,7 +322,7 @@ label
     &:after
       content: " "
       position: absolute
-      right: 10px
+      right: 20px
       transform: translateY(-50%)
       top: 50%
       background: url("../img/edit.svg") no-repeat
@@ -361,4 +348,45 @@ label
   svg path,
   svg rect
     fill: $sec-color
+
+.circle
+  position: absolute
+  right: 25px
+  top: -7px
+  background-color: $green-color
+  width: 31px
+  height: 31px
+  display: flex
+  align-items: center
+  border-radius: 100%
+  padding-left: 8px
+  cursor: pointer
+  transition: .3s all
+  &:hover
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24)
+  &:active
+    box-shadow: 0px 0px 0px
+    background-color: $sec-color
+
+.plus.icon
+  color: #000
+
+.plus.icon:before
+  content: ''
+  position: absolute
+  width: 15px
+  height: 1px
+  background-color: white
+
+
+.plus.icon:after
+  content: ''
+  position: absolute
+  width: 15px
+  height: 1px
+  background-color: white
+  -webkit-transform: rotate(90deg)
+  transform: rotate(90deg)
+
+
 
