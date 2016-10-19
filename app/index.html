@@ -8,22 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="scripts/boscSettings.js"></script>
   <script src="scripts/boscApis.js"></script>
-  <script src="scripts/app.js"></script>
+  <script src="scripts/modelView.js"></script>
+  <script src="scripts/modelsContainer.js"></script>
+  <script src="scripts/index.js"></script>
   <script src="scripts/tipso.min.js"></script>
-
   <script src="http://www.threejs.org/build/three.min.js"></script>
   <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
   <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
   <script src="scripts/3dSphere.js"></script>
   <script src="scripts/js.cookie.js"></script>
-
-  <script>
-    $(window).on('load', function(){
-      if( !Cookies.get('authId') ) {
-        window.location.href = 'login.html';
-      }
-    });
-  </script>
 
 </head>
 

@@ -51,25 +51,6 @@ $( '.loader' ).on('loadedList', function() {
         $('#searchBox').hide();
 });
 
-$('.files-list').on('click','.file', function(){
-	$('.files-list > *').css('background-color','white')
-	$(this).css('background-color','rgb(241,241,241)')
-	thisModel = $(this).data('modelData')
-	if (thisModel) {
-		$('.right').fadeOut(500, function() {
-			$('.welcome').hide();
-			$('.modelInfo').css('display','flex')
-		$('.modelInfo > .title-text').html(thisModel.name)
-		$('.modelInfo > .issue-title').html(thisModel.shortDesc)
-		$('.modelInfo > .description').html(thisModel.longDesc)
-		$('.right').fadeIn(500, function(){
-            $(this).trigger('justFaded')
-        })
-		})
-
-	}
-});
-
 // Show the save button when someone edits metadata in the file detail
 $('.right').on('justFaded', function(){
     $(this).bind("DOMSubtreeModified", function(){
