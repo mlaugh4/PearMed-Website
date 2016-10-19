@@ -1,6 +1,5 @@
 function ModelsContainer( selector , modelView ) {
 
-  var thisModelsContainer = this;
   var el = $( selector )
 
   var successCallback = function (models) {
@@ -17,7 +16,7 @@ function ModelsContainer( selector , modelView ) {
   var completeCallback = function () {
     $('.loader').hide();
     $('.loader').trigger('loadedList');
-    if ( thisModelsContainer.el.children().length > 6 )
+    if ( el.children().length > 6 )
         $('#searchBox').show();
     else
         $('#searchBox').hide();
