@@ -57,16 +57,12 @@ function BoscApis() {
 BoscApis.prototype.mock = function () {
 	var thisObj = this;
 
-	$('.loader').show()
-
 	var callApi = function (callback) {
 		setTimeout(callback, 1000);
 	}
 
 	this.getModels = function (success, error, complete) {
 		callApi(function () {
-			$('.loader').trigger('loadedList')
-			$('.loader').hide( function(){});
 			success(thisObj.testModelData);
 			console.log($(this))
 		});

@@ -42,14 +42,6 @@ $('.logout').click( function(){
     BoscSettings.setAuthId( null );
 });
 
-// Triggered when the files list loads
-$( '.loader' ).on('loadedList', function() {
-	if ( $('.files-list').children().length > 6) {
-        $('#searchBox').show();
-    } else
-        $('#searchBox').hide();
-});
-
 
 // Hide search icon on focus
 $('input[type=search]').focus( function() {
