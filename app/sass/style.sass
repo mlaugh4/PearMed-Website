@@ -15,6 +15,7 @@ body
   align-items: center
   background: url("../img/squared_metal.png")
   -webkit-font-smoothing: antialiased
+  font-family: $font-stack
 
 html
   overflow-y: scroll
@@ -29,12 +30,12 @@ a
   text-decoration: none
   cursor: pointer
 
-.menu
+.leftMenu
   position: absolute
   top: 50%
   transform: translateY(-50%)
   left: 1vw
-  height: 300px
+  height: 100px
   display: flex
   flex-direction: column
   align-items: center
@@ -47,6 +48,13 @@ a
     height: 15px
     width: auto
 
+.bottomMenu
+  position: absolute
+  bottom: 20px
+  display: flex
+  flex-direction: row
+  width: 230px
+  justify-content: space-between
 
 .tipso_bubble
   margin-left: 10px
@@ -75,6 +83,7 @@ a
 
 .shell
   font-family: $font-stack
+  position: relative
   font-size: 14px
   color: $pri-color
   font-weight: lighter
@@ -102,6 +111,8 @@ a
   top: 29px
   cursor: pointer
 
+#loginForm
+  padding-right: 30px
 
 .header
   width: 100%
@@ -124,26 +135,8 @@ a
   display: flex
   flex-direction: row
 
-.full-width
-  position: relative
-  width: 100%
-  height: 77px
-  padding: 20px 0
-  display: flex
-  flex-direction: row
-  align-items: center
-  justify-content: flex-end
-  border-bottom: .5px solid $ter-color
-  .backarrow
-    position: absolute
-    left: 0px
-    width: 30px
-    transform: translateY(-50%)
-    top: 50%
-    cursor: pointer
-    &:hover
-
 .half-width
+  overflow:hidden
   position: relative
   height: 100%
   padding: 30px 20px
