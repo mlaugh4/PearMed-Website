@@ -190,7 +190,7 @@ label
 
 
 .files-list
-  overflow-y: scroll
+  overflow-y: auto
   height: 100%
   .file
     &:hover > *
@@ -250,6 +250,7 @@ label
 
 .primary-btn
   cursor: pointer
+  border: 0px
   font-weight: bold
   text-transform: uppercase
   font-size: 10px
@@ -304,10 +305,9 @@ label
   .title-text
     margin-bottom: 10px
   .saveButton
-    position: absolute
     display: none
-    bottom: 0px
-    right: 10px
+    margin-top: 0px
+
 .modelInfo > .editable
   margin-bottom: 20px
   position: relative

@@ -175,7 +175,7 @@ input {
   fill: #a1a1a1; }
 
 .files-list {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%; }
   .files-list .file {
     cursor: pointer;
@@ -233,6 +233,7 @@ input {
 
 .primary-btn {
   cursor: pointer;
+  border: 0px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 10px;
@@ -287,10 +288,8 @@ input {
   .modelInfo .title-text {
     margin-bottom: 10px; }
   .modelInfo .saveButton {
-    position: absolute;
     display: none;
-    bottom: 0px;
-    right: 10px; }
+    margin-top: 0px; }
 
 .modelInfo > .editable {
   margin-bottom: 20px;
