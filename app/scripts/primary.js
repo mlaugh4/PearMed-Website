@@ -19,7 +19,26 @@ $('#loginForm').keypress(function (e) {
 
 function Login() {
     BoscSettings.setAuthId( $('#loginForm').val() );
-    window.location.href = 'index.html';
+
+    var successCallback = function () {
+			window.location.href = 'index.html';
+    }
+
+		var errorCallback = function (response, ajaxOptions, thrownError) {
+			console.log(response.status);
+
+			if(response.status == 401)
+				alert("Oops. You are not authorized.");
+			else
+				alert("Damn son!");
+		}
+
+		var completeCallback = function () {
+			
+		}
+
+    var boscApis = new BoscApis();
+    boscApis.getUserInfo(successCallback, errorCallback, completeCallback);
 }
 
 // Fading in login button

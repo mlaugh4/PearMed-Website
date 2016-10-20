@@ -14,6 +14,18 @@ function BoscApis() {
 	}
 
 	// Get all of the models linked to this user
+	this.getUserInfo = function (success, error, complete) {
+		this.callApi({
+			type: "GET",
+			url: BoscSettings.apiRoot + "users/me",
+			dataType: "json",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
+
+	// Get all of the models linked to this user
 	this.getModels = function (success, error, complete) {
 		this.callApi({
 			type: "GET",
@@ -59,6 +71,16 @@ BoscApis.prototype.mock = function () {
 
 	var callApi = function (callback) {
 		setTimeout(callback, 1000);
+	}
+
+	this.getUserInfo = function (success, error, complete) {
+		callApi(function () {
+			success({
+				'name' : 'Test Account',
+				'authId': BoscSettings.authId,
+			});
+			console.log($(this))
+		});
 	}
 
 	this.getModels = function (success, error, complete) {
