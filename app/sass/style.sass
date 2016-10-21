@@ -120,6 +120,10 @@ a
   margin-top: 5px
   background-color: #FFCCCC
   border-radius: 2px
+  display: none
+  a:hover
+    text-decoration: underline
+
 
 .header
   width: 100%
@@ -216,6 +220,11 @@ label
       right: 5px
       bottom: 10px
 
+.empty-files-list
+  display: none
+  position: absolute
+  top: 70px
+
 .issue-title
   font-weight: bold
   font-size: .8em
@@ -236,8 +245,7 @@ label
 
 .description
   margin-bottom: 20px
-  flex-grow: 2
-  &
+  height: 200px
 
 
 .meta-holder
@@ -314,11 +322,14 @@ label
   .saveButton
     display: none
     margin-top: 0px
+    background-color: $ter-color
 
 .modelInfo > .editable
   margin-bottom: 20px
   position: relative
+  border: 1px solid transparent
   &:hover
+    border: 1px dotted $ter-color
     &:after
       content: " "
       position: absolute

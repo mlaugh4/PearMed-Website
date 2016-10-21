@@ -111,7 +111,10 @@ a {
   padding: 5px;
   margin-top: 5px;
   background-color: #FFCCCC;
-  border-radius: 2px; }
+  border-radius: 2px;
+  display: none; }
+  .errorText a:hover {
+    text-decoration: underline; }
 
 .header {
   width: 100%;
@@ -201,6 +204,11 @@ input {
       right: 5px;
       bottom: 10px; }
 
+.empty-files-list {
+  display: none;
+  position: absolute;
+  top: 70px; }
+
 .issue-title {
   font-weight: bold;
   font-size: 0.8em; }
@@ -221,7 +229,7 @@ input {
 
 .description {
   margin-bottom: 20px;
-  flex-grow: 2; }
+  height: 200px; }
 
 .meta-holder {
   display: flex;
@@ -296,21 +304,25 @@ input {
     margin-bottom: 10px; }
   .modelInfo .saveButton {
     display: none;
-    margin-top: 0px; }
+    margin-top: 0px;
+    background-color: #f1f1f1; }
 
 .modelInfo > .editable {
   margin-bottom: 20px;
-  position: relative; }
-  .modelInfo > .editable:hover:after {
-    content: " ";
-    position: absolute;
-    right: 20px;
-    transform: translateY(-50%);
-    top: 50%;
-    background: url("../img/edit.svg") no-repeat;
-    background-size: contain;
-    width: 14px;
-    height: 14px; }
+  position: relative;
+  border: 1px solid transparent; }
+  .modelInfo > .editable:hover {
+    border: 1px dotted #f1f1f1; }
+    .modelInfo > .editable:hover:after {
+      content: " ";
+      position: absolute;
+      right: 20px;
+      transform: translateY(-50%);
+      top: 50%;
+      background: url("../img/edit.svg") no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 14px; }
   .modelInfo > .editable:focus {
     transition: 0.3s background-color;
     background-color: #f1f1f1; }

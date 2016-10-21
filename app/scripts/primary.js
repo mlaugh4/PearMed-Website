@@ -17,24 +17,33 @@ $('#loginForm').keypress(function (e) {
   }
 });
 
+
+
+// Login logic with error messages
 function Login() {
-    BoscSettings.setAuthId( $('#loginForm').val() );
+    var authId = $('#loginForm').val()
+    BoscSettings.authId = authId
+
 
     var successCallback = function () {
-			window.location.href = 'index.html';
+		BoscSettings.setAuthId( authId );
+        window.location.href = 'index.html';
     }
 
 		var errorCallback = function (response, ajaxOptions, thrownError) {
 			console.log(response.status);
+            $('#loginForm').blur();
 
-			if(response.status == 401)
-				alert("Oops. You are not authorized.");
-			else
-				alert("Damn son!");
+			if ( response.status == 401 ) {
+				$('.errorText').text("Oops. You are not authorized. Please try again.").slideDown('400')
+            }
+			else {
+                $('.errorText').html("Uh oh.. Something's not right here. <a href='mailto:team@pearmedical.com'>Contact us.</a>").slideDown('400')
+            }
 		}
 
 		var completeCallback = function () {
-			
+
 		}
 
     var boscApis = new BoscApis();

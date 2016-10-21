@@ -37,7 +37,6 @@ function ModelView( ) {
     }
 
     var complete = function () {
-      // $(".loading").hide();
       console.log("complete")
     }
 
@@ -51,6 +50,7 @@ function ModelView( ) {
     var success = function ( model ) {
       console.log("success")
       thisModelView.load(model);
+      $('.empty-files-list').fadeOut()
 
         if ( thisModelView.onCreateModel != null )
           thisModelView.onCreateModel( model );
@@ -62,7 +62,6 @@ function ModelView( ) {
       }
 
       var complete = function () {
-        // $(".loading").hide();
         console.log("complete")
       }
 
@@ -130,6 +129,7 @@ function ModelView( ) {
     event.preventDefault();
 
     var updatedData = {
+      _id:        thisModelView.model._id,
       name:       $('.name').html(),
       shortDesc:  $('.issue-title').html(),
       longDesc:   $('.description').html(),

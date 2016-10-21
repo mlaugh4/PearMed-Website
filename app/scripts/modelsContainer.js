@@ -19,6 +19,9 @@ function ModelsContainer( selector , modelView ) {
         $('#searchBox').show();
     else
         $('#searchBox').hide();
+
+    if( el.children().length == 0 )
+      $('.empty-files-list').fadeIn()
   }
 
   var callGetModelsApi = function() {
