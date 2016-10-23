@@ -11,7 +11,7 @@ $(window).on("load", function () {
 		"<a-assets>" +
 			"<a-asset-item id='modelObj' src='" + BoscSettings.apiRoot  + "organModels/" + modelId + "/obj'></a-asset-item>" +
 		"</a-assets>" +
-		"<a-entity obj-model='obj: #modelObj;' position='-1 0.5 1' rotation='0 45 0' width='1' height='1' depth='1'  color='#4CC3D9'></a-entity>"
+		"<a-entity id='target' obj-model='obj: #modelObj;' position='-1 0 1' rotation='0 45 0' width='1' height='1' depth='1'  color='#4CC3D9'></a-entity>"
 	);
 });
 

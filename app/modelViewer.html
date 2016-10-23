@@ -5,19 +5,31 @@
     <title>Bosc Model Viewer</title>
     <meta name="description" content="Bosc Model Viewer">
 
+
     <script src="scripts/aframe-v0.3.2.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/js.cookie.js"></script>
     <script src="scripts/boscSettings.js"></script>
     <script src="scripts/boscApis.js"></script>
 	  <script src="scripts/modelViewer.js"></script>
+    <script src="scripts/aframe-orbit-controls-component.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-entity position="0 0 3.8">
+      <a-sky color="#2196F3"></a-sky>
+
+      <a-camera orbit-controls target="#target" distance="1" look-controls-enabled=false wasd-controls-enabled=false position="0 0 0" ></a-camera>
+
+      <!-- Lights -->
+      <!-- <a-light type="spot" color="#fff" position="5 5 3" look-at="a-entity"></a-light> -->
+      <a-light type="point" color="#AAA" position="-5 5 0" look-at="a-entity"></a-light>
+      <a-light type="point" color="#AAA" position="5 5 0" look-at="a-entity"></a-light>
+
+      <!-- <a-entity position="-3 0 0" rotation="0 -90 0">
         <a-camera></a-camera>
-      </a-entity>
+      </a-entity> -->
+
+      <a-plane rotation="-90 0 0" position="2 -2 -2" color="#eee" width="60" height="50" depth="2"></a-plane>
     </a-scene>
   </body>
 </html>
