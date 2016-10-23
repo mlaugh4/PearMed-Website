@@ -15,6 +15,7 @@ function ModelView( ) {
         $('.modelInfo > .title-text').html(model.name)
         $('.modelInfo > .issue-title').html(model.shortDesc)
         $('.modelInfo > .description').html(model.longDesc)
+        $('.modelInfo > img.modelPreview').attr('src', BoscSettings.apiRoot + 'organModels/' + model._id + '/png?authId=' + BoscSettings.authId);
         $('.right').fadeIn(500, function(){
           $(this).trigger('justFaded')
         })
