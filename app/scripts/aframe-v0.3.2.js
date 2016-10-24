@@ -58416,6 +58416,10 @@ module.exports.Component = registerComponent('obj-model', {
           self.model = objModel;
           el.setObject3D('mesh', objModel);
           el.emit('model-loaded', {format: 'obj', model: objModel});
+        }, function ( e ) {
+          el.emit('model-progress', { loaded: e.loaded, total: e.total });
+        }, function ( e ) {
+          el.emit('model-error', e);
         });
       });
       return;
@@ -58436,6 +58440,10 @@ module.exports.Component = registerComponent('obj-model', {
       self.model = objModel;
       el.setObject3D('mesh', objModel);
       el.emit('model-loaded', {format: 'obj', model: objModel});
+    }, function ( e ) {
+      el.emit('model-progress', { loaded: e.loaded, total: e.total });
+    }, function ( e ) {
+      el.emit('model-error', e);
     });
   }
 });

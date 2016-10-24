@@ -6,21 +6,37 @@ $(window).on("load", function () {
 		window.location.href = 'index.html';
 
 	// Add an html element for the model we are going to view
+	objModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId;
 	$("a-scene").append(
-		"<a-assets>" +
-			"<a-asset-item id='modelObj' src='" + BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId + "'></a-asset-item>" +
-		"</a-assets>" +
-		"<a-entity cursor-listener id='target' obj-model='obj: #modelObj;' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9'>" +
-			"<a-animation begin='zoom' easing='ease-in-out' attribute='scale' dur='500' from='1 1 1' to='2 2 2' direction='alternate'></a-animation>" +
+
+		"<a-entity cursor-listener id='target' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9'>" +
+			"<a-animation begin='click' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
 		"</a-entity>"
 	);
 
-	// Add orbit controls to the camera
-	// Needs to happen after the obj is added so the orbit controls know what to orbit around
-	$("a-entity[camera]")
-		.attr("target", "#target")
-		.attr("distance", 5)
-		.attr("orbit-controls", "");
+	$("#target").on("model-loaded", function () {
+		// Get the bounds of the model
+		var objModel = $("#target").get(0).object3D;
+		var box = new THREE.Box3().setFromObject( objModel );
+		var size = box.size();
+		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+
+		// Add orbit controls to the camera
+		// Needs to happen after the obj is added so the orbit controls know what to orbit around
+		$("a-entity[camera]")
+			.attr("target", "#target")
+			.attr("distance", maxDimension * 2)
+			.attr("orbit-controls", "");
+	});
+
+	$("#target").on("model-progress", function ( e ) {
+		console.log(e.detail.loaded / e.detail.total);
+	});
+
+	$("#target").on("model-error", function ( e ) {
+		// Error code
+	});
+});
 
 	// $('#target').dblclick( function(){
 	// 	this.emit('zoom');
