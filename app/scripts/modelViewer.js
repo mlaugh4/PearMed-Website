@@ -11,9 +11,30 @@ $(window).on("load", function () {
 		"<a-assets>" +
 			"<a-asset-item id='modelObj' src='" + BoscSettings.apiRoot  + "organModels/" + modelId + "/obj'></a-asset-item>" +
 		"</a-assets>" +
-		"<a-entity id='target' obj-model='obj: #modelObj;' position='-1 0 1' rotation='0 45 0' width='1' height='1' depth='1'  color='#4CC3D9'></a-entity>"
+		"<a-entity cursor-listener id='target' obj-model='obj: #modelObj;' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9'>" +
+			"<a-animation begin='click' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2'></a-animation>" +
+		"</a-entity>"
 	);
 });
+
+
+// Expanding objects
+
+// AFRAME.registerComponent('cursor-listener', {
+//   init: function () {
+//     this.el.addEventListener('click', function () {
+//     	var sze = this.getAttribute('scale')
+//     	console.log(sze)
+//       if ( sze.x == 1 ) {
+//       	console.log("go big")
+//       	this.setAttribute('scale', '1.2 1.2 1.2');
+//       } else {
+//       	console.log('go small')
+//       	this.setAttribute('scale', '1 1 1');
+//       }
+//     });
+//   }
+// });
 
 var getUrlParameter = function getUrlParameter(sParam) {
 	var sPageURL = decodeURIComponent(window.location.search.substring(1)),

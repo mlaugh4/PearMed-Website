@@ -383,4 +383,9 @@ input {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
+[contentEditable=true]:empty:not(:focus):before {
+  content: attr(data-text);
+  font-style: italic;
+  opacity: 0.5; }
+
 /*# sourceMappingURL=style.css.map */

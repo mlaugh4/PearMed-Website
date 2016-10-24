@@ -12,24 +12,27 @@
     <script src="scripts/boscSettings.js"></script>
     <script src="scripts/boscApis.js"></script>
 	  <script src="scripts/modelViewer.js"></script>
-    <script src="scripts/aframe-orbit-controls-component.min.js"></script>
+
   </head>
   <body>
     <a-scene>
       <a-sky color="#2196F3"></a-sky>
 
-      <a-camera orbit-controls target="#target" distance="1" look-controls-enabled=false wasd-controls-enabled=false position="0 0 0" ></a-camera>
-
       <!-- Lights -->
       <!-- <a-light type="spot" color="#fff" position="5 5 3" look-at="a-entity"></a-light> -->
-      <a-light type="point" color="#AAA" position="-5 5 0" look-at="a-entity"></a-light>
-      <a-light type="point" color="#AAA" position="5 5 0" look-at="a-entity"></a-light>
+      <a-light type="ambient" color="#AAA" intensity="0.5" position="-5 5 0" target="a-entity"></a-light>
+      <a-light type="point" color="#AAA" position="5 5 0" target="#target"></a-light>
 
-      <!-- <a-entity position="-3 0 0" rotation="0 -90 0">
-        <a-camera></a-camera>
-      </a-entity> -->
+      <a-entity camera look-controls wasd-controls position="0 0 3" rotation="0 0 0">
+        <a-entity cursor="fuse: false; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02;"
+                    material="color: cyan; shader: flat">
+            <a-animation begin="click" easing="ease-in-out" attribute="scale" fill="none" direction="reverse" from="1 1 1" to="1.2 1.2 1.2" dur="500"></a-animation>
+          </a-entity>
+      </a-entity>
 
-      <a-plane rotation="-90 0 0" position="2 -2 -2" color="#eee" width="60" height="50" depth="2"></a-plane>
+      <a-plane rotation="-90 0 0" position="2 -2 -2" color="#fff" width="60" height="50" depth="2"></a-plane>
     </a-scene>
   </body>
 </html>
