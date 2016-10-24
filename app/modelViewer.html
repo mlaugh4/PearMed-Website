@@ -47,9 +47,9 @@
 
       <a-assets>
           <img id="boscLogo" src="img/bosc_logo.png">
-          <a-asset-item id="bottom-obj" src="/img/bottom.obj"></a-asset-item>
-          <a-asset-item id="bottom-mtl" src="/img/bottom.mtl"></a-asset-item>
-         <!--  <a-asset-item id="bottom" src="/img/bottom.dae"></a-asset-item> -->
+          <!-- <a-asset-item id="bottom" src="/img/bottom.dae"</a-asset-item> -->
+          <a-asset-item id="bObj" src="/img/bottom.obj"</a-asset-item>
+          <a-asset-item id="bMtl" src="/img/bottom.mtl"</a-asset-item>
 
         </a-assets>
 
@@ -57,11 +57,11 @@
       <a-image src="#boscLogo" height="10" width="10" position="0 10 -20" rotation="30 0 0"></a-image>
 
       <!-- Lights -->
-      <a-light type="ambient" color="#ccc" intensity=".2" >
+      <a-light type="ambient" color="#A8A8A8" intensity="1" position="0 10 -5">
     </a-light>
-      <a-light type="spot" color="#fff" intensity="1.0" position="0 -2 5" rotation="0 0 0" penumbra=".5">
+      <a-light type="point" color="#A8A8A8" intensity=".2" position="1 -2 5" rotation="0 0 0" decay ="100" penumbra=".5">
     </a-light>
-      <a-light type="spot" color="#fff" intensity="1.0" position="0 5 -5" rotation="-100 0 0"  penumbra=".5">
+      <a-light type="point" color="#A8A8A8" intensity=".2" position="0 2 -5" rotation="-100 0 0"  decay ="100" penumbra=".1">
     </a-light>
 
       <a-entity camera look-controls-enabled=false wasd-controls-enabled='true' position='0 0 3' rotation="0 0 0">
@@ -74,8 +74,9 @@
           </a-entity>
       </a-entity>
 
-      <!-- <a-collada-model src="#bottom"></a-collada-model> -->
-      <a-obj-model src="#bottom-obj" mtl="#bottom-mtl" position="0 -3 0" scale="1 1 1" color="#0D47A1" roughness="1"></a-obj-model>
+      <!-- <a-collada-model src="#bottom" position="0 -3 0"></a-collada-model> -->
+
+      <a-entity obj-model="obj: #bObj; mtl: #bMtl" position="0 -2 0" ></a-entity>
       <!-- <a-plane rotation="-90 0 0" position="0 -2 0" color="#0D47A1" width="100" height="100" depth="2" roughness=".5" envMap="#target"></a-plane> -->
     </a-scene>
   </body>
