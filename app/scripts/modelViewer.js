@@ -6,13 +6,7 @@ $(window).on("load", function () {
 		window.location.href = 'index.html';
 
 	// Add an html element for the model we are going to view
-	// in addition to the camera with orbit controls
-	//
-	// Note:
-	//		Camera needs to be added here dynamically so the orbit controls don't attempt
-	//		to search for the target before it exists.
 	$("a-scene").append(
-		"<a-camera orbit-controls target='#target' distance='1' look-controls-enabled=false wasd-controls-enabled=false position='0 0 0' ></a-camera>" +
 		"<a-assets>" +
 			"<a-asset-item id='modelObj' src='" + BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId + "'></a-asset-item>" +
 		"</a-assets>" +
@@ -20,6 +14,13 @@ $(window).on("load", function () {
 			"<a-animation begin='click' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
 		"</a-entity>"
 	);
+
+	// Add orbit controls to the camera
+	// Needs to happen after the obj is added so the orbit controls know what to orbit around
+	$("a-entity[camera]")
+		.attr("target", "#target")
+		.attr("distance", 1)
+		.attr("orbit-controls", "");
 });
 
 
