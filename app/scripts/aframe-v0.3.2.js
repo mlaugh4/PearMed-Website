@@ -26112,8 +26112,6 @@ THREE.XHRLoader.prototype = {
 
 		if ( this.responseType !== undefined ) request.responseType = this.responseType;
 		if ( this.withCredentials !== undefined ) request.withCredentials = this.withCredentials;
-		
-		request.setRequestHeader("Bosc-AuthId", BoscSettings.authId);
 
 		request.send( null );
 
