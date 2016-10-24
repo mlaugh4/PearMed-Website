@@ -15,12 +15,20 @@ $(window).on("load", function () {
 		"</a-entity>"
 	);
 
-	// Add orbit controls to the camera
-	// Needs to happen after the obj is added so the orbit controls know what to orbit around
-	$("a-entity[camera]")
-		.attr("target", "#target")
-		.attr("distance", 1)
-		.attr("orbit-controls", "");
+	$("#target").on("model-loaded", function () {
+		// Get the bounds of the model
+		var objModel = $("#target").get(0).object3D;
+		var box = new THREE.Box3().setFromObject( objModel );
+		var size = box.size();
+		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+
+		// Add orbit controls to the camera
+		// Needs to happen after the obj is added so the orbit controls know what to orbit around
+		$("a-entity[camera]")
+			.attr("target", "#target")
+			.attr("distance", maxDimension * 2)
+			.attr("orbit-controls", "");
+		});
 });
 
 
