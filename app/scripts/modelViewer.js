@@ -30,7 +30,15 @@ $(window).on("load", function () {
 	});
 
 	$("#target").on("model-progress", function ( e ) {
-		console.log(e.detail.loaded / e.detail.total);
+		var prog = (e.detail.loaded / e.detail.total);
+		console.log( prog )
+		if ( prog == "1" ) {
+			$('.loading').hide()
+			$('a-scene').show()
+		} else {
+			$('#percent').html(prog + "%")
+		}
+
 	});
 
 	$("#target").on("model-error", function ( e ) {
@@ -42,8 +50,6 @@ $(window).on("load", function () {
 	// 	this.emit('zoom');
 	// 	console.log("emittttt")
 	// });
-
-});
 
 // Expanding objects
 
