@@ -37,6 +37,18 @@ function BoscApis() {
 		});
 	}
 
+	// Get all of the models linked to this user
+	this.getSingleModel = function (modelId, success, error, complete) {
+		this.callApi({
+			type: "GET",
+			url: BoscSettings.apiRoot + "organModels/" + modelId,
+			dataType: "json",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
+
 	// Upload models to the server
 	this.postModel = function (data, success, error, complete) {
 		this.callApi({
@@ -87,6 +99,23 @@ BoscApis.prototype.mock = function () {
 		callApi(function () {
 			success(thisObj.testModelData);
 			console.log($(this))
+		});
+	}
+
+	this.getSingleModel = function (modelId, success, error, complete) {
+		callApi(function () {
+			var model = null;
+			BoscApis.prototype.testModelData.forEach( function (m) {
+				if( m._id == modelId )
+					model = m;
+			})
+
+			if(model)
+				success( model );
+			else
+				error();
+
+			complete();
 		});
 	}
 
