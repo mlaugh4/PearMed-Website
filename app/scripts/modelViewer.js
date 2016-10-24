@@ -10,7 +10,7 @@ $(window).on("load", function () {
 	$("a-scene").append(
 
 		"<a-entity cursor-listener id='target' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9'>" +
-			"<a-animation begin='click' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
+			"<a-animation begin='dblclick' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
 		"</a-entity>"
 	);
 
@@ -44,12 +44,29 @@ $(window).on("load", function () {
 	$("#target").on("model-error", function ( e ) {
 		// Error code
 	});
-});
 
-	// $('#target').dblclick( function(){
-	// 	this.emit('zoom');
-	// 	console.log("emittttt")
-	// });
+	// Emit a double click from the cursor
+	//
+	// NOTE:
+	//		If we emit a "dblclick" event, the scene element gets a hold of it first
+	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
+
+        this.addEventListener("dblclick", function( e ){
+        	if( e.target.nodeName != "CANVAS" )
+        		return;
+
+        	var cursor = document.querySelector("a-entity[cursor]").components.cursor;
+
+            // Double click is outside the player
+            // (note that for some reason you cannot prevent a dblclick on player from bubbling up (??)
+
+            if(cursor.intersectedEl) {
+            	cursor.intersectedEl.emit("dblclick", e);
+            	e.preventDefault();
+            }
+        });
+    });
+});
 
 // Expanding objects
 
