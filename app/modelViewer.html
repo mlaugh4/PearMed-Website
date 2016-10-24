@@ -29,27 +29,43 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        opacity: .5;
       }
       .loading #percent {
         font-size: 35px;
+        opacity:1;
       }
     </style>
 
   </head>
   <div class="loading">
-    <div>loading</div>
+    <div>doing complex and magical things (aka loading)</div>
     <div id="percent"></div>
   </div>
   <body>
-    <a-scene>
+    <a-scene fog="type: exponential; color: #BBDEFB;">
+
+      <a-assets>
+          <img id="boscLogo" src="img/bosc_logo.png">
+          <a-asset-item id="bottom-obj" src="/img/bottom.obj"></a-asset-item>
+          <a-asset-item id="bottom-mtl" src="/img/bottom.mtl"></a-asset-item>
+         <!--  <a-asset-item id="bottom" src="/img/bottom.dae"></a-asset-item> -->
+
+        </a-assets>
+
       <a-sky color="#2196F3"></a-sky>
+      <a-image src="#boscLogo" height="10" width="10" position="0 10 -20" rotation="30 0 0"></a-image>
 
       <!-- Lights -->
-      <!-- <a-light type="spot" color="#fff" position="5 5 3" look-at="a-entity"></a-light> -->
-      <a-light type="ambient" color="#AAA" intensity="0.5" position="-5 5 0" target="a-entity"></a-light>
-      <a-light type="point" color="#AAA" position="5 5 0" target="#target"></a-light>
+      <a-light type="ambient" color="#ccc" intensity=".2" >
+    </a-light>
+      <a-light type="spot" color="#fff" intensity="1.0" position="0 -2 5" rotation="0 0 0" penumbra=".5">
+    </a-light>
+      <a-light type="spot" color="#fff" intensity="1.0" position="0 5 -5" rotation="-100 0 0"  penumbra=".5">
+    </a-light>
 
       <a-entity camera look-controls-enabled=false wasd-controls-enabled='true' position='0 0 3' rotation="0 0 0">
+        <a-plane></a-plane>
         <a-entity cursor="fuse: false; fuseTimeout: 500"
                     position="0 0 -1"
                     geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02;"
@@ -58,7 +74,9 @@
           </a-entity>
       </a-entity>
 
-      <a-plane rotation="-90 0 0" position="2 -2 -2" color="#fff" width="60" height="50" depth="2"></a-plane>
+      <!-- <a-collada-model src="#bottom"></a-collada-model> -->
+      <a-obj-model src="#bottom-obj" mtl="#bottom-mtl" position="0 -3 0" scale="1 1 1" color="#0D47A1" roughness="1"></a-obj-model>
+      <!-- <a-plane rotation="-90 0 0" position="0 -2 0" color="#0D47A1" width="100" height="100" depth="2" roughness=".5" envMap="#target"></a-plane> -->
     </a-scene>
   </body>
 </html>

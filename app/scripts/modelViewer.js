@@ -9,7 +9,7 @@ $(window).on("load", function () {
 	objModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId;
 	$("a-scene").append(
 
-		"<a-entity cursor-listener id='target' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9'>" +
+		"<a-entity cursor-listener id='target' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='1'>" +
 			"<a-animation begin='dblclick' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
 		"</a-entity>"
 	);
@@ -31,8 +31,9 @@ $(window).on("load", function () {
 
 	$("#target").on("model-progress", function ( e ) {
 		var prog = (e.detail.loaded / e.detail.total);
-		console.log( prog )
-		if ( prog == "1" ) {
+		prog = (prog * 100).toFixed(0)
+
+		if ( prog == "100" ) {
 			$('.loading').hide()
 			$('a-scene').show()
 		} else {
