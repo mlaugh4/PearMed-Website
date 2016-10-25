@@ -7,29 +7,26 @@ $(window).on("load", function () {
 
 	// Add an html element for the model we are going to view
 	objModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId;
-	$("a-scene").append(
+	$("#modelContainer").append(
 
-		"<a-entity cursor-listener id='target' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='1'>" +
-			"<a-animation begin='dblclick' easing='ease-in-out' attribute='scale' dur='500' to='2 2 2' direction='alternate'></a-animation>" +
+		"<a-entity cursor-listener id='model' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='1'>" +
 		"</a-entity>"
 	);
 
-	$("#target").on("model-loaded", function () {
+	$("#model").on("model-loaded", function () {
 		// Get the bounds of the model
-		var objModel = $("#target").get(0).object3D;
+		var objModel = $("#model").get(0).object3D;
 		var box = new THREE.Box3().setFromObject( objModel );
 		var size = box.size();
 		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
 
-		// Add orbit controls to the camera
-		// Needs to happen after the obj is added so the orbit controls know what to orbit around
-		$("a-entity[camera]")
-			.attr("target", "#target")
-			.attr("distance", maxDimension * 2)
-			.attr("orbit-controls", "");
+		// Resize the model so its max dimension is 1 meter
+		var targetSize = 1; // We want to resize this object to 1 meter
+		var scaleFactor = targetSize / maxDimension; // Scale it by this much to reach the target size
+		$(this).attr("scale", [scaleFactor, scaleFactor, scaleFactor].join(" "));
 	});
 
-	$("#target").on("model-progress", function ( e ) {
+	$("#model").on("model-progress", function ( e ) {
 		var prog = (e.detail.loaded / e.detail.total);
 		prog = (prog * 100).toFixed(0)
 
@@ -42,7 +39,7 @@ $(window).on("load", function () {
 
 	});
 
-	$("#target").on("model-error", function ( e ) {
+	$("#model").on("model-error", function ( e ) {
 		// Error code
 	});
 
