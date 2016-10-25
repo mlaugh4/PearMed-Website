@@ -153,3 +153,29 @@ function ModelView( ) {
 
 }
 
+var key = setInterval(getCheckState( modelId ),10000)
+
+function getCheckState( modelId ) {
+  return function() {
+    checkState( modelId )
+  }
+}
+
+function checkState ( modelId ) {
+
+  var boscApis = new BoscApis();
+
+  var success = function() {
+    if ( modelId.state == "processing" ) {
+      $('')
+    } else if ( modelId.state == "ready" ) {
+      closeInterval(key)
+    }
+  }
+
+  var error = function()
+  var complete = function()
+
+  BoscApis.getSingleModel(modelId, success, error, complete)
+
+}

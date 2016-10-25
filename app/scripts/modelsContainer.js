@@ -13,8 +13,9 @@ function ModelsContainer( selector , modelView ) {
     }
   }
 
+  // Only shows search box if theres more than 6 models
   var completeCallback = function () {
-    $('.loader').hide();
+    $('.loadList').hide();
     if ( el.children().length > 6 )
         $('#searchBox').show();
     else
@@ -28,7 +29,7 @@ function ModelsContainer( selector , modelView ) {
 
     var boscApis = new BoscApis();
 
-    $('.loader').show()
+    $('.loadList').show()
     boscApis.getModels( successCallback , errorCallback, completeCallback )
 
   }
