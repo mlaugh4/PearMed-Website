@@ -2,6 +2,7 @@
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box; }
 
+/*Breakpoints */
 body {
   display: flex;
   justify-content: center;
@@ -229,9 +230,8 @@ input {
   margin-bottom: 20px;
   height: 100px; }
 
-.modelPreview {
-  max-width: 100%;
-  max-height: 100%; }
+.modelImg {
+  width: 100%; }
 
 .meta-holder {
   display: flex;
@@ -354,7 +354,7 @@ input {
 
 .circle {
   position: absolute;
-  right: 25px;
+  right: 5%;
   top: -7px;
   background-color: #AF9E3A;
   width: 31px;
@@ -394,5 +394,12 @@ input {
   content: attr(data-text);
   font-style: italic;
   opacity: 0.5; }
+
+@media (max-width: 400px) {
+  .half-width {
+    padding: 15px; }
+
+  .left {
+    padding-right: 0px; } }
 
 /*# sourceMappingURL=style.css.map */
