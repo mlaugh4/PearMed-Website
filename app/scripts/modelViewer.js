@@ -7,9 +7,10 @@ $(window).on("load", function () {
 
 	// Add an html element for the model we are going to view
 	objModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId;
+	mtlModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/mtl?authId=" + BoscSettings.authId;
 	$("#modelContainer").append(
 
-		"<a-entity cursor-listener id='model' obj-model='obj: url(" + objModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='1'>" +
+		"<a-entity cursor-listener id='model' obj-model='obj: url(" + objModelUrl + "); mtl: url(" + mtlModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='1'>" +
 		"</a-entity>"
 	);
 
