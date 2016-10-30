@@ -21,7 +21,6 @@ BoscSettings = {
 
 	mock: function () {
 		BoscSettings.apiRoot = "http://localhost:3000/";
-        BoscSettings.authId = "95565080-fb3d-4469-bc39-4acf5285abe7";
 	}
 }
 
