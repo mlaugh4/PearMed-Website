@@ -34,8 +34,8 @@ a{
   text-decoration: none;
   text-transform: uppercase;
   color:rgba(33,33,33,.8);
-  font-weight: 100;
-  font-size: 10px;
+  font-weight: bold;
+  font-size: 12px;
 }
 .container a {
   color:#aba239;
@@ -69,11 +69,12 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left:300px;
 }
 
 .main-text {
   width: 350px;
-  padding-left:60px;
+  /*padding-left:60px;*/
   display: flex;
   flex-direction: column;
   /*height:100px;*/
@@ -108,7 +109,12 @@ span {
 }
 
 #logo {
+  z-index: -1;
   opacity:0;
+  position: absolute;
+  left:-300px;
+  height:120%;
+  transform: scaleX(-1);
 }
 
 div{
@@ -267,8 +273,10 @@ div{
 /***************MOBILE***************/
 
 @media only screen and (max-width: 500px) {
+
   .main {
     flex-direction:column;
+    padding-left: 0px
   }
   .main-text {
     padding-left: 0px;
