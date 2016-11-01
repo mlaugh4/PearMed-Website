@@ -45,14 +45,33 @@ var loadModel = function ( model ) {
 
 		// Update the UI
 		if ( prog == "100" ) {
+			// Hide the loading UI
 			$('.loading').hide()
+
+			// Show the scene
 			$('a-scene').show()
 		} else {
 			$('#percent').html(prog + "%")
 		}
 	}
 
+	// Adjust the model' size to make sure it's visible
+	var adjustModelSize = function () {
+		// Get the bounds of the model
+		var objModel = $("#modelContainer").get(0).object3D;
+		var box = new THREE.Box3().setFromObject( objModel );
+		var size = box.size();
+		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+		console.log("Max dimension: " + maxDimension);
+
+		// Resize the model so its max dimension is 1 meter
+		var targetSize = 1; // We want to resize this object to 1 meter
+		var scaleFactor = targetSize / maxDimension; // Scale it by this much to reach the target size
+		$( "#modelContainer" ).attr("scale", [scaleFactor, scaleFactor, scaleFactor].join(" "));
+	}
+
 	// Loop over each part and load it
+	var loadedCount = 0;
 	for( var partIndex = 0; partIndex < model.parts.length; partIndex++) {
 		var part = model.parts[ partIndex ];
 
@@ -73,18 +92,12 @@ var loadModel = function ( model ) {
 		// Save the metadata on the UI element
 		$( "#" + partDOMId ).data("metadata", part);
 
-		// When the model is loaded adjust its size
-		$( "#" + partDOMId ).on("model-loaded", function () {
-			// Get the bounds of the model
-			var objModel = $("#model").get(0).object3D;
-			var box = new THREE.Box3().setFromObject( objModel );
-			var size = box.size();
-			var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
-
-			// Resize the model so its max dimension is 1 meter
-			var targetSize = 1; // We want to resize this object to 1 meter
-			var scaleFactor = targetSize / maxDimension; // Scale it by this much to reach the target size
-			$(this).attr("scale", [scaleFactor, scaleFactor, scaleFactor].join(" "));
+		// When all parts have loaded, update the models size
+		// to make sure it's in view
+		$( "#" + partDOMId ).on("model-loaded", function ( e ) {
+			loadedCount++;
+			if(loadedCount >= model.parts.length)
+				adjustModelSize()
 		});
 
 		// Update overall progress
