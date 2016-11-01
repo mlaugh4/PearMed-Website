@@ -35,7 +35,7 @@ a{
   text-transform: uppercase;
   color:rgba(33,33,33,.8);
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
 }
 .container a {
   color:#aba239;
@@ -61,7 +61,19 @@ span {
 
 
 /***********HOME*************/
-
+.flexH {
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.partners {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  opacity: 0;
+}
+.partners > img {
+  height:40px;
+}
 
 .main {
   width:100%;
@@ -73,7 +85,7 @@ span {
 }
 
 .main-text {
-  width: 350px;
+  width: 380px;
   /*padding-left:60px;*/
   display: flex;
   flex-direction: column;

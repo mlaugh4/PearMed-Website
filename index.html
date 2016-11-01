@@ -1,4 +1,4 @@
-<html>
+<html style="overflow-y: hidden;">
 <head>
   <meta name="google-site-verification" content="Kctkb4ovFntAcicPwO1FTDxPOlN79_Em3kNMFpzYzRY" />
   <meta name="viewport" content="width=device-width">
@@ -23,8 +23,11 @@
         <a class="link4" href="news.html">News</a>
         <a class="link5" href="contact.html">Contact</a>
       </div>
-      <div>
-
+      <hr>
+      <div class="flexH partners">
+        <img src="img/comotion.png">
+        <img src="img/uwmc.png">
+        <img src="img/uci.jpg">
       </div>
       <a class="primary-btn" href="/app/login.html">Launch Bosc</a>
     </div>
@@ -62,6 +65,11 @@
       n += 100
       console.log(n)
     })
+
+    $('.partners').delay(1000).animate({
+      opacity: .3
+    },1000)
+
   });
 </script>
 
