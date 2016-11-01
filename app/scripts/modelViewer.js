@@ -5,44 +5,99 @@ $(window).on("load", function () {
 	if(!modelId)
 		window.location.href = 'index.html';
 
-	// Add an html element for the model we are going to view
-	objModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/obj?authId=" + BoscSettings.authId;
-	mtlModelUrl = BoscSettings.apiRoot  + "organModels/" + modelId + "/mtl?authId=" + BoscSettings.authId;
-	$("#modelContainer").append(
+	var success = function ( model ) {
+		loadModel( model );
+	}
 
-		"<a-entity cursor-listener id='model' obj-model='obj: url(" + objModelUrl + "); mtl: url(" + mtlModelUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='0'>" +
-		"</a-entity>"
-	);
+	var error = function (response, ajaxOptions, thrownError) {
+		alert("error");
+		console.log("status: " + response.status);
+	}
 
-	$("#model").on("model-loaded", function () {
-		// Get the bounds of the model
-		var objModel = $("#model").get(0).object3D;
-		var box = new THREE.Box3().setFromObject( objModel );
-		var size = box.size();
-		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+	var complete = function () {
+		
+	}
 
-		// Resize the model so its max dimension is 1 meter
-		var targetSize = 1; // We want to resize this object to 1 meter
-		var scaleFactor = targetSize / maxDimension; // Scale it by this much to reach the target size
-		$(this).attr("scale", [scaleFactor, scaleFactor, scaleFactor].join(" "));
-	});
+	var boscApis = new BoscApis();
+	boscApis.getSingleModel(modelId, success, error, complete);
+});
 
-	$("#model").on("model-progress", function ( e ) {
-		var prog = (e.detail.loaded / e.detail.total);
+var loadModel = function ( model ) {
+	// Holds on to progress for each part that's loading
+	var progressMap = {};
+
+	// Calculates and updates progress UI
+	var updateProgress = function () {
+		var overallLoaded = 0;
+		var overallTotal = 0;
+
+		// Loop over the status of each part and add it's progress to the total
+		for( var partId in progressMap ) {
+			var loadedInfo = progressMap[ partId ];
+			if(loadedInfo) {
+				overallLoaded += loadedInfo.loaded;
+				overallTotal += loadedInfo.total;
+			}
+		}
+
+		var prog = (overallLoaded / overallTotal);
 		prog = (prog * 100).toFixed(0)
 
+		// Update the UI
 		if ( prog == "100" ) {
 			$('.loading').hide()
 			$('a-scene').show()
 		} else {
 			$('#percent').html(prog + "%")
 		}
+	}
 
-	});
+	// Loop over each part and load it
+	for( var partIndex = 0; partIndex < model.parts.length; partIndex++) {
+		var part = model.parts[ partIndex ];
 
-	$("#model").on("model-error", function ( e ) {
-		// Error code
-	});
+		// Create a unique DOM id
+		var partDOMId = "model-" + part._id;
+
+		// Build urls for the obj and mtl files
+		var objUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/obj?authId=" + BoscSettings.authId;
+		var mtlUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/mtl?authId=" + BoscSettings.authId;
+
+		// Add an html element for the part
+		$("#modelContainer").append(
+
+			"<a-entity cursor-listener id='" + partDOMId + "' obj-model='obj: url(" + objUrl + "); mtl: url(" + mtlUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='0'>" +
+			"</a-entity>"
+		);
+
+		// Save the metadata on the UI element
+		$( "#" + partDOMId ).data("metadata", part);
+
+		// When the model is loaded adjust its size
+		$( "#" + partDOMId ).on("model-loaded", function () {
+			// Get the bounds of the model
+			var objModel = $("#model").get(0).object3D;
+			var box = new THREE.Box3().setFromObject( objModel );
+			var size = box.size();
+			var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+
+			// Resize the model so its max dimension is 1 meter
+			var targetSize = 1; // We want to resize this object to 1 meter
+			var scaleFactor = targetSize / maxDimension; // Scale it by this much to reach the target size
+			$(this).attr("scale", [scaleFactor, scaleFactor, scaleFactor].join(" "));
+		});
+
+		// Update overall progress
+		$( "#" + partDOMId ).on("model-progress", function ( e ) {
+			progressMap[ $(this).data("metadata")._id ] = e.detail;
+			updateProgress();
+		});
+
+		// Handle errors...eventually
+		$( "#" + partDOMId ).on("model-error", function ( e ) {
+			// Error code
+		});
+	}	
 
 	// Emit a double click from the cursor
 	//
@@ -65,7 +120,7 @@ $(window).on("load", function () {
             }
         });
     });
-});
+}
 
 // Expanding objects
 
