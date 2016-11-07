@@ -20,6 +20,28 @@ $(window).on("load", function () {
 
 	var boscApis = new BoscApis();
 	boscApis.getSingleModel(modelId, success, error, complete);
+
+	// Emit a double click from the cursor
+	//
+	// NOTE:
+	//		If we emit a "dblclick" event, the scene element gets a hold of it first
+	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
+
+	    this.addEventListener("dblclick", function( e ){
+	    	if( e.target.nodeName != "CANVAS" )
+	    		return;
+
+	    	var cursor = document.querySelector("a-entity[cursor]").components.cursor;
+
+	        // Double click is outside the player
+	        // (note that for some reason you cannot prevent a dblclick on player from bubbling up (??)
+
+	        if(cursor.intersectedEl) {
+	        	cursor.intersectedEl.emit("dblclick", e);
+	        	e.preventDefault();
+	        }
+	    });
+	});
 });
 
 var loadModel = function ( model ) {
@@ -110,29 +132,12 @@ var loadModel = function ( model ) {
 		$( "#" + partDOMId ).on("model-error", function ( e ) {
 			// Error code
 		});
-	}	
 
-	// Emit a double click from the cursor
-	//
-	// NOTE:
-	//		If we emit a "dblclick" event, the scene element gets a hold of it first
-	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
-
-        this.addEventListener("dblclick", function( e ){
-        	if( e.target.nodeName != "CANVAS" )
-        		return;
-
-        	var cursor = document.querySelector("a-entity[cursor]").components.cursor;
-
-            // Double click is outside the player
-            // (note that for some reason you cannot prevent a dblclick on player from bubbling up (??)
-
-            if(cursor.intersectedEl) {
-            	cursor.intersectedEl.emit("dblclick", e);
-            	e.preventDefault();
-            }
-        });
-    });
+		// Handle double clicking
+		$( "#" + partDOMId ).on("dblclick", function ( e ) {
+			$("#modelContainer")[0].object3D.el.emit("dblclick", e.detail);
+		});
+	}
 }
 
 // Expanding objects
