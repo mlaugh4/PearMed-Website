@@ -8,6 +8,7 @@
 
     <script src="scripts/aframe-v0.3.2.js"></script>
     <script src="scripts/aframe-orbit-controls-component.js"></script>
+    <script src="scripts/aframe-mouse-cursor-component.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/js.cookie.js"></script>
     <script src="scripts/boscSettings.js"></script>
@@ -74,11 +75,8 @@
       <a-light type="spot" color="#A8A8A8" intensity="2" position="3 3 3" rotation="30 20 0"  distance="8" penumbra=".1">
       </a-light> -->
 
-      <a-entity camera orbit-controls target="#modelContainer" distance="2" look-controls-enabled=false wasd-controls-enabled='true' position='0 0 3' rotation="0 0 0">
+      <a-entity camera mouse-cursor orbit-controls target="#modelContainer" distance="2" look-controls-enabled=false wasd-controls-enabled='true' position='0 0 3' rotation="0 0 0">
         <a-plane></a-plane>
-        <a-entity cursor="fuse: false; fuseTimeout: 500" position="0 0 -1"
-                    geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02;"
-                    material="color: cyan; shader: flat">
             <a-animation begin="click" easing="ease-in-out" attribute="scale" fill="none" direction="reverse" from="1 1 1" to="1.2 1.2 1.2" dur="500"></a-animation>
           </a-entity>
       </a-entity>

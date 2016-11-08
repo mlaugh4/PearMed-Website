@@ -21,29 +21,20 @@ $(window).on("load", function () {
 	var boscApis = new BoscApis();
 	boscApis.getSingleModel(modelId, success, error, complete);
 
+	hookUpEvents();
+});
+
+var hookUpEvents = function () {
 	// Emit a double click from the cursor
 	//
 	// NOTE:
 	//		If we emit a "dblclick" event, the scene element gets a hold of it first
 	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
-
-	    this.addEventListener("dblclick", function( e ){
-	    	if( e.target.nodeName != "CANVAS" )
-	    		return;
-
-	    	var cursor = document.querySelector("a-entity[cursor]").components.cursor;
-
-	        // Double click is outside the player
-	        // (note that for some reason you cannot prevent a dblclick on player from bubbling up (??)
-
-	        if(cursor.intersectedEl) {
-	        	cursor.intersectedEl.emit("dblclick", e);
-	        	e.preventDefault();
-	        }
-	    });
+		// Events here
 	});
-});
+}
 
+var modelParts = [];
 var loadModel = function ( model ) {
 	// Holds on to progress for each part that's loading
 	var progressMap = {};
@@ -96,9 +87,10 @@ var loadModel = function ( model ) {
 	var loadedCount = 0;
 	for( var partIndex = 0; partIndex < model.parts.length; partIndex++) {
 		var part = model.parts[ partIndex ];
+		modelParts.push(part);
 
 		// Create a unique DOM id
-		var partDOMId = "model-" + part._id;
+		part.DOMId = "model-" + part._id;
 
 		// Build urls for the obj and mtl files
 		var objUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/obj?authId=" + BoscSettings.authId;
@@ -107,38 +99,55 @@ var loadModel = function ( model ) {
 		// Add an html element for the part
 		$("#modelContainer").append(
 
-			"<a-entity cursor-listener id='" + partDOMId + "' obj-model='obj: url(" + objUrl + "); mtl: url(" + mtlUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='0'>" +
+			"<a-entity cursor-listener id='" + part.DOMId + "' obj-model='obj: url(" + objUrl + "); mtl: url(" + mtlUrl + ")' position='0 0 0' rotation='0 45 0' scale='1 1 1'  color='#4CC3D9' roughness='0'>" +
 			"</a-entity>"
 		);
 
 		// Save the metadata on the UI element
-		$( "#" + partDOMId ).data("metadata", part);
+		$( "#" + part.DOMId ).data("metadata", part);
 
 		// When all parts have loaded, update the models size
 		// to make sure it's in view
-		$( "#" + partDOMId ).on("model-loaded", function ( e ) {
+		$( "#" + part.DOMId ).on("model-loaded", function ( e ) {
 			loadedCount++;
 			if(loadedCount >= model.parts.length)
 				adjustModelSize()
 		});
 
 		// Update overall progress
-		$( "#" + partDOMId ).on("model-progress", function ( e ) {
+		$( "#" + part.DOMId ).on("model-progress", function ( e ) {
 			progressMap[ $(this).data("metadata")._id ] = e.detail;
 			updateProgress();
 		});
 
 		// Handle errors...eventually
-		$( "#" + partDOMId ).on("model-error", function ( e ) {
+		$( "#" + part.DOMId ).on("model-error", function ( e ) {
 			// Error code
 		});
 
-		// Handle double clicking
-		$( "#" + partDOMId ).on("dblclick", function ( e ) {
-			$("#modelContainer")[0].object3D.el.emit("dblclick", e.detail);
+		$( "#" + part.DOMId ).on("click", function ( e ) {
+			focusOnModelPart( $(this).data("metadata") );
 		});
 	}
 }
+
+var focusOnModelPart = function ( part ) {
+	var box = new THREE.Box3().setFromObject( $( "#" + part.DOMId ).get(0).object3D );
+	var size = box.size();
+	var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+
+	// Fade out all other parts
+	modelParts.forEach( function (p)  {
+		opacity = ( p == part ) ? 1 : 0.3;
+		var obj3D = $( "#" + p.DOMId ).get(0).object3D;
+		obj3D.traverse( function (child) {
+			if(child.material) {
+				child.material.opacity = opacity;
+				child.material.transparent = true;
+			}
+		})
+	});
+} 
 
 // Expanding objects
 
