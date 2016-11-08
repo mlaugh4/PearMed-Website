@@ -132,9 +132,23 @@ var loadModel = function ( model ) {
 }
 
 var focusOnModelPart = function ( part ) {
+	// Calculate the meshe's center, and move the orbit pivot point to it
+	var mesh = $("#" + part.DOMId).get(0).object3D.getObjectByProperty("type", "Mesh");
+	mesh.geometry.computeBoundingBox();
+	var center = mesh.geometry.boundingBox.center();
+	var modelScale = $("#modelContainer").get(0).getAttribute("scale").x;
+	var adjustedCenter = [center.x, center.y, center.z].map(function (point) { return point * modelScale; });
+	$("#orbitPivot").get(0).setAttribute("position", adjustedCenter.join(" "));
+
+	// Get this part's longest side
 	var box = new THREE.Box3().setFromObject( $( "#" + part.DOMId ).get(0).object3D );
 	var size = box.size();
 	var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
+
+	// Update the distance we're pivoting at since each part is a different size
+	$("a-entity[camera]").attr("distance", maxDimension * 2);
+	var orbitControls = $("a-entity[camera]").get(0).components["orbit-controls"];
+	orbitControls.init();
 
 	// Fade out all other parts
 	modelParts.forEach( function (p)  {
