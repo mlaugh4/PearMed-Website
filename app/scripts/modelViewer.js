@@ -44,6 +44,28 @@ $(window).on("load", function () {
 		// Error code
 	});
 
+
+
+
+
+
+
+	// Scroll to zoom
+	function onDocumentMouseWheel( event ) {
+	    fov -= event.wheelDeltaY * 0.05;
+	    camera.projectionMatrix = THREE.Matrix4.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
+
+	    var scrollValue = event.wheelDeltaY;
+	    console.log("scrollValue")
+	}
+
+	$("a-scene").get(0).sceneEl.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false );
+
+
+
+
+
+
 	// Emit a double click from the cursor
 	//
 	// NOTE:
