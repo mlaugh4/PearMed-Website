@@ -32,6 +32,17 @@ var hookUpEvents = function () {
 	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
 		// Events here
 	});
+
+	$("a-scene").get(0).sceneEl.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false );
+}
+
+// Scroll to zoom
+function onDocumentMouseWheel( event ) {
+    fov -= event.wheelDeltaY * 0.05;
+    camera.projectionMatrix = THREE.Matrix4.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
+
+    var scrollValue = event.wheelDeltaY;
+    console.log("scrollValue")
 }
 
 var modelParts = [];
@@ -68,47 +79,6 @@ var loadModel = function ( model ) {
 		}
 	}
 
-<<<<<<< HEAD
-	});
-
-	$("#model").on("model-error", function ( e ) {
-		// Error code
-	});
-
-
-
-
-
-
-
-	// Scroll to zoom
-	function onDocumentMouseWheel( event ) {
-	    fov -= event.wheelDeltaY * 0.05;
-	    camera.projectionMatrix = THREE.Matrix4.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
-
-	    var scrollValue = event.wheelDeltaY;
-	    console.log("scrollValue")
-	}
-
-	$("a-scene").get(0).sceneEl.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false );
-
-
-
-
-
-
-	// Emit a double click from the cursor
-	//
-	// NOTE:
-	//		If we emit a "dblclick" event, the scene element gets a hold of it first
-	$("a-scene").get(0).sceneEl.addEventListener("loaded", function(){
-
-        this.addEventListener("dblclick", function( e ){
-        	if( e.target.nodeName != "CANVAS" )
-        		return;
-
-        	var cursor = document.querySelector("a-entity[cursor]").components.cursor;
-=======
 	// Adjust the model' size to make sure it's visible
 	var adjustModelSize = function () {
 		// Get the bounds of the model
@@ -117,7 +87,6 @@ var loadModel = function ( model ) {
 		var size = box.size();
 		var maxDimension = Math.max( Math.max(size.x, size.y), size.z );
 		console.log("Max dimension: " + maxDimension);
->>>>>>> origin/master
 
 		// Resize the model so its max dimension is 1 meter
 		var targetSize = 1; // We want to resize this object to 1 meter
