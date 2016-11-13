@@ -27,7 +27,7 @@ small {
 }
 p {
   line-height:26px;
-  font-size:12px;
+  font-size:13px;
   text-align: justify;
 }
 a{
@@ -328,6 +328,9 @@ div{
     left: 0;
     position: relative;
     margin: 60px 0;
+  }
+  .partners > img {
+    height:30px;
   }
 }
 
