@@ -1,5 +1,5 @@
 BoscSettings = {
-	apiRoot: "http://52.160.88.200:3000/",
+	apiRoot: "http://35.161.194.241:3000/",
 	authId: Cookies.get('authId'),
 
 	setAuthId: function ( authId ) {
@@ -22,6 +22,5 @@ BoscSettings = {
 	mock: function () {
 		BoscSettings.apiRoot = "http://localhost:3000/";
 	}
-}
 
-// BoscSettings.mock()
+}
