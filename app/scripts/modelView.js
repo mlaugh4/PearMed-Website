@@ -154,30 +154,32 @@ function ModelView( ) {
 }
 
 // Check in 10-second intervals what the state of the upload is
-var key = setInterval(getCheckState( modelId ),10000)
+// var key = setInterval(getCheckState( modelId ),10000)
 
-function getCheckState( modelId ) {
-  return function() {
-    checkState( modelId )
-  }
-}
+// function getCheckState( modelId ) {
+//   return function() {
+//     checkState( modelId )
+//   }
+// }
 
 
-function checkState ( modelId ) {
+// function checkState ( modelId ) {
 
-  var boscApis = new BoscApis();
+//   var boscApis = new BoscApis();
 
-  var success = function() {
-    if ( modelId.state == "processing" ) {
-      $('')
-    } else if ( modelId.state == "ready" ) {
-      closeInterval(key)
-    }
-  }
+//   var success = function() {
+//     if ( modelId.state == "processing" ) {
+//       $('file').append(
+//           "<div class='loadingIcon'>Loading...</div>"
+//         )
+//     } else if ( modelId.state == "ready" ) {
+//       closeInterval(key)
+//     }
+//   }
 
-  var error = function()
-  var complete = function()
+//   var error = function()
+//   var complete = function()
 
-  BoscApis.getSingleModel(modelId, success, error, complete)
+//   BoscApis.getSingleModel(modelId, success, error, complete)
 
-}
+// }
