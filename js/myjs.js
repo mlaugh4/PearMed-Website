@@ -40,6 +40,26 @@ $(function() {
     $('.flow').attr('src','img/product_flow_diagram-min.png');
     }
 
+  //Masonry Stuff
+  var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true,
+  });
+
+  $('.grid').delay(containerDelay).animate({
+    opacity:1
+  },transitionSpeed)
+
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry();
+  });
+
+  $('.showResources').click(function(){
+    $('.resources').toggle();
+  });
+
+
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

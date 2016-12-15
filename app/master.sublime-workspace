@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-transform"
+			],
+			[
+				"slide",
+				"slideDown	.slideDown()"
+			],
+			[
+				"slid",
+				"slideDown	.slideDown()"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"short",
+				"shortDesc"
+			],
+			[
+				"this",
+				"thisModelView"
+			],
+			[
+				"model",
+				"ModelsContainer"
+			],
+			[
+				"update",
+				"updateUi"
+			],
+			[
+				"erro",
+				"errorCallback"
+			],
+			[
+				"updat",
+				"updateUi"
+			],
+			[
 				"Bo",
 				"BoscApis"
 			],
@@ -38,10 +78,6 @@
 			[
 				"toggle",
 				"toggleClass	.toggleClass()"
-			],
-			[
-				"model",
-				"modelElement"
 			],
 			[
 				"test",
@@ -101,10 +137,6 @@
 			],
 			[
 				"text-",
-				"text-decoration"
-			],
-			[
-				"text",
 				"text-decoration"
 			],
 			[
@@ -186,10 +218,6 @@
 			[
 				"padd",
 				"padding-right"
-			],
-			[
-				"padding",
-				"padding-left"
 			],
 			[
 				"nac",
@@ -327,31 +355,23 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 6079,
+				"buffer_size": 7941,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "uploadTemplate.html",
+			"file": "modelViewer.html",
 			"settings":
 			{
-				"buffer_size": 6431,
+				"buffer_size": 3500,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "login.html",
+			"file": "scripts/modelView.js",
 			"settings":
 			{
-				"buffer_size": 1090,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "detail.html",
-			"settings":
-			{
-				"buffer_size": 26131,
+				"buffer_size": 5085,
 				"line_ending": "Unix"
 			}
 		},
@@ -359,7 +379,15 @@
 			"file": "sass/style.sass",
 			"settings":
 			{
-				"buffer_size": 6486,
+				"buffer_size": 7674,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/modelViewer.js",
+			"settings":
+			{
+				"buffer_size": 6393,
 				"line_ending": "Unix"
 			}
 		},
@@ -367,15 +395,47 @@
 			"file": "scripts/primary.js",
 			"settings":
 			{
-				"buffer_size": 6358,
+				"buffer_size": 2587,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/app.js",
+			"file": "scripts/modelsContainer.js",
 			"settings":
 			{
-				"buffer_size": 2223,
+				"buffer_size": 2745,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/index.js",
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/boscSettings.js",
+			"settings":
+			{
+				"buffer_size": 518,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Desktop/pear/CadaVR-Unity/Assets/scripts/Annotations.cs",
+			"settings":
+			{
+				"buffer_size": 4090,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/marklaughery/Desktop/pear/CadaVR-Unity/Assets/scripts/AnnoGO.cs",
+			"settings":
+			{
+				"buffer_size": 329,
 				"line_ending": "Unix"
 			}
 		},
@@ -383,15 +443,7 @@
 			"file": "scripts/boscApis.js",
 			"settings":
 			{
-				"buffer_size": 3557,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "style.css",
-			"settings":
-			{
-				"buffer_size": 6685,
+				"buffer_size": 5115,
 				"line_ending": "Unix"
 			}
 		}
@@ -424,16 +476,23 @@
 	},
 	"file_history":
 	[
+		"/Users/marklaughery/Documents/code/pearmed/app/login.html",
+		"/Users/marklaughery/Documents/code/pearmed/product.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/style.css",
+		"/Users/marklaughery/Documents/code/pearmed/news.html",
+		"/Users/marklaughery/Documents/code/pearmed/index.html",
+		"/Users/marklaughery/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/marklaughery/Documents/code/pearmed/js/myjs.js",
+		"/Users/marklaughery/Documents/code/pearmed/styles.css",
+		"/Users/marklaughery/Documents/code/pearmed/app/scripts/modelsContainer.js",
+		"/Users/marklaughery/Documents/code/pearmed/app/scripts/app.js",
+		"/Users/marklaughery/Documents/code/pearmed/app/uploadTemplate.html",
+		"/Users/marklaughery/Documents/code/pearmed/app/detail.html",
 		"/Users/marklaughery/Documents/code/pearmed/app/stylescss.sass",
 		"/Users/marklaughery/Documents/code/pearmed/app/scripts/3dSphere.js",
 		"/Users/marklaughery/Documents/code/pearmed/app/smallDetail.html",
-		"/Users/marklaughery/Documents/code/pearmed/app/uploadTemplate.html",
 		"/Users/marklaughery/Documents/code/pearmed/app/uploadEdit.html",
-		"/Users/marklaughery/Documents/code/pearmed/app/detail.html",
-		"/Users/marklaughery/Documents/code/pearmed/app/login.html",
-		"/Users/marklaughery/Documents/code/pearmed/index.html",
 		"/Users/marklaughery/Documents/code/mark-winslow/index.html",
-		"/Users/marklaughery/Documents/code/pearmed/styles.css",
 		"/Users/marklaughery/Documents/code/pearmed/app/index.html",
 		"/Users/marklaughery/Documents/code/CadaVR-Website/cadavred/index.html",
 		"/Users/marklaughery/Documents/code/mark-winslow/master.sublime-project",
@@ -492,7 +551,6 @@
 		"/Users/marklaughery/Documents/code/mlaugh4.github.io/index2",
 		"/Users/marklaughery/Documents/code/mlaugh4.github.io/index2.html",
 		"/Users/marklaughery/Documents/code/mlaugh4.github.io/dog.jpg",
-		"/Users/marklaughery/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/marklaughery/Desktop/mS/DIY/project/urls.py",
 		"/Users/marklaughery/Desktop/mS/DIY/html/panel/audience_entries.html",
 		"/Users/marklaughery/Desktop/mS/DIY/html/panel/upload/create_audience.html",
@@ -545,13 +603,7 @@
 		"/Users/marklaughery/Desktop/mS/DIY/html/surveySerialNumbers/backup.html",
 		"/Users/marklaughery/Desktop/mS/DIY/html/surveySerialNumbers/index.html",
 		"/Users/marklaughery/Desktop/mS/DIY/noe/panel/api.py",
-		"/Users/marklaughery/Desktop/mS/DIY/static/assets/styles.css",
-		"/Users/marklaughery/Desktop/mS/DIY/noe/surveyAdmin/main.py",
-		"/Users/marklaughery/Desktop/mS/DIY/media/assets/dist/js/scripts.js",
-		"/Users/marklaughery/Desktop/mS/DIY/noe/surveyAdmin/interfaceYaml.py",
-		"/Users/marklaughery/Desktop/mS/DIY/html/panel/panelrequests.html",
-		"/Users/marklaughery/Desktop/mS/DIY/html/editsurvey.html",
-		"/Users/marklaughery/Desktop/eve.csv"
+		"/Users/marklaughery/Desktop/mS/DIY/static/assets/styles.css"
 	],
 	"find":
 	{
@@ -569,6 +621,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dbl",
+			"boscapi",
+			"url",
+			"point",
+			"spot",
+			"sphere",
+			"\"",
+			"look-at",
+			"1.2",
+			"\"",
+			"none",
+			"div",
+			"'800'",
+			"400",
+			"span",
+			"div",
+			"content",
+			"input",
+			"longDescription",
+			"thisModel",
+			"$('.files-list')",
+			"20px",
+			";",
+			"{",
+			"}",
+			"issue-title",
+			"div",
+			"id",
+			"right",
+			"file",
+			"search",
+			"boscApis.mock();",
+			"secondary",
 			"mock",
 			"div",
 			"psw",
@@ -663,40 +748,7 @@
 			".left",
 			"left",
 			"h3",
-			"label",
-			"button",
-			"div",
-			"assets",
-			"p",
-			"div",
-			"scip",
-			"final",
-			"msurvey",
-			"chunk",
-			"alt=\"\"",
-			"div",
-			"back",
-			"new message",
-			"comment",
-			"btn",
-			"ol",
-			"div",
-			"scip",
-			"4",
-			"span",
-			"div",
-			"000",
-			"0",
-			"fff",
-			"tyle=\"position:absolute;right:0px;top:0px;height:100%;width:40px;background-color:white;opacity:.1\"",
-			"auto",
-			"div",
-			"style=\"height:500px;width:auto;\"",
-			"200px",
-			"padding",
-			"msg",
-			"msg\\",
-			"msg"
+			"label"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -726,15 +778,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 6079,
+						"buffer_size": 7941,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1519,
-								1519
+								3604,
+								3604
 							]
 						],
 						"settings":
@@ -744,81 +796,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2151.0,
+						"translation.y": 1421.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "uploadTemplate.html",
+					"file": "modelViewer.html",
 					"settings":
 					{
-						"buffer_size": 6431,
+						"buffer_size": 3500,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6253,
-								6238
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2897.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "login.html",
-					"settings":
-					{
-						"buffer_size": 1090,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								528,
-								528
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "detail.html",
-					"settings":
-					{
-						"buffer_size": 26131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								334,
-								334
+								0,
+								0
 							]
 						],
 						"settings":
@@ -836,23 +832,51 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 8,
 			"sheets":
 			[
 				{
-					"buffer": 4,
-					"file": "sass/style.sass",
+					"buffer": 2,
+					"file": "scripts/modelView.js",
 					"settings":
 					{
-						"buffer_size": 6486,
+						"buffer_size": 5085,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								539,
-								539
+								5084,
+								4450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2368.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "sass/style.sass",
+					"settings":
+					{
+						"buffer_size": 7674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6764,
+								6698
 							]
 						],
 						"settings":
@@ -868,19 +892,46 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "scripts/primary.js",
+					"buffer": 4,
+					"file": "scripts/modelViewer.js",
 					"settings":
 					{
-						"buffer_size": 6358,
+						"buffer_size": 6393,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								3484,
+								3484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/primary.js",
+					"settings":
+					{
+						"buffer_size": 2587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2200,
+								2200
 							]
 						],
 						"settings":
@@ -897,18 +948,74 @@
 				},
 				{
 					"buffer": 6,
-					"file": "scripts/app.js",
+					"file": "scripts/modelsContainer.js",
 					"settings":
 					{
-						"buffer_size": 2223,
+						"buffer_size": 2745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								771,
-								775
+								729,
+								699
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "scripts/index.js",
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "scripts/boscSettings.js",
+					"settings":
+					{
+						"buffer_size": 518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								517,
+								517
 							]
 						],
 						"settings":
@@ -923,53 +1030,78 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "scripts/boscApis.js",
+					"buffer": 9,
+					"file": "/Users/marklaughery/Desktop/pear/CadaVR-Unity/Assets/scripts/Annotations.cs",
 					"settings":
 					{
-						"buffer_size": 3557,
+						"buffer_size": 4090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								593,
-								593
+								74,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 797.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/marklaughery/Desktop/pear/CadaVR-Unity/Assets/scripts/AnnoGO.cs",
+					"settings":
+					{
+						"buffer_size": 329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "scripts/boscApis.js",
+					"settings":
+					{
+						"buffer_size": 5115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1413,
+								1413
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 341.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 6685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								264,
-								264
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1008,7 +1140,7 @@
 		"cols":
 		[
 			0.0,
-			0.475138284796,
+			0.451072429521,
 			1.0
 		],
 		"rows":
@@ -1243,6 +1375,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 118.0,
+	"side_bar_width": 124.0,
 	"status_bar_visible": true
 }
