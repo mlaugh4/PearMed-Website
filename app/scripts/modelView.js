@@ -172,8 +172,11 @@ function ModelView( ) {
 //       $('file').append(
 //           "<div class='loadingIcon'>Loading...</div>"
 //         )
+//       $('.loadingModel').show()
 //     } else if ( modelId.state == "ready" ) {
 //       closeInterval(key)
+//       $('.loadingModel').hide()
+//       $('file').
 //     }
 //   }
 

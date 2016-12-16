@@ -131,6 +131,12 @@ span {
 .link5:hover{
   color:#D64D16;
 }
+.link6{
+  color:#aba239;
+}
+.link6:hover{
+  color:#D64D16;
+}
 .link5home:hover{
   color:#D64D16;
 }
@@ -317,9 +323,11 @@ div{
   align-items:center;
   justify-content:center;
 }
-.index svg {
+/*.index svg {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
-}
+}*/
 .index .headline {
   font-size: 26px;
   color:lightgrey;
