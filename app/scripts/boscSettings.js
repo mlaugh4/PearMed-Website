@@ -15,8 +15,8 @@ BoscSettings = {
 
 	ensureAuthId: function () {
 		// If authid is not set go to the login page
-		// if(!BoscSettings.authId)
-		// 	window.location.href = 'login.html';
+		if(!BoscSettings.authId)
+			window.location.href = 'login.html';
 	},
 
 	mock: function () {
