@@ -88,7 +88,7 @@
   $(function(){
     var svg1 = document.getElementById('svg1');
 
-    if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || (navigator.userAgent.indexOf('MSIE') > -1))  {
+    if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || (navigator.userAgent.indexOf('MSIE') > -1) || (navigator.appVersion.indexOf("Win")!=-1) )  {
         console.log("safari")
         var svg1 = document.getElementById('svg1');
         var svg2 = document.getElementById('svg2');
