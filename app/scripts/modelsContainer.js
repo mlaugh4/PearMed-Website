@@ -49,7 +49,7 @@ function ModelsContainer( selector , modelView ) {
           "<div class='secondary'>" +
             getLastModifiedDisplayValue(model) +
           "</div>" +
-          // "<img src='chevron.svg' class='arrow'></img>" +
+          // "<div class='loadingIcon'>Loading...</div>" +
         "</div>"
       );
       var modelElement = $('#'+ model._id)

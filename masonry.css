@@ -17,19 +17,6 @@
   width: 33.333%;
   min-width:250px;
 }
-/*.g-i-c {
-  width:100%;
-  border-radius: 5px;
-  background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 99%, rgba(197,197,197,0.50) 100%);
-  background: #FFFFFF;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background-position: middle;
-  position:relative;
-  border-top: 3px solid #AF9E3A;
-}*/
 
 .g-i-c2 {
   width:100%;
@@ -123,6 +110,7 @@
   font-size: 16px;
   padding-bottom: 10px;
   color: grey;
+  letter-spacing: .7px
 }
 
 .grid-item--width2 .g-i-c2 p {

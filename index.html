@@ -92,10 +92,13 @@
         console.log("safari")
         var svg1 = document.getElementById('svg1');
         var svg2 = document.getElementById('svg2');
-        svg1.setAttribute("width", "271px");
-        svg1.setAttribute("height", "300px");
-        svg2.setAttribute("width", "190px");
-        svg2.setAttribute("height", "50px");
+
+        setTimeout(function(){
+          svg1.setAttribute("width", "271px");
+          svg1.setAttribute("height", "300px");
+          svg2.setAttribute("width", "190px");
+          svg2.setAttribute("height", "50px");
+        },1000)
     } else {
 
     $('.center svg')

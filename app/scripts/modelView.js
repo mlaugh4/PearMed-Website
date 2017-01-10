@@ -153,7 +153,7 @@ function ModelView( ) {
 
 }
 
-// Check in 10-second intervals what the state of the upload is
+//Check in 10-second intervals what the state of the upload is
 // var key = setInterval(getCheckState( modelId ),10000)
 
 // function getCheckState( modelId ) {
@@ -176,7 +176,7 @@ function ModelView( ) {
 //     } else if ( modelId.state == "ready" ) {
 //       closeInterval(key)
 //       $('.loadingModel').hide()
-//       $('file').
+//       // $('file').
 //     }
 //   }
 

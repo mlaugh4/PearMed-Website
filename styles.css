@@ -192,6 +192,11 @@ div{
   left: 40px;
   top:20px;
   opacity:0;
+  transition: .3s transform;
+  -webkit-transition:.3s transform;
+}
+.logo:hover{
+  transform: scale(1.2);
 }
 .logo img {
   height:100%;
@@ -319,7 +324,7 @@ div{
 .index .center {
   position:relative;
   height:400px;
-  width:400px;
+  /*width:400px;*/
   align-items:center;
   justify-content:center;
 }
@@ -327,12 +332,15 @@ div{
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
 }
 .index .headline {
   font-size: 26px;
   color:lightgrey;
   opacity:0;
   padding-top:80px;
+  letter-spacing: 1px;
 }
 
 /***************MOBILE***************/
@@ -389,6 +397,9 @@ div{
   }
   .partners > img {
     height:30px;
+  }
+  .index .headline {
+    padding-top:40px;
   }
 }
 
