@@ -7179,7 +7179,10 @@ THREE.MTLLoader.MaterialCreator.prototype = {
 
 					// Diffuse texture map
 
-					params[ 'map' ] = this.loadTexture( this.baseUrl + value );
+          // The server inserts a url to the texture in the mtl file
+          var textureUrl = value;
+          console.log("textureUrl: " + textureUrl)
+					params[ 'map' ] = this.loadTexture( textureUrl );
 					params[ 'map' ].wrapS = this.wrap;
 					params[ 'map' ].wrapT = this.wrap;
 
@@ -7223,7 +7226,10 @@ THREE.MTLLoader.MaterialCreator.prototype = {
 
 					if ( params[ 'bumpMap' ] ) break; // Avoid loading twice.
 
-					params[ 'bumpMap' ] = this.loadTexture( this.baseUrl + value );
+          // The server inserts a url to the texture in the mtl file
+          var bumpUrl = value.split(" ")[3]
+          console.log("bumpUrl: " + bumpUrl)
+					params[ 'bumpMap' ] = this.loadTexture( bumpUrl );
 					params[ 'bumpMap' ].wrapS = this.wrap;
 					params[ 'bumpMap' ].wrapT = this.wrap;
 
