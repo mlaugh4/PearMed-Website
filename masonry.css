@@ -46,9 +46,11 @@
 .g-i-c2 p {
   margin: 0px;
   font-size: 28px;
-  /*font-weight:bold;*/
+  font-weight:300;
   text-align:left;
   line-height: 32px;
+  text-transform: none;
+
 }
 .card-img {
 /*  -webkit-border-radius: 3px;
