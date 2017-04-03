@@ -1,13 +1,15 @@
 /*
 	Used to communicate with the Bosc APIs
 */
-function BoscApis() {
-	console.log(BoscSettings.authId)
+function BoscApis(id_token) {
+	this.id_token = id_token || BoscSettings.authId;
+	console.log(this.id_token)
 
 	// Executes an ajax call
 	this.callApi = function (options) {
+		var authHeaderVal = this.id_token;
 		options.beforeSend = function (request) {
-			request.setRequestHeader("Bosc-AuthId", BoscSettings.authId);
+			request.setRequestHeader("Authorization", authHeaderVal);
 		};
 
 		$.ajax(options);
@@ -76,6 +78,28 @@ function BoscApis() {
 			complete: complete,
 		});
 	}
+
+	// Get accoung info
+	this.getAccounts = function (accountId, success, error, complete) {
+		this.callApi({
+			type: 'GET',
+			url: BoscSettings.apiRoot + "accounts/",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
+
+	// Get accoung info
+	this.getAccountInfo = function (accountId, success, error, complete) {
+		this.callApi({
+			type: 'GET',
+			url: BoscSettings.apiRoot + "accounts/" + accountId + "/",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
 }
 
 BoscApis.prototype.mock = function () {
@@ -89,7 +113,7 @@ BoscApis.prototype.mock = function () {
 		callApi(function () {
 			success({
 				'name' : 'Test Account',
-				'authId': BoscSettings.authId,
+				'authId': this.id_token,
 			});
 			console.log($(this))
 		});
@@ -148,6 +172,38 @@ BoscApis.prototype.mock = function () {
 
 			success(data);
 		})
+	}
+
+	this.getAccounts = function (success, error, complete) {
+		callApi(function () {
+			success([
+				{ '_id': '1234', 'name' : 'Test Account 1'},
+				{ '_id': '4321', 'name' : 'Test Account 2'},
+			]);
+
+			complete();
+			console.log($(this))
+		});
+	}
+
+	this.getAccountInfo = function (accountId, success, error, complete) {
+		callApi(function () {
+			success({
+				'_id': accountId,
+				'name' : 'Test Account',
+				'members': [ 
+					{ google: { name: "Ryan James", email: "rcjames1004@gmail.com" } },
+					{ google: { name: "Aria James", email: "love@gmail.com" } },
+				],
+				'invitations': [
+					"danielle.hayden@gmail.com",
+					"test@gmail.com",
+				],
+			});
+
+			complete();
+			console.log($(this))
+		});
 	}
 }
 

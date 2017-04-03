@@ -403,6 +403,20 @@ input {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
+.selectAccount {
+  text-align: center;
+}
+
+.account.primary-btn {
+  margin: 5px;
+}
+
+.loading {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
 [contentEditable=true]:empty:not(:focus):before {
   content: attr(data-text);
   font-style: italic;

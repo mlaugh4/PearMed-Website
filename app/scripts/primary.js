@@ -4,58 +4,8 @@
 ////////// LOGIN PAGE
 
 
-$('#nextarrow').click(function(event) {
-    Login();
-});
-
-$('#loginForm').keypress(function (e) {
- var key = e.which;
- if(key == 13)  // the enter key code
-  {
-    Login();
-    return false;
-  }
-});
-
-
-
-// Login logic with error messages
-function Login() {
-    var authId = $('#loginForm').val()
-    BoscSettings.authId = authId
-
-
-    var successCallback = function () {
-		BoscSettings.setAuthId( authId );
-        window.location.href = 'index.html';
-    }
-
-		var errorCallback = function (response, ajaxOptions, thrownError) {
-			console.log(response.status);
-            $('#loginForm').blur();
-
-			if ( response.status == 401 ) {
-				$('.errorText').text("Oops. You are not authorized. Please try again.").slideDown('400')
-            }
-			else {
-                $('.errorText').html("Uh oh.. Something's not right here. <a href='mailto:team@pearmedical.com'>Contact us.</a>").slideDown('400')
-            }
-		}
-
-		var completeCallback = function () {
-
-		}
-
-    var boscApis = new BoscApis();
-    boscApis.getUserInfo(successCallback, errorCallback, completeCallback);
-}
-
-// Fading in login button
-$('#loginForm').keyup(function () {
-	if ( $(this).val().length > 0 )
-		$('#nextarrow').fadeIn(500);
-	else
-		$('#nextarrow').fadeOut(200);
+$('.signInButton').click(function(event) {
+    window.location.href = BoscSettings.authLoginUrl;
 });
 
 ////////// INDEX PAGE

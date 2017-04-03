@@ -10,30 +10,29 @@
   <script src="scripts/boscSettings.js"></script>
   <script src="scripts/boscApis.js"></script>
 
-  <script>
-    $(window).on('load', function(){
-      if( BoscSettings.authId ) {
-        window.location.href = 'index.html';
-      }
-    });
-  </script>
-
 </head>
 
 <body>
   <div class="shell" id="login">
-    <img src="img/bosc_logo.png" style="width:50%;min-width:200px">
-    <form style="width:50%;min-width:200px;flex-grow:2;position:relative">
-      <div class="secondary">Login with your auth ID:</div>
-      <input type="text" name="psw" id="loginForm">
-      <img src="img/backarrow.svg" id="nextarrow">
-      <div class="errorText"></div>
-    </form>
+    <img class="boscLogo" src="img/bosc_logo.png" style="width:50%;min-width:200px">
+    
+    <img class="loading" src="img/loading.gif" />
+
+    <div class="signInButton primary-btn">
+    	Sign In
+    </div>
+
+    <div class="accountsContainer">
+    	<div class="selectAccount">Select An Account</div>
+    </div>
+
     <a class="secondary-btn" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%)" href="mailto:team@pearmedical.com">Request access</a>
   </div>
 </body>
 
 <script src="scripts/boscSettings.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/login.js"></script>
 <script src="scripts/primary.js"></script>
 
 </html>
