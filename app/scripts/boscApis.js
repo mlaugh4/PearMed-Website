@@ -80,7 +80,7 @@ function BoscApis(id_token) {
 	}
 
 	// Get accoung info
-	this.getAccounts = function (accountId, success, error, complete) {
+	this.getAccounts = function (success, error, complete) {
 		this.callApi({
 			type: 'GET',
 			url: BoscSettings.apiRoot + "accounts/",
@@ -95,6 +95,18 @@ function BoscApis(id_token) {
 		this.callApi({
 			type: 'GET',
 			url: BoscSettings.apiRoot + "accounts/" + accountId + "/",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
+
+	// Send invitation
+	this.sendInvitation = function (accountId, data, success, error, complete) {
+		this.callApi({
+			type: 'POST',
+			url: BoscSettings.apiRoot + "accounts/" + accountId + "/sendInvitation",
+			data: data,
 			success: success,
 			error: error,
 			complete: complete,
@@ -191,7 +203,7 @@ BoscApis.prototype.mock = function () {
 			success({
 				'_id': accountId,
 				'name' : 'Test Account',
-				'members': [ 
+				'users': [ 
 					{ google: { name: "Ryan James", email: "rcjames1004@gmail.com" } },
 					{ google: { name: "Aria James", email: "love@gmail.com" } },
 				],

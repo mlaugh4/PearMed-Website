@@ -4,7 +4,7 @@ $(window).on('load', function() {
 	$(".accountsContainer").hide();
 
 	// If an access token is present in the header use it
-	var id_token = Utils.getUrlVars()['id_token'];
+	var id_token = BoscSettings.authId || Utils.getUrlVars()['id_token'];
 
 	// If the access_token is not valid login
 	if (id_token)
@@ -14,24 +14,24 @@ $(window).on('load', function() {
 });
 
 function ValidateAccessToken(id_token) {
-	BoscSettings.setAuthId(id_token);
-
 	// If we successfully received the user's access token we're good to go
 	// Save the access token and continue
 	var successCallback = function(accounts) {
 		BoscSettings.setAuthId(id_token);
 
+		var viewModelsUnderAccount = function(account) { window.location.href = 'account.html?accountId=' + account._id; }
+
 		if (!accounts.length) {
-			$(".accountsContainer").append("<div class='noAccounts'>You are not a member of any accounts. Please request access.</div>");
+			$(".accountsContainer").append("<div class='noAccounts'>You are not a member of any accounts. Please request access from an account member.</div>");
+		}
+		else if(accounts.length == 1) {
+			viewModelsUnderAccount(accounts[0]);
 		}
 		else {
 			accounts.forEach(function(account) {
 				var accountEl = $("<div class='account primary-btn'>" + account.name + "</div>");
 				$(".accountsContainer").append(accountEl);
-				accountEl.click(function() {
-					//window.location.href = 'index.html?accountId=' + account._id;
-					window.location.href = 'account.html?accountId=' + account._id;
-				})
+				accountEl.click(function() { viewModelsUnderAccount(account); })
 			});
 		}
 	}
@@ -58,6 +58,5 @@ function ValidateAccessToken(id_token) {
 	$(".loading").show();
 
 	var boscApis = new BoscApis(id_token);
-	boscApis.mock();
 	boscApis.getAccounts(successCallback, errorCallback, completeCallback);
 }

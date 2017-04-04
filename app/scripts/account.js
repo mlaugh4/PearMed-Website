@@ -7,14 +7,11 @@ $(window).on('load', function() {
 		window.location.href = 'login.html';
 	}
 	else {
-		var boscApis = new BoscApis();
-		boscApis.mock();
-
 		var successCallback = function(account) {
 			$(".accountName").text(account.name);
 
-			account.members.forEach(function(member) {
-				$(".membersContainer").append("<li>" + member.google.name + " [" + member.google.email + "]</li>")
+			account.users.forEach(function(user) {
+				$(".membersContainer").append("<li>" + user.google.name + " [" + user.google.email + "]</li>")
 			})
 
 			account.invitations.forEach(function(email) {
@@ -31,6 +28,41 @@ $(window).on('load', function() {
 			$(".loading").hide();
 		}
 
+		var boscApis = new BoscApis();
 		boscApis.getAccountInfo(accountId, successCallback, errorCallback, completeCallback);
 	}
+
+	$(".sendInvitation").click(function () {
+		var email = $(".invitationText").val();
+		if(validateEmail(email)) {
+			$(".errorMessage").hide();
+
+			var successCallback = function(account) {
+				window.location.reload()
+			}
+
+			// If there was an error clear the id_token and attempt to log the user in
+			var errorCallback = function(response, ajaxOptions, thrownError) {
+				$(".errorMessage").text(response.responseJSON.error)
+				$(".errorMessage").show();
+			}
+
+			var completeCallback = function() {
+				$(".loading").hide();
+			}
+
+			$(".loading").show();
+			var boscApis = new BoscApis();
+			boscApis.sendInvitation(accountId, { email: email }, successCallback, errorCallback, completeCallback);
+		}
+		else {
+			$(".errorMessage").text("Please use a valid email address")
+			$(".errorMessage").show();
+		}
+	})
 });
+
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
