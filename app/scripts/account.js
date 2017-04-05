@@ -24,9 +24,9 @@ $(window).on('load', function() {
 			window.location.href = 'login.html';
 		}
 
-		// var completeCallback = function() {
-		// 	$(".loading").hide();
-		// }
+		var completeCallback = function() {
+			$(".loading").hide();
+		}
 
 		var boscApis = new BoscApis();
 		boscApis.mock();
