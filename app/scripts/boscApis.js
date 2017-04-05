@@ -112,6 +112,18 @@ function BoscApis(id_token) {
 			complete: complete,
 		});
 	}
+
+	// Create account
+	this.createAccount = function (name, success, error, complete) {
+		this.callApi({
+			type: 'POST',
+			url: BoscSettings.apiRoot + "accounts",
+			data: { name: name },
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
 }
 
 BoscApis.prototype.mock = function () {
