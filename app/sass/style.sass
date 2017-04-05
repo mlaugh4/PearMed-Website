@@ -32,6 +32,10 @@ a
   text-decoration: none
   cursor: pointer
 
+ul
+  list-style: none
+  padding: 0
+
 .leftMenu
   position: absolute
   top: 50%
@@ -49,6 +53,10 @@ a
     opacity: .5
     height: 15px
     width: auto
+
+.topMenu
+  position: absolute
+  top: 10px
 
 .bottomMenu
   position: absolute
@@ -129,8 +137,8 @@ a
 
 .header
   width: 100%
-  height: 40px
-  padding: 5px 0
+  /*height: 40px*/
+  padding: 10px 0
   display: flex
   flex-direction: row
   justify-content: center
@@ -143,6 +151,7 @@ a
 .content
   /*padding: 0 30px*/
   overflow: hidden
+  height: 100%
 
 .lower-container
   display: flex
@@ -181,7 +190,7 @@ input
     outline: 1px solid $green-color
     transition: .3s outline ease
   &[type=text]
-    height: 50px
+    height: 40px
     font-weight: 400
     font-size: 1.5em
   &[type=submit]
@@ -411,7 +420,20 @@ label
   height: 1px
   background-color: white
 
-
+.invitationForm
+  display: flex
+  flex-direction: row
+  align-items: center
+  width: 70%
+  h3
+    width: 200px
+  input
+    flex-grow: 1
+    margin-right: 10px
+  input[type=submit]
+    height: 40px
+    margin-top: 0px
+    border: none
 
 .plus.icon:after
   content: ''

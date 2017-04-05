@@ -16,6 +16,9 @@
 </head>
 
 <body>
+  <div class="topMenu">
+    <h1 class="accountName"></h1>
+  </div>
   <div class="leftMenu">
     <div id="logo"><img src="img/bosc_logo.png"></div>
     <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
@@ -29,25 +32,32 @@
   <!-- LANDING SCREEN -->
   <!-- Models list -->
   <div class="shell">
+
     <div class="content">
+
+      <div class="header">
+        <div class="loading" style="height:100%">
+          <img class="loading" src="img/loading.gif"/>
+        </div>
+        <div class="invitationForm">
+          <p>Share with others</p>
+          <input type="text" class="invitationText" placeholder="Enter email">
+          <input type="submit" class="secondary-btn sendInvitation" value="Send" />
+          <div class="errorMessage" style="display: none"></div>
+        </div>
+      </div>
+
       <div class="lower-container">
 
-      	<img class="loading" src="img/loading.gif" />
-        
-				<h1 class="accountName"></h1>
+        <div class="half-width left" style="width: 50%">
+          <h3>Members</h3>
+          <ul class="membersContainer"></ul>
+        </div>
 
-				<h2>Members</h2>
-				<ul class="membersContainer"></ul>
-
-				<h2>Outstanding Invitations</h2>
-				<ul class="invitationsContainer"></ul>
-
-				<div class="invitationForm">
-					<h3>Send Invitation</h3>
-					<input type="text" class="invitationText" placeholder="Enter email">
-					<input type="submit" class="sendInvitation" value="Send" />
-					<div class="errorMessage" style="display: none"></div>
-				</div>
+        <div class="half-width right" style="width: 50%">
+          <h3>Outstanding Invites</h3>
+          <ul class="invitationsContainer"></ul>
+        </div>
 
      </div>
    </div>
