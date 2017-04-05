@@ -60,6 +60,8 @@ $(window).on('load', function() {
 			$(".errorMessage").show();
 		}
 	})
+
+	$(".viewModelsButton").click(function () { window.location.href = 'index.html?accountId=' + accountId; })
 });
 
 function validateEmail(email) {

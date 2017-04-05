@@ -417,6 +417,11 @@ input {
   height: 30px;
 }
 
+.accountButton {
+  display: block;
+  float: right;
+}
+
 [contentEditable=true]:empty:not(:focus):before {
   content: attr(data-text);
   font-style: italic;
