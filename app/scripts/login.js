@@ -19,7 +19,7 @@ function ValidateAccessToken(id_token) {
 	var successCallback = function(accounts) {
 		BoscSettings.setAuthId(id_token);
 
-		var viewModelsUnderAccount = function(account) { window.location.href = 'account.html?accountId=' + account._id; }
+		var viewModelsUnderAccount = function(account) { window.location.href = 'index.html?accountId=' + account._id; }
 
 		if (!accounts.length) {
 			$(".accountsContainer").append("<div class='noAccounts'>You are not a member of any accounts. Please request access from an account member.</div>");
