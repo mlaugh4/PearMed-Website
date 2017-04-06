@@ -29,7 +29,6 @@ $(window).on('load', function() {
 		}
 
 		var boscApis = new BoscApis();
-		boscApis.mock();
 		boscApis.getAccountInfo(accountId, successCallback, errorCallback, completeCallback);
 	}
 
@@ -48,9 +47,9 @@ $(window).on('load', function() {
 				$(".errorMessage").show();
 			}
 
-			// var completeCallback = function() {
-			// 	$(".loading").hide();
-			// }
+			var completeCallback = function() {
+				$(".loading").hide();
+			}
 
 			$(".loading").show();
 			var boscApis = new BoscApis();

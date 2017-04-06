@@ -3,7 +3,6 @@
 */
 function BoscApis(id_token) {
 	this.id_token = id_token || BoscSettings.authId;
-	console.log(this.id_token)
 
 	// Executes an ajax call
 	this.callApi = function (options) {
@@ -28,11 +27,12 @@ function BoscApis(id_token) {
 	}
 
 	// Get all of the models linked to this user
-	this.getModels = function (success, error, complete) {
+	this.getModels = function (accountId, success, error, complete) {
 		this.callApi({
 			type: "GET",
-			url: BoscSettings.apiRoot + "organModels",
+			url: BoscSettings.apiRoot + "organModels/",
 			dataType: "json",
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -40,11 +40,12 @@ function BoscApis(id_token) {
 	}
 
 	// Get all of the models linked to this user
-	this.getSingleModel = function (modelId, success, error, complete) {
+	this.getSingleModel = function (accountId, modelId, success, error, complete) {
 		this.callApi({
 			type: "GET",
 			url: BoscSettings.apiRoot + "organModels/" + modelId,
 			dataType: "json",
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -52,7 +53,7 @@ function BoscApis(id_token) {
 	}
 
 	// Upload models to the server
-	this.postModel = function (data, success, error, complete) {
+	this.postModel = function (accountId, data, success, error, complete) {
 		this.callApi({
 			type: 'POST',
 			url: BoscSettings.apiRoot + "organModels",
@@ -61,6 +62,7 @@ function BoscApis(id_token) {
 			cache: false,
 			contentType: false,
 			processData: false,
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -68,11 +70,12 @@ function BoscApis(id_token) {
 	}
 
 	// Update model on server
-	this.putModel = function (data, success, error, complete) {
+	this.putModel = function (accountId, data, success, error, complete) {
 		this.callApi({
 			type: 'PUT',
 			url: BoscSettings.apiRoot + "organModels/" + data._id + "/",
 			data: data,
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -95,6 +98,7 @@ function BoscApis(id_token) {
 		this.callApi({
 			type: 'GET',
 			url: BoscSettings.apiRoot + "accounts/" + accountId + "/",
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -107,6 +111,7 @@ function BoscApis(id_token) {
 			type: 'POST',
 			url: BoscSettings.apiRoot + "accounts/" + accountId + "/sendInvitation",
 			data: data,
+			headers: { 'PearMed-AccountId': accountId },
 			success: success,
 			error: error,
 			complete: complete,
@@ -143,14 +148,14 @@ BoscApis.prototype.mock = function () {
 		});
 	}
 
-	this.getModels = function (success, error, complete) {
+	this.getModels = function (accountId, success, error, complete) {
 		callApi(function () {
-			success(thisObj.testModelData);
-			console.log($(this))
+			success(thisObj.testAccount);
+			complete();
 		});
 	}
 
-	this.getSingleModel = function (modelId, success, error, complete) {
+	this.getSingleModel = function (accountId, modelId, success, error, complete) {
 		callApi(function () {
 			var model = null;
 			BoscApis.prototype.testModelData.forEach( function (m) {
@@ -167,7 +172,7 @@ BoscApis.prototype.mock = function () {
 		});
 	}
 
-	this.postModel = function (data, success, error, complete) {
+	this.postModel = function (accountId, data, success, error, complete) {
 		callApi(function () {
 			thisObj.testModelData.unshift(
 					{
@@ -184,7 +189,7 @@ BoscApis.prototype.mock = function () {
 		})
 	}
 
-	this.putModel = function (data, success, error, complete) {
+	this.putModel = function (accountId, data, success, error, complete) {
 		callApi(function () {
 			thisObj.testModelData.forEach( function ( model ) {
 				if( model._id == data._id ) {
@@ -297,3 +302,7 @@ BoscApis.prototype.testModelData = [
 	},
 ];
 
+BoscApis.prototype.testAccount = {
+	name: "Test Account",
+	models: BoscApis.prototype.testModelData,
+}

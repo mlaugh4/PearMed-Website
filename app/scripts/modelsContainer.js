@@ -1,4 +1,4 @@
-function ModelsContainer( selector , modelView ) {
+function ModelsContainer( accountId, selector , modelView ) {
 
   var el = $( selector )
 
@@ -30,7 +30,7 @@ function ModelsContainer( selector , modelView ) {
     var boscApis = new BoscApis();
 
     $('.loadList').show()
-    boscApis.getModels( successCallback , errorCallback, completeCallback )
+    boscApis.getModels( accountId, successCallback , errorCallback, completeCallback )
 
   }
 

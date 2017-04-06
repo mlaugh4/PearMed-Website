@@ -1,4 +1,4 @@
-function ModelView( ) {
+function ModelView( accountId ) {
 
   this.onCreateModel = null;
   this.onUpdateModel = null;
@@ -15,7 +15,7 @@ function ModelView( ) {
         $('.modelInfo > .title-text').html(model.name)
         $('.modelInfo > .issue-title').html(model.shortDesc)
         $('.modelInfo > .description').html(model.longDesc)
-        $('img.modelImg').attr('src', BoscSettings.apiRoot + 'organModels/' + model._id + '/png?authId=' + BoscSettings.authId);
+        $('img.modelImg').attr('src', BoscSettings.apiRoot + 'organModels/' + model._id + '/png?accountId=' + accountId + '&id_token=' + BoscSettings.authId);
         $('.right').fadeIn(500, function(){
           $(this).trigger('justFaded')
         })
@@ -42,7 +42,7 @@ function ModelView( ) {
     }
 
     var boscApis = new BoscApis(BoscApis.testAuthId);
-    boscApis.putModel(model, success, error, complete);
+    boscApis.putModel(accountId, model, success, error, complete);
 
   }
 
@@ -67,7 +67,7 @@ function ModelView( ) {
       }
 
       var boscApis = new BoscApis(BoscApis.testAuthId);
-      boscApis.postModel(formData, success, error, complete);
+      boscApis.postModel(accountId, formData, success, error, complete);
 
     }
   //End of createModel
@@ -131,9 +131,9 @@ function ModelView( ) {
 
     var updatedData = {
       _id:        thisModelView.model._id,
-      name:       $('.name').html(),
-      shortDesc:  $('.issue-title').html(),
-      longDesc:   $('.description').html(),
+      name:       $('.name.editable').text(),
+      shortDesc:  $('.issue-title.editable').text(),
+      longDesc:   $('.description.editable').text(),
     }
 
     thisModelView.updateModel( updatedData );
@@ -146,7 +146,7 @@ function ModelView( ) {
   $(".modelInfo .modelPreview").click( function () {
     if(thisModelView.model)
       window.open(
-          "modelViewer.html?modelId=" + thisModelView.model._id,
+          "modelViewer.html?accountId=" + accountId + "&modelId=" + thisModelView.model._id,
           '_blank' // <- This is what makes it open in a new tab.
       );
   })

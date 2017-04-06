@@ -1,26 +1,46 @@
 $(window).on('load', function(){
 
-    BoscSettings.ensureAuthId();
+	BoscSettings.ensureAuthId();
 
-    var accountId = Utils.getUrlVars()['accountId'];
-    if (!accountId) {
-			window.location.href = 'login.html';
-		}
+	var accountId = Utils.getUrlVars()['accountId'];
+	if (!accountId)
+		window.location.href = 'login.html';
 
-		$(".accountButton").click(function () {
-			window.location.href = 'account.html?accountId=' + accountId;
-		})
+	UpdateAccountName(accountId)
 
-    var modelView = new ModelView (  );
+	$(".accountButton").click(function () {
+		window.location.href = 'account.html?accountId=' + accountId;
+	})
 
-    var modelsContainer = new ModelsContainer( '.files-list', modelView );
+	var modelView = new ModelView ( accountId );
 
-    // When metadata is updated, update the files list
-    modelView.onCreateModel = modelView.onUpdateModel = function( model ) {
-        modelsContainer.update()
-    }
+	var modelsContainer = new ModelsContainer( accountId, '.files-list', modelView );
 
-    modelsContainer.update();
+	// When metadata is updated, update the files list
+	modelView.onCreateModel = modelView.onUpdateModel = function( model ) {
+		modelsContainer.update()
+	}
+
+	modelsContainer.update();
 
 });
 
+function UpdateAccountName(accountId) {
+	var successCallback = function(account) {
+		$(".accountName").text(account.name);
+	}
+
+	// If there was an error clear the id_token and attempt to log the user in
+	var errorCallback = function(response, ajaxOptions, thrownError) {
+		window.location.href = 'login.html';
+	}
+
+	var completeCallback = function() {
+		$(".loading").hide();
+	}
+
+	$(".loading").show();
+
+	var boscApis = new BoscApis();
+	boscApis.getAccountInfo(accountId, successCallback, errorCallback, completeCallback);
+}

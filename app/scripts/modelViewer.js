@@ -1,9 +1,13 @@
 $(window).on("load", function () {
 	BoscSettings.ensureAuthId();
 
-	var modelId = getUrlParameter("modelId");
-	if(!modelId)
+	var accountId = Utils.getUrlVars()["accountId"];
+	if(!accountId)
 		window.location.href = 'index.html';
+
+	var modelId = Utils.getUrlVars()["modelId"];
+	if(!modelId)
+		window.location.href = 'login.html';
 
 	var success = function ( model ) {
 		loadModel( model );
@@ -19,7 +23,7 @@ $(window).on("load", function () {
 	}
 
 	var boscApis = new BoscApis();
-	boscApis.getSingleModel(modelId, success, error, complete);
+	boscApis.getSingleModel(accountId, modelId, success, error, complete);
 
 	hookUpEvents();
 });
@@ -104,8 +108,14 @@ var loadModel = function ( model ) {
 		part.DOMId = "model-" + part._id;
 
 		// Build urls for the obj and mtl files
-		var objUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/obj?authId=" + BoscSettings.authId;
-		var mtlUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/mtl?authId=" + BoscSettings.authId;
+		var objUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/obj?accountId=" + model.account + "&id_token=" + BoscSettings.authId;
+		var mtlUrl = BoscSettings.apiRoot  + "organModels/" + model._id + "/parts/" + part._id + "/mtl?accountId=" + model.account + "&id_token=" + BoscSettings.authId;
+
+		console.log("OBj url:")
+		console.log(objUrl)
+
+		console.log("MTL url:")
+		console.log(mtlUrl)
 
 		// Add an html element for the part
 		$("#modelContainer").append(
@@ -173,36 +183,3 @@ var focusOnModelPart = function ( part ) {
 		})
 	});
 }
-
-// Expanding objects
-
-// AFRAME.registerComponent('cursor-listener', {
-//   init: function () {
-//     this.el.addEventListener('click', function () {
-//     	var sze = this.getAttribute('scale')
-//     	console.log(sze)
-//       if ( sze.x == 1 ) {
-//       	console.log("go big")
-//       	this.setAttribute('scale', '1.2 1.2 1.2');
-//       } else {
-//       	console.log('go small')
-//       	this.setAttribute('scale', '1 1 1');
-//       }
-//     });
-//   }
-// });
-
-var getUrlParameter = function getUrlParameter(sParam) {
-	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-		sURLVariables = sPageURL.split('&'),
-		sParameterName,
-		i;
-
-	for (i = 0; i < sURLVariables.length; i++) {
-		sParameterName = sURLVariables[i].split('=');
-
-		if (sParameterName[0] === sParam) {
-			return sParameterName[1] === undefined ? true : sParameterName[1];
-		}
-	}
-};
