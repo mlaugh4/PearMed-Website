@@ -1,21 +1,16 @@
 $(window).on('load', function() {
 	$(".loading").hide();
-	$(".signInButton").hide();
 	$(".accountsContainer").hide();
-
-	// If an access token is present in the header use it
-	var id_token = BoscSettings.authId || Utils.getUrlVars()['id_token'];
-
-	// If the access_token is not valid login
-	if (id_token)
-		ValidateAccessToken(id_token);
-	else
-		$(".signInButton").show();
 });
 
-function ValidateAccessToken(id_token) {
-	// If we successfully received the user's access token we're good to go
-	// Save the access token and continue
+function onSignIn(googleUser) {
+	var id_token = googleUser.getAuthResponse().id_token;
+	
+	getAccounts(id_token);
+}
+
+function getAccounts(id_token) {
+	// If we successfully recieved accounts render them, or, if there was only one account, render its models
 	var successCallback = function(accounts) {
 		BoscSettings.setAuthId(id_token);
 
@@ -36,17 +31,48 @@ function ValidateAccessToken(id_token) {
 		}
 	}
 
-	// If there was an error clear the id_token and attempt to log the user in
+	// React to any errors
 	var errorCallback = function(response, ajaxOptions, thrownError) {
-		BoscSettings.setAuthId(null);
-
+		// If the user is not authorized it's because this is their first time using Bosc.
+		// Create them a new account
 		if (response.status == 401){
-			window.location.href = BoscSettings.authLoginUrl;
+			createNewAccount(id_token);
 		}
 		else {
+			BoscSettings.setAuthId(null);
 			$(".accountsContainer").empty();
 			$(".accountsContainer").append("<div class='accountError'>Error retrieving accounts. Please contact team@pearmedical.com</div>");
 		}
+	}
+
+	var completeCallback = function() {
+		$(".loading").hide();
+		$(".boscLogo").hide();
+		$(".signInButton").hide();
+		$(".accountsContainer").show();
+	}
+
+	$(".loading").show();
+
+	var boscApis = new BoscApis(id_token);
+	boscApis.getAccounts(successCallback, errorCallback, completeCallback);
+}
+
+// NOTE: Eventually this should consent the user
+function createNewAccount(id_token) {
+	// New user registered successfully
+	// Now we should be able to get the accounts
+	var successCallback = function(user) {
+		BoscSettings.setAuthId(id_token);
+		getAccounts(id_token)
+	}
+
+	// Error creating account
+	var errorCallback = function(response, ajaxOptions, thrownError) {
+		BoscSettings.setAuthId(null);
+
+		$(".accountsContainer").empty();
+		$(".accountsContainer").append("<div class='accountError'>Unable to log you in. Please contact team@pearmedical.com.</div>");
 	}
 
 	var completeCallback = function() {
@@ -58,10 +84,5 @@ function ValidateAccessToken(id_token) {
 	$(".loading").show();
 
 	var boscApis = new BoscApis(id_token);
-	boscApis.getAccounts(successCallback, errorCallback, completeCallback);
-}
-
-function onSignIn(googleUser) {
-	var id_token = googleUser.getAuthResponse().id_token;
-	console.log("Id token: " + id_token)
+	boscApis.createUser(successCallback, errorCallback, completeCallback);
 }

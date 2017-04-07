@@ -26,6 +26,17 @@ function BoscApis(id_token) {
 		});
 	}
 
+	// Create a new user based on values in the id token
+	this.createUser = function (success, error, complete) {
+		this.callApi({
+			type: "POST",
+			url: BoscSettings.apiRoot + "users",
+			success: success,
+			error: error,
+			complete: complete,
+		});
+	}
+
 	// Get all of the models linked to this user
 	this.getModels = function (accountId, success, error, complete) {
 		this.callApi({
