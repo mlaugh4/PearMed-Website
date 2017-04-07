@@ -1,13 +1,5 @@
 //https://github.com/js-cookie/js-cookie
 
-
-////////// LOGIN PAGE
-
-
-$('.signInButton').click(function(event) {
-    window.location.href = BoscSettings.authLoginUrl;
-});
-
 ////////// INDEX PAGE
 
 //Download button

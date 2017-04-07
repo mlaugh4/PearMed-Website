@@ -60,3 +60,8 @@ function ValidateAccessToken(id_token) {
 	var boscApis = new BoscApis(id_token);
 	boscApis.getAccounts(successCallback, errorCallback, completeCallback);
 }
+
+function onSignIn(googleUser) {
+	var id_token = googleUser.getAuthResponse().id_token;
+	console.log("Id token: " + id_token)
+}

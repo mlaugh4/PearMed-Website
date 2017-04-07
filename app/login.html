@@ -2,10 +2,12 @@
 <head>
 
   <meta name="google-site-verification" content="Kctkb4ovFntAcicPwO1FTDxPOlN79_Em3kNMFpzYzRY" />
+  <meta name="google-signin-client_id" content="15086306266-mbq5a4umqll6fuh7820n1fqo9t76jogk.apps.googleusercontent.com">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="scripts/js.cookie.js"></script>
   <script src="scripts/boscSettings.js"></script>
   <script src="scripts/boscApis.js"></script>
@@ -27,9 +29,7 @@
     
     <img class="loading" src="img/loading.gif" />
 
-    <div class="signInButton primary-btn">
-    	Sign In
-    </div>
+    <div class="signInButton g-signin2" data-onsuccess="onSignIn"></div>
 
     <div class="accountsContainer">
     	<h1 class="selectAccount">Select An Account</h1>
