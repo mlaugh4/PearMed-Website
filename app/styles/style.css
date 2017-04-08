@@ -20,9 +20,12 @@ h1 {
   margin: 0 0 5px 0; }
 
 a {
-  color: #4a4a4a;
+  color: #D55D16;
   text-decoration: none;
   cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
 
 ul {
   list-style: none;
@@ -436,6 +439,10 @@ input {
   margin: 0 auto; }
 
 .accountName {
+  text-align: center; }
+
+.createAccountButton {
+  margin: 15 0 0 0;
   text-align: center; }
 
 [contentEditable=true]:empty:not(:focus):before {

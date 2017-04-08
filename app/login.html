@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="scripts/js.cookie.js"></script>
   <script src="scripts/boscSettings.js"></script>
   <script src="scripts/boscApis.js"></script>
@@ -17,7 +16,7 @@
 <body>
   <div class="leftMenu">
     <div id="logo"><img src="img/bosc_logo.png"></div>
-    <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip">
+    <img src="img/moreinfo.svg" alt="" id="moreInfo" class="hover-tipso-tooltip" />
   </div>
   <div class="bottomMenu">
     <a class="secondary-btn download">Download Bosc App</a>
@@ -25,15 +24,22 @@
   </div>
   
   <div class="shell" id="login">
-    <img class="boscLogo" src="img/bosc_logo.png" style="width:50%;min-width:200px">
+    <img class="boscLogo" src="img/bosc_logo.png" style="width:50%;min-width:200px;display: none" />
     
-    <img class="loading" src="img/loading.gif" />
+    <img class="loading" style="display: none" src="img/loading.gif" />
 
-    <div class="signInButton g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="signInButton g-signin2" style="display: none" data-onsuccess="onSignIn"></div>
 
-    <div class="accountsContainer">
+    <div class='termsOfServiceContainer' style="display: none">
+      <div>By clicking Create Account, you agree to our <a class='openTerms' href='terms.html' target="_blank">Terms</a>.</div>
+      <div class='createAccountButton primary-btn'>Create Account</div>
+    </div>
+
+    <div class="accountsContainer" style="display: none">
     	<h1 class="selectAccount">Select An Account</h1>
     </div>
+
+    <h1 class='errorMessage'></h1>
 
     <a class="secondary-btn" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%)" href="mailto:team@pearmedical.com">Request access</a>
   </div>
@@ -43,5 +49,6 @@
 <script src="scripts/utils.js"></script>
 <script src="scripts/login.js"></script>
 <script src="scripts/primary.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onGooglePrimaryJsLoad" async defer></script>
 
 </html>

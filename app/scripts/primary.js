@@ -1,5 +1,13 @@
 //https://github.com/js-cookie/js-cookie
 
+function onGooglePrimaryJsLoad() {
+	gapi.load('auth2', function() {
+		gapi.auth2.init();
+	});
+
+	$('body').trigger("primaryJsLoaded");
+}
+
 ////////// INDEX PAGE
 
 //Download button
@@ -9,7 +17,10 @@ $(window).on('load', function(){
 
 // Logout button
 $('.logout').click( function(){
-    BoscSettings.setAuthId( null );
+	var auth2 = gapi.auth2.getAuthInstance();
+	auth2.signOut().then(function () {
+		BoscSettings.setAuthId( null );
+	});
 });
 
 
