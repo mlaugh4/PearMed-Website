@@ -1,15 +1,15 @@
 BoscSettings = {
 	apiRoot: "http://35.161.194.241:3000/",
 	authLoginUrl: 'http://35.161.194.241:3000/auth/google/',
-	authId: Cookies.get('authId'),
+	authId: Cookies.get('idToken'),
 
 	setAuthId: function ( authId ) {
 		if(!authId)
-			Cookies.remove("authId");
+			Cookies.remove("idToken");
 		else
-			Cookies.set("authId", authId);
+			Cookies.set("idToken", authId);
 
-		BoscSettings.authId = Cookies.get("authId");
+		BoscSettings.authId = Cookies.get("idToken");
 
 		this.ensureAuthId();
 	},
